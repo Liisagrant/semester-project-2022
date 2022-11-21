@@ -67,13 +67,6 @@
                             aria-expanded="false"
                         >
                             <span class="sr-only">Open menu</span>
-                            <!--
-            Icon when menu is closed.
-
-            Heroicon name: outline/bars-3
-
-            Menu open: "hidden", Menu closed: "block"
-          -->
                             <svg
                                 id="menu"
                                 class="block h-6 w-6 text-SecondColor"
@@ -90,13 +83,6 @@
                                     d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                                 />
                             </svg>
-                            <!--
-            Icon when menu is open.
-
-            Heroicon name: outline/x-mark
-
-            Menu open: "block", Menu closed: "hidden"
-          -->
                             <svg
                                 id="x"
                                 class="hidden h-6 w-6"
@@ -117,64 +103,65 @@
                     </div>
                     <div
                         class="hidden lg:relative lg:z-10 lg:ml-4 lg:flex lg:items-center"
-                    >
-                        <!-- Profile dropdown -->
-                        <div class="relative ml-4 flex-shrink-0">
-                            <div>
-                                <button
-                                    type="button"
-                                    class="flex rounded-full bg-gray-800 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                                    id="user-menu-button"
-                                    aria-expanded="false"
-                                    aria-haspopup="true"
-                                >
-                                    <span class="sr-only">Open user menu</span>
-                                    <img
-                                        class="h-8 w-8 rounded-full"
-                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                        alt="Profile Photo"
-                                    />
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    ></div>
                 </div>
                 <nav
                     id="navLinks-desktop"
                     class="hidden lg:flex lg:space-x-8 lg:py-2"
                     aria-label="Global"
                 >
-                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                     <a
-                        href="./sign-up.html"
+                        href="#"
                         class="bg-gray-900 text-SecondColor hover:text-thirdColor rounded-md py-2 px-3 inline-flex items-center text-sm font-medium"
                         aria-current="page"
-                        >SignUp</a
+                        >Home</a
                     >
 
                     <a
                         href="#"
                         class="text-SecondColor hover:bg-gray-700 hover:text-thirdColor rounded-md py-2 px-3 inline-flex items-center text-sm font-medium"
-                        >LogIn</a
+                        >Items in auction</a
+                    >
+
+                    <a
+                        href="#"
+                        class="text-SecondColor hover:bg-gray-700 hover:text-thirdColor rounded-md py-2 px-3 inline-flex items-center text-sm font-medium"
+                        >Add a new Item</a
+                    >
+
+                    <a
+                        href="#"
+                        class="text-SecondColor hover:bg-gray-700 hover:text-thirdColor rounded-md py-2 px-3 inline-flex items-center text-sm font-medium"
+                        >Profile</a
                     >
                 </nav>
             </div>
-
             <!-- Mobile menu, show/hide based on menu state. -->
             <nav class="hidden lg:hidden" aria-label="Global" id="mobile-menu">
                 <div class="space-y-1 px-2 pt-2 pb-3">
-                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                     <a
-                        href="./sign-up.html"
-                        class="bg-gray-900 text-SecondColor hover:text-thirdColor rounded-md py-2 px-3 inline-flex items-center text-sm font-medium"
+                        href="#"
+                        class="bg-gray-900 text-SecondColor hover:text-thirdColor block rounded-md py-2 px-3 text-base font-medium"
                         aria-current="page"
-                        >SignUp</a
+                        >Home</a
                     >
 
                     <a
                         href="#"
-                        class="text-SecondColor hover:bg-gray-700 hover:text-thirdColor rounded-md py-2 px-3 inline-flex items-center text-sm font-medium"
-                        >LogIn</a
+                        class="text-SecondColor hover:bg-gray-700 hover:text-thirdColor block rounded-md py-2 px-3 text-base font-medium"
+                        >Items in action</a
+                    >
+
+                    <a
+                        href="#"
+                        class="text-SecondColor hover:bg-gray-700 hover:text-thirdColor block rounded-md py-2 px-3 text-base font-medium"
+                        >Add a new item</a
+                    >
+
+                    <a
+                        href="#"
+                        class="text-SecondColor hover:bg-gray-700 hover:text-thirdColor block rounded-md py-2 px-3 text-base font-medium"
+                        >Profile</a
                     >
                 </div>
             </nav>
@@ -185,33 +172,54 @@
             >
                 <div class="mx-auto w-full max-w-sm lg:w-96">
                     <div>
-                        <h2
+                        <h1
                             class="mt-6 text-3xl font-bold tracking-tight text-gray-900"
                         >
-                            Sign in to your account
-                        </h2>
+                            Register as a user
+                        </h1>
                         <p class="mt-2 text-sm text-gray-600">
                             Or
                             <a
-                                href="#"
+                                href="index.html"
                                 class="font-medium text-indigo-600 hover:text-indigo-500"
-                                >start your 14-day free trial</a
+                                >Sign in to your account</a
                             >
                         </p>
                     </div>
-
                     <div class="mt-8">
-                        <div>
-                            <div class="relative mt-6"></div>
-                        </div>
-
                         <div class="mt-6">
-                            <form action="#" method="POST" class="space-y-6">
+                            <form
+                                id="signup-form"
+                                action="#"
+                                method="POST"
+                                class="space-y-6"
+                            >
+                                <div>
+                                    <label
+                                        for="firstname"
+                                        class="block text-sm font-medium text-gray-700"
+                                        >First Name</label
+                                    >
+                                    <div class="mt-1">
+                                        <input
+                                            id="firstname"
+                                            name="firstname"
+                                            type="text"
+                                            autocomplete="firstname"
+                                            class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                                        />
+                                    </div>
+                                    <span
+                                        id="firstnameError"
+                                        class="hidden text-sm text-red-500"
+                                        >Please enter your first name
+                                    </span>
+                                </div>
                                 <div>
                                     <label
                                         for="email"
                                         class="block text-sm font-medium text-gray-700"
-                                        >Email address</label
+                                        >Email</label
                                     >
                                     <div class="mt-1">
                                         <input
@@ -219,12 +227,22 @@
                                             name="email"
                                             type="email"
                                             autocomplete="email"
-                                            required
                                             class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                                         />
                                     </div>
+                                    <span
+                                        id="emailError"
+                                        class="hidden text-sm text-red-500"
+                                        >Please enter valid email
+                                    </span>
+                                    <span
+                                        id="emailErrorNotValid"
+                                        class="hidden text-sm text-red-500"
+                                    >
+                                        This email is not valid. It must be a
+                                        noroff.no or Noroff.stud.no address
+                                    </span>
                                 </div>
-
                                 <div class="space-y-1">
                                     <label
                                         for="password"
@@ -237,45 +255,77 @@
                                             name="password"
                                             type="password"
                                             autocomplete="current-password"
-                                            required
                                             class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                                         />
                                     </div>
+                                    <span
+                                        id="passwordError"
+                                        class="hidden text-sm text-red-500"
+                                        >Please enter a password with least 8
+                                        characters
+                                    </span>
                                 </div>
-
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center">
+                                <div class="space-y-1">
+                                    <label
+                                        for="confirmpassword"
+                                        class="block text-sm font-medium text-gray-700"
+                                        >Confirm Password</label
+                                    >
+                                    <div class="mt-1">
                                         <input
-                                            id="remember-me"
-                                            name="remember-me"
-                                            type="checkbox"
-                                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                                            id="confirmpassword"
+                                            name="password"
+                                            type="password"
+                                            autocomplete="current-password"
+                                            class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                                         />
-                                        <label
-                                            for="remember-me"
-                                            class="ml-2 block text-sm text-gray-900"
-                                            >Remember me</label
-                                        >
                                     </div>
-
-                                    <div class="text-sm">
-                                        <a
-                                            href="#"
-                                            class="font-medium text-indigo-600 hover:text-indigo-500"
-                                            >Forgot your password?</a
-                                        >
-                                    </div>
+                                    <span
+                                        id="confirmpasswordError"
+                                        class="hidden text-sm text-red-500"
+                                        >Please enter a password with least 8
+                                        characters
+                                    </span>
+                                    <span
+                                        id="passwordErrorNotMatch"
+                                        class="hidden text-sm text-red-500"
+                                        >Password does not match
+                                    </span>
                                 </div>
-
+                                <div class="space-y-1">
+                                    <label
+                                        for="Image-url"
+                                        class="block text-sm font-medium text-gray-700"
+                                        >Image url (This is optinal and can be
+                                        added later)</label
+                                    >
+                                    <div class="mt-1">
+                                        <input
+                                            id="img-url"
+                                            name="img-url"
+                                            type="img-url"
+                                            class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                                        />
+                                    </div>
+                                    <span
+                                        id="imageUrlError"
+                                        class="hidden text-sm text-red-500"
+                                        >Sorry. This url is not valid
+                                    </span>
+                                </div>
                                 <div>
                                     <button
                                         type="submit"
-                                        class="flex w-full justify-center rounded-md border border-transparent bg-fourthColor py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                        class="flex w-full justify-center rounded-md border border-transparent bg-fourthColor py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-red focus:outline-none"
                                     >
                                         Sign in
                                     </button>
                                 </div>
                             </form>
+                            <div
+                                id="error-signup-user"
+                                class="text-center mt-6 text-red-500"
+                            ></div>
                         </div>
                     </div>
                 </div>
@@ -283,8 +333,8 @@
             <div class="relative hidden w-0 flex-1 lg:block">
                 <img
                     class="absolute inset-0 h-full w-full object-cover"
-                    src="/media/login-image.jpg"
-                    alt=""
+                    src="./media/sign-up.jpg"
+                    alt="Image of fine art"
                 />
             </div>
         </div>
