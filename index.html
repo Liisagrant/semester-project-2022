@@ -211,7 +211,17 @@
                                         />
                                     </div>
                                 </div>
-
+                                <span
+                                    id="emailErrorNotValid"
+                                    class="hidden text-sm text-red-500"
+                                    >Please enter a valid email. It must be a
+                                    stud.no or stud.noroff.no email address.
+                                </span>
+                                <span
+                                    id="emailError"
+                                    class="hidden text-sm text-red-500"
+                                    >Email is required
+                                </span>
                                 <div class="space-y-1">
                                     <label
                                         for="password"
@@ -228,6 +238,11 @@
                                             class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                                         />
                                     </div>
+                                    <span
+                                        id="passwordError"
+                                        class="hidden text-sm text-red-500"
+                                        >Password is required
+                                    </span>
                                 </div>
 
                                 <div class="flex items-center justify-between">
@@ -261,6 +276,10 @@
                                         Sign in
                                     </button>
                                 </div>
+                                <span
+                                    id="generalError"
+                                    class="text-sm text-red-500 flex"
+                                ></span>
                             </form>
                         </div>
                     </div>
@@ -387,14 +406,14 @@
                                 <h3
                                     class="text-base font-medium text-SecondColor hover:text-thirdColor"
                                 >
-                                    Solutions
+                                    Menu
                                 </h3>
                                 <ul role="list" class="mt-4 space-y-4">
                                     <li>
                                         <a
                                             href="#"
                                             class="text-base text-SecondColor hover:text-thirdColor"
-                                            >Marketing</a
+                                            >Homepage</a
                                         >
                                     </li>
 
@@ -402,7 +421,7 @@
                                         <a
                                             href="#"
                                             class="text-base text-SecondColor hover:text-thirdColor"
-                                            >Analytics</a
+                                            >Product</a
                                         >
                                     </li>
 
@@ -410,7 +429,7 @@
                                         <a
                                             href="#"
                                             class="text-base text-SecondColor hover:text-thirdColor"
-                                            >Commerce</a
+                                            >Profile</a
                                         >
                                     </li>
 
@@ -418,7 +437,7 @@
                                         <a
                                             href="#"
                                             class="text-base text-SecondColor hover:text-thirdColor"
-                                            >Insights</a
+                                            >Login</a
                                         >
                                     </li>
                                 </ul>
