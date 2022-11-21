@@ -7,6 +7,7 @@ module.exports = {
             SecondColor: '#CCA152',
             thirdColor: '#9DB3BE',
             fourthColor: '#58626E',
+            whiteColor: '#FFFFFF',
         },
         extend: {
             fontFamily: {

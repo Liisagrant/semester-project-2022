@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <link rel="icon" type="image/svg+xml" href="/vite.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Vite App</title>
+        <title>LogIn</title>
         <script type="module" src="./js/main.js" defer></script>
         <script type="module" src="./js/nav.js" defer></script>
     </head>
@@ -67,13 +67,6 @@
                             aria-expanded="false"
                         >
                             <span class="sr-only">Open menu</span>
-                            <!--
-            Icon when menu is closed.
-
-            Heroicon name: outline/bars-3
-
-            Menu open: "hidden", Menu closed: "block"
-          -->
                             <svg
                                 id="menu"
                                 class="block h-6 w-6 text-SecondColor"
@@ -90,13 +83,7 @@
                                     d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                                 />
                             </svg>
-                            <!--
-            Icon when menu is open.
 
-            Heroicon name: outline/x-mark
-
-            Menu open: "block", Menu closed: "hidden"
-          -->
                             <svg
                                 id="x"
                                 class="hidden h-6 w-6"
@@ -194,7 +181,7 @@
                             Or
                             <a
                                 href="#"
-                                class="font-medium text-indigo-600 hover:text-indigo-500"
+                                class="font-medium text-mainColor hover:text-fourthColor"
                                 >start your 14-day free trial</a
                             >
                         </p>
@@ -266,11 +253,10 @@
                                         >
                                     </div>
                                 </div>
-
                                 <div>
                                     <button
                                         type="submit"
-                                        class="flex w-full justify-center rounded-md border border-transparent bg-fourthColor py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                        class="flex w-full justify-center rounded-md bg-fourthColor py-2 px-4 text-sm font-medium text-whiteColor shadow-sm hover:bg-secondColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                                     >
                                         Sign in
                                     </button>
