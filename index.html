@@ -62,14 +62,14 @@
                         <button
                             id="Mobile-menu-btn"
                             type="button"
-                            class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                            class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-lightGray"
                             aria-controls="mobile-menu"
                             aria-expanded="false"
                         >
                             <span class="sr-only">Open menu</span>
                             <svg
                                 id="menu"
-                                class="block h-6 w-6 text-SecondColor"
+                                class="block h-6 w-6 text-SecondColor hover:text-lightGray"
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
                                 viewBox="0 0 24 24"
@@ -86,12 +86,12 @@
 
                             <svg
                                 id="x"
-                                class="hidden h-6 w-6"
+                                class="hidden h-6 w-6 text-SecondColor hover:text-lightGray"
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke-width="1.5"
-                                stroke="gray"
+                                stroke="currentColor"
                                 aria-hidden="true"
                             >
                                 <path
@@ -134,14 +134,14 @@
                     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                     <a
                         href="./sign-up.html"
-                        class="bg-gray-900 text-SecondColor hover:text-thirdColor rounded-md py-2 px-3 inline-flex items-center text-sm font-medium"
+                        class="text-SecondColor hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium"
                         aria-current="page"
                         >SignUp</a
                     >
 
                     <a
                         href="#"
-                        class="text-SecondColor hover:bg-gray-700 hover:text-thirdColor rounded-md py-2 px-3 inline-flex items-center text-sm font-medium"
+                        class="text-SecondColor hover:text-lightGray hover:text-thirdColor rounded-md py-2 px-3 inline-flex items-center text-sm font-medium"
                         >LogIn</a
                     >
                 </nav>
@@ -153,35 +153,35 @@
                     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                     <a
                         href="./sign-up.html"
-                        class="bg-gray-900 text-SecondColor hover:text-thirdColor rounded-md py-2 px-3 inline-flex items-center text-sm font-medium"
+                        class="bg-gray-900 text-SecondColor hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium"
                         aria-current="page"
                         >SignUp</a
                     >
 
                     <a
                         href="#"
-                        class="text-SecondColor hover:bg-gray-700 hover:text-thirdColor rounded-md py-2 px-3 inline-flex items-center text-sm font-medium"
+                        class="text-SecondColor hover:text-lightGray hover:text-thirdColor rounded-md py-2 px-3 inline-flex items-center text-sm font-medium"
                         >LogIn</a
                     >
                 </div>
             </nav>
         </header>
-        <div class="flex min-h-full bg-thirdColor">
+        <div class="flex min-h-full bg-lightGray">
             <div
                 class="flex flex-1 flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24"
             >
                 <div class="mx-auto w-full max-w-sm lg:w-96">
                     <div>
                         <h2
-                            class="mt-6 text-3xl font-bold tracking-tight text-gray-900"
+                            class="mt-6 text-3xl font-bold tracking-tight text-black"
                         >
                             Sign in to your account
                         </h2>
-                        <p class="mt-2 text-sm text-gray-600">
+                        <p class="mt-2 text-sm text-black">
                             Or
                             <a
                                 href="#"
-                                class="font-medium text-mainColor hover:text-fourthColor"
+                                class="font-medium text-mainColor hover:text-white"
                                 >start your 14-day free trial</a
                             >
                         </p>
@@ -263,7 +263,7 @@
                                     <div class="text-sm">
                                         <a
                                             href="#"
-                                            class="font-medium text-indigo-600 hover:text-indigo-500"
+                                            class="font-medium text-indigo-600 hover:text-white"
                                             >Forgot your password?</a
                                         >
                                     </div>
@@ -271,7 +271,7 @@
                                 <div>
                                     <button
                                         type="submit"
-                                        class="flex w-full justify-center rounded-md bg-fourthColor py-2 px-4 text-sm font-medium text-whiteColor shadow-sm hover:bg-secondColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                        class="flex w-full justify-center rounded-md bg-darkGray py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                                     >
                                         Sign in
                                     </button>
@@ -304,13 +304,10 @@
                             alt="Sniper"
                         />
                         <div class="flex space-x-6">
-                            <a
-                                href="#"
-                                class="text-gray-400 hover:text-gray-500"
-                            >
+                            <a href="#" class="hover:text-lightGray">
                                 <span class="sr-only">Facebook</span>
                                 <svg
-                                    class="h-6 w-6 text-SecondColor"
+                                    class="h-6 w-6 text-SecondColor hover:text-lightGray"
                                     fill="currentColor"
                                     viewBox="0 0 24 24"
                                     aria-hidden="true"
@@ -323,13 +320,10 @@
                                 </svg>
                             </a>
 
-                            <a
-                                href="#"
-                                class="text-gray-400 hover:text-gray-500"
-                            >
+                            <a href="#" class="hover:text-darkGray">
                                 <span class="sr-only">Instagram</span>
                                 <svg
-                                    class="h-6 w-6 text-SecondColor"
+                                    class="h-6 w-6 text-SecondColor hover:text-lightGray"
                                     fill="currentColor"
                                     viewBox="0 0 24 24"
                                     aria-hidden="true"
@@ -342,13 +336,10 @@
                                 </svg>
                             </a>
 
-                            <a
-                                href="#"
-                                class="text-gray-400 hover:text-gray-500"
-                            >
+                            <a href="#" class="hover:text-lightGray">
                                 <span class="sr-only">Twitter</span>
                                 <svg
-                                    class="h-6 w-6 text-SecondColor"
+                                    class="h-6 w-6 text-SecondColor hover:text-lightGray"
                                     fill="currentColor"
                                     viewBox="0 0 24 24"
                                     aria-hidden="true"
@@ -359,13 +350,10 @@
                                 </svg>
                             </a>
 
-                            <a
-                                href="#"
-                                class="text-gray-400 hover:text-gray-500"
-                            >
+                            <a href="#" class="hover:text-darkGray">
                                 <span class="sr-only">GitHub</span>
                                 <svg
-                                    class="h-6 w-6 text-SecondColor"
+                                    class="h-6 w-6 text-SecondColor hover:text-lightGray"
                                     fill="currentColor"
                                     viewBox="0 0 24 24"
                                     aria-hidden="true"
@@ -378,13 +366,10 @@
                                 </svg>
                             </a>
 
-                            <a
-                                href="#"
-                                class="text-gray-400 hover:text-gray-500"
-                            >
+                            <a href="#" class="hover:text-darkGray">
                                 <span class="sr-only">Dribbble</span>
                                 <svg
-                                    class="h-6 w-6 text-SecondColor"
+                                    class="h-6 w-6 text-SecondColor hover:text-lightGray"
                                     fill="currentColor"
                                     viewBox="0 0 24 24"
                                     aria-hidden="true"
@@ -404,7 +389,7 @@
                         <div class="md:grid md:grid-cols-2 md:gap-8">
                             <div>
                                 <h3
-                                    class="text-base font-medium text-SecondColor hover:text-thirdColor"
+                                    class="text-base font-medium text-SecondColor hover:text-lightGray"
                                 >
                                     Menu
                                 </h3>
@@ -412,7 +397,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >Homepage</a
                                         >
                                     </li>
@@ -420,7 +405,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >Product</a
                                         >
                                     </li>
@@ -428,7 +413,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >Profile</a
                                         >
                                     </li>
@@ -436,7 +421,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >Login</a
                                         >
                                     </li>
@@ -452,7 +437,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >Pricing</a
                                         >
                                     </li>
@@ -460,7 +445,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >Documentation</a
                                         >
                                     </li>
@@ -468,7 +453,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >Guides</a
                                         >
                                     </li>
@@ -476,7 +461,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >API Status</a
                                         >
                                     </li>
@@ -494,7 +479,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >About</a
                                         >
                                     </li>
@@ -502,7 +487,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >Blog</a
                                         >
                                     </li>
@@ -510,7 +495,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >Jobs</a
                                         >
                                     </li>
@@ -518,7 +503,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >Press</a
                                         >
                                     </li>
@@ -526,7 +511,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >Partners</a
                                         >
                                     </li>
@@ -542,7 +527,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >Claim</a
                                         >
                                     </li>
@@ -550,7 +535,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >Privacy</a
                                         >
                                     </li>
@@ -558,7 +543,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >Terms</a
                                         >
                                     </li>

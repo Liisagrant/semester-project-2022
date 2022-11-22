@@ -5,10 +5,12 @@ module.exports = {
         colors: {
             mainColor: '#314657',
             SecondColor: '#CCA152',
-            thirdColor: '#9DB3BE',
-            fourthColor: '#58626E',
-            whiteColor: '#FFFFFF',
-            greenColor: '#1B4518',
+            lightGray: '#9DB3BE',
+            darkGray: '#58626E',
+            white: '#FFFFFF',
+            black: '#444444',
+            green: '#1B4518',
+            red: '#F37D7D',
         },
         extend: {
             fontFamily: {

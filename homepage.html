@@ -32,7 +32,7 @@
                                 <div
                                     class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
                                 >
-                                    <!-- Heroicon name: mini/magnifying-glass -->
+                                    <!-- mini/magnifying-glass -->
                                     <svg
                                         class="h-5 w-5"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -62,21 +62,14 @@
                         <button
                             id="Mobile-menu-btn"
                             type="button"
-                            class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                            class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-lightGray"
                             aria-controls="mobile-menu"
                             aria-expanded="false"
                         >
                             <span class="sr-only">Open menu</span>
-                            <!--
-            Icon when menu is closed.
-
-            Heroicon name: outline/bars-3
-
-            Menu open: "hidden", Menu closed: "block"
-          -->
                             <svg
                                 id="menu"
-                                class="block h-6 w-6 text-SecondColor"
+                                class="block h-6 w-6 text-SecondColor hover:text-lightGray"
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
                                 viewBox="0 0 24 24"
@@ -90,21 +83,14 @@
                                     d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                                 />
                             </svg>
-                            <!--
-            Icon when menu is open.
-
-            Heroicon name: outline/x-mark
-
-            Menu open: "block", Menu closed: "hidden"
-          -->
                             <svg
                                 id="x"
-                                class="hidden h-6 w-6"
+                                class="hidden h-6 w-6 text-SecondColor hover:text-lightGray"
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke-width="1.5"
-                                stroke="gray"
+                                stroke="currentColor"
                                 aria-hidden="true"
                             >
                                 <path
@@ -144,66 +130,64 @@
                     class="hidden lg:flex lg:space-x-8 lg:py-2"
                     aria-label="Global"
                 >
-                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                     <a
                         href="#"
-                        class="bg-gray-900 text-SecondColor hover:text-thirdColor rounded-md py-2 px-3 inline-flex items-center text-sm font-medium"
+                        class="bg-gray-900 text-SecondColor hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium"
                         aria-current="page"
                         >Home</a
                     >
 
                     <a
                         href="#"
-                        class="text-SecondColor hover:bg-gray-700 hover:text-thirdColor rounded-md py-2 px-3 inline-flex items-center text-sm font-medium"
+                        class="text-SecondColor hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium"
                         >Items in auction</a
                     >
 
                     <a
                         href="#"
-                        class="text-SecondColor hover:bg-gray-700 hover:text-thirdColor rounded-md py-2 px-3 inline-flex items-center text-sm font-medium"
+                        class="text-SecondColor hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium"
                         >Add a new Item</a
                     >
 
                     <a
                         href="#"
-                        class="text-SecondColor hover:bg-gray-700 hover:text-thirdColor rounded-md py-2 px-3 inline-flex items-center text-sm font-medium"
+                        class="text-SecondColor hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium"
                         >Profile</a
                     >
                 </nav>
             </div>
 
-            <!-- Mobile menu, show/hide based on menu state. -->
+            <!-- Mobile menu-->
             <nav class="hidden lg:hidden" aria-label="Global" id="mobile-menu">
                 <div class="space-y-1 px-2 pt-2 pb-3">
-                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                     <a
                         href="#"
-                        class="bg-gray-900 text-SecondColor hover:text-thirdColor block rounded-md py-2 px-3 text-base font-medium"
+                        class="text-SecondColor hover:text-lightGray block rounded-md py-2 px-3 text-base font-medium"
                         aria-current="page"
                         >Home</a
                     >
 
                     <a
                         href="#"
-                        class="text-SecondColor hover:bg-gray-700 hover:text-thirdColor block rounded-md py-2 px-3 text-base font-medium"
+                        class="text-SecondColor hover:text-lightGray block rounded-md py-2 px-3 text-base font-medium"
                         >Items in action</a
                     >
 
                     <a
                         href="#"
-                        class="text-SecondColor hover:bg-gray-700 hover:text-thirdColor block rounded-md py-2 px-3 text-base font-medium"
+                        class="text-SecondColor hover:text-lightGray block rounded-md py-2 px-3 text-base font-medium"
                         >Add a new item</a
                     >
 
                     <a
                         href="#"
-                        class="text-SecondColor hover:bg-gray-700 hover:text-thirdColor block rounded-md py-2 px-3 text-base font-medium"
+                        class="text-SecondColor hover:text-lightGray block rounded-md py-2 px-3 text-base font-medium"
                         >Profile</a
                     >
                 </div>
             </nav>
         </header>
-        <div class="relative bg-thirdColor mx-2 my-2 lg:mx-16 lg:my-16">
+        <div class="relative bg-lightGray mx-2 my-2 lg:mx-16 lg:my-16">
             <main class="lg:relative">
                 <div
                     class="mx-auto w-full max-w-7xl pt-16 pb-20 text-center lg:py-48 lg:text-left"
@@ -219,7 +203,7 @@
                         <h2
                             class="text-2xl font-bold tracking-tight text-mainColor mt-8 sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl"
                         >
-                            <span class="block text-indigo-600 xl:inline mt-8"
+                            <span class="block xl:inline mt-8"
                                 >So EASY. Signup, Search and BID</span
                             >
                         </h2>
@@ -242,11 +226,11 @@
                 </div>
             </main>
         </div>
-        <div class="bg-fourthColor mx-auto w-full text-center my-16">
+        <div class="bg-darkGray mx-auto w-full text-center my-16">
             <h2
-                class="text-2xl font-bold tracking-tight text-mainColor sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl py-6"
+                class="text-2xl font-bold tracking-tight sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl py-6"
             >
-                <span class="block text-whiteColor xl:inline mt-8"
+                <span class="block text-whiteColor xl:inline"
                     >Items in actions right now!</span
                 >
             </h2>
@@ -258,7 +242,7 @@
                         role="list"
                         class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8"
                     >
-                        <li class="bg-thirdColor px-2 py-2 rounded-lg">
+                        <li class="bg-lightGray px-2 py-2 rounded-lg">
                             <div class="space-y-4">
                                 <div class="aspect-w-3 aspect-h-2">
                                     <img
@@ -274,9 +258,7 @@
                                             class="space-y-1 text-lg font-medium leading-6"
                                         >
                                             <h3>Fast Bike</h3>
-                                            <p
-                                                class="text-greenColor font-bold"
-                                            >
+                                            <p class="text-green font-bold">
                                                 Current Bid: 104 $
                                             </p>
                                             <h4 class="text-base">
@@ -286,7 +268,7 @@
                                         <div>
                                             <button
                                                 type="submit"
-                                                class="flex justify-center rounded-md bg-fourthColor py-2 px-2 text-sm font-medium text-whiteColor shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                                class="flex justify-center rounded-md bg-darkGray py-2 px-2 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                                             >
                                                 view Item
                                             </button>
@@ -295,7 +277,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="bg-thirdColor px-2 py-2 rounded-lg">
+                        <li class="bg-lightGray px-2 py-2 rounded-lg">
                             <div class="space-y-4">
                                 <div class="aspect-w-3 aspect-h-2">
                                     <img
@@ -311,9 +293,7 @@
                                             class="space-y-1 text-lg font-medium leading-6"
                                         >
                                             <h3>Fast Bike</h3>
-                                            <p
-                                                class="text-greenColor font-bold"
-                                            >
+                                            <p class="text-green font-bold">
                                                 Current Bid: 104 $
                                             </p>
                                             <h4 class="text-base">
@@ -323,7 +303,7 @@
                                         <div>
                                             <button
                                                 type="submit"
-                                                class="flex justify-center rounded-md bg-fourthColor py-2 px-2 text-sm font-medium text-whiteColor shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                                class="flex justify-center rounded-md bg-darkGray py-2 px-2 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                                             >
                                                 view Item
                                             </button>
@@ -332,7 +312,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="bg-thirdColor px-2 py-2 rounded-lg">
+                        <li class="bg-lightGray px-2 py-2 rounded-lg">
                             <div class="space-y-4">
                                 <div class="aspect-w-3 aspect-h-2">
                                     <img
@@ -348,9 +328,7 @@
                                             class="space-y-1 text-lg font-medium leading-6"
                                         >
                                             <h3>Fast Bike</h3>
-                                            <p
-                                                class="text-greenColor font-bold"
-                                            >
+                                            <p class="text-green font-bold">
                                                 Current Bid: 104 $
                                             </p>
                                             <h4 class="text-base">
@@ -360,7 +338,7 @@
                                         <div>
                                             <button
                                                 type="submit"
-                                                class="flex justify-center rounded-md bg-fourthColor py-2 px-2 text-sm font-medium text-whiteColor shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                                class="flex justify-center rounded-md bg-darkGray py-2 px-2 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                                             >
                                                 view Item
                                             </button>
@@ -369,7 +347,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="bg-thirdColor px-2 py-2 rounded-lg">
+                        <li class="bg-lightGray px-2 py-2 rounded-lg">
                             <div class="space-y-4">
                                 <div class="aspect-w-3 aspect-h-2">
                                     <img
@@ -385,9 +363,7 @@
                                             class="space-y-1 text-lg font-medium leading-6"
                                         >
                                             <h3>Fast Bike</h3>
-                                            <p
-                                                class="text-greenColor font-bold"
-                                            >
+                                            <p class="text-green font-bold">
                                                 Current Bid: 104 $
                                             </p>
                                             <h4 class="text-base">
@@ -397,7 +373,7 @@
                                         <div>
                                             <button
                                                 type="submit"
-                                                class="flex justify-center rounded-md bg-fourthColor py-2 px-2 text-sm font-medium text-whiteColor shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                                class="flex justify-center rounded-md bg-darkGray py-2 px-2 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                                             >
                                                 view Item
                                             </button>
@@ -406,7 +382,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="bg-thirdColor px-2 py-2 rounded-lg">
+                        <li class="bg-lightGray px-2 py-2 rounded-lg">
                             <div class="space-y-4">
                                 <div class="aspect-w-3 aspect-h-2">
                                     <img
@@ -422,9 +398,7 @@
                                             class="space-y-1 text-lg font-medium leading-6"
                                         >
                                             <h3>Fast Bike</h3>
-                                            <p
-                                                class="text-greenColor font-bold"
-                                            >
+                                            <p class="text-green font-bold">
                                                 Current Bid: 104 $
                                             </p>
                                             <h4 class="text-base">
@@ -434,7 +408,7 @@
                                         <div>
                                             <button
                                                 type="submit"
-                                                class="flex justify-center rounded-md bg-fourthColor py-2 px-2 text-sm font-medium text-whiteColor shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                                class="flex justify-center rounded-md bg-darkGray py-2 px-2 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                                             >
                                                 view Item
                                             </button>
@@ -443,52 +417,150 @@
                                 </div>
                             </div>
                         </li>
-                        <var>
-                            <li class="bg-thirdColor px-2 py-2 rounded-lg">
-                                <div class="space-y-4">
-                                    <div class="aspect-w-3 aspect-h-2">
-                                        <img
-                                            class="rounded-lg object-cover shadow-lg"
-                                            src="/media/fastbike.jpg"
-                                            alt="disc"
-                                        />
-                                    </div>
+                        <li class="bg-lightGray px-2 py-2 rounded-lg">
+                            <div class="space-y-4">
+                                <div class="aspect-w-3 aspect-h-2">
+                                    <img
+                                        class="rounded-lg object-cover shadow-lg"
+                                        src="/media/fastbike.jpg"
+                                        alt="disc"
+                                    />
+                                </div>
 
-                                    <div class="space-y-2">
-                                        <div class="flex justify-between">
-                                            <div
-                                                class="space-y-1 text-lg font-medium leading-6"
+                                <div class="space-y-2">
+                                    <div class="flex justify-between">
+                                        <div
+                                            class="space-y-1 text-lg font-medium leading-6"
+                                        >
+                                            <h3>Fast Bike</h3>
+                                            <p class="text-green font-bold">
+                                                Current Bid: 104 $
+                                            </p>
+                                            <h4 class="text-base">
+                                                Remaining time: 35 min
+                                            </h4>
+                                        </div>
+                                        <div>
+                                            <button
+                                                type="submit"
+                                                class="flex justify-center rounded-md bg-darkGray py-2 px-2 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                                             >
-                                                <h3>Fast Bike</h3>
-                                                <p
-                                                    class="text-greenColor font-bold"
-                                                >
-                                                    Current Bid: 104 $
-                                                </p>
-                                                <h4 class="text-base">
-                                                    Remaining time: 35 min
-                                                </h4>
-                                            </div>
-                                            <div>
-                                                <button
-                                                    type="submit"
-                                                    class="flex justify-center rounded-md bg-fourthColor py-2 px-2 text-sm font-medium text-whiteColor shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                                                >
-                                                    view Item
-                                                </button>
-                                            </div>
+                                                view Item
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
-                            </li>
-                        </var>
+                            </div>
+                        </li>
+                        <li class="bg-lightGray px-2 py-2 rounded-lg">
+                            <div class="space-y-4">
+                                <div class="aspect-w-3 aspect-h-2">
+                                    <img
+                                        class="rounded-lg object-cover shadow-lg"
+                                        src="/media/fastbike.jpg"
+                                        alt="disc"
+                                    />
+                                </div>
 
-                        <!-- More people... -->
+                                <div class="space-y-2">
+                                    <div class="flex justify-between">
+                                        <div
+                                            class="space-y-1 text-lg font-medium leading-6"
+                                        >
+                                            <h3>Fast Bike</h3>
+                                            <p class="text-green font-bold">
+                                                Current Bid: 104 $
+                                            </p>
+                                            <h4 class="text-base">
+                                                Remaining time: 35 min
+                                            </h4>
+                                        </div>
+                                        <div>
+                                            <button
+                                                type="submit"
+                                                class="flex justify-center rounded-md bg-darkGray py-2 px-2 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                            >
+                                                view Item
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="bg-lightGray px-2 py-2 rounded-lg">
+                            <div class="space-y-4">
+                                <div class="aspect-w-3 aspect-h-2">
+                                    <img
+                                        class="rounded-lg object-cover shadow-lg"
+                                        src="/media/fastbike.jpg"
+                                        alt="disc"
+                                    />
+                                </div>
+
+                                <div class="space-y-2">
+                                    <div class="flex justify-between">
+                                        <div
+                                            class="space-y-1 text-lg font-medium leading-6"
+                                        >
+                                            <h3>Fast Bike</h3>
+                                            <p class="text-green font-bold">
+                                                Current Bid: 104 $
+                                            </p>
+                                            <h4 class="text-base">
+                                                Remaining time: 35 min
+                                            </h4>
+                                        </div>
+                                        <div>
+                                            <button
+                                                type="submit"
+                                                class="flex justify-center rounded-md bg-darkGray py-2 px-2 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                            >
+                                                view Item
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="bg-lightGray px-2 py-2 rounded-lg">
+                            <div class="space-y-4">
+                                <div class="aspect-w-3 aspect-h-2">
+                                    <img
+                                        class="rounded-lg object-cover shadow-lg"
+                                        src="/media/fastbike.jpg"
+                                        alt="disc"
+                                    />
+                                </div>
+
+                                <div class="space-y-2">
+                                    <div class="flex justify-between">
+                                        <div
+                                            class="space-y-1 text-lg font-medium leading-6"
+                                        >
+                                            <h3>Fast Bike</h3>
+                                            <p class="text-green font-bold">
+                                                Current Bid: 104 $
+                                            </p>
+                                            <h4 class="text-base">
+                                                Remaining time: 35 min
+                                            </h4>
+                                        </div>
+                                        <div>
+                                            <button
+                                                type="submit"
+                                                class="flex justify-center rounded-md bg-darkGray py-2 px-2 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                            >
+                                                view Item
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
-
         <footer class="bg-mainColor" aria-labelledby="footer-heading">
             <h2 id="footer-heading" class="sr-only">Footer</h2>
             <div class="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
@@ -500,13 +572,10 @@
                             alt="Sniper"
                         />
                         <div class="flex space-x-6">
-                            <a
-                                href="#"
-                                class="text-gray-400 hover:text-gray-500"
-                            >
+                            <a href="#" class="hover:text-lightGray">
                                 <span class="sr-only">Facebook</span>
                                 <svg
-                                    class="h-6 w-6 text-SecondColor"
+                                    class="h-6 w-6 text-SecondColor hover:text-lightGray"
                                     fill="currentColor"
                                     viewBox="0 0 24 24"
                                     aria-hidden="true"
@@ -519,13 +588,10 @@
                                 </svg>
                             </a>
 
-                            <a
-                                href="#"
-                                class="text-gray-400 hover:text-gray-500"
-                            >
+                            <a href="#" class="hover:text-darkGray">
                                 <span class="sr-only">Instagram</span>
                                 <svg
-                                    class="h-6 w-6 text-SecondColor"
+                                    class="h-6 w-6 text-SecondColor hover:text-lightGray"
                                     fill="currentColor"
                                     viewBox="0 0 24 24"
                                     aria-hidden="true"
@@ -538,13 +604,10 @@
                                 </svg>
                             </a>
 
-                            <a
-                                href="#"
-                                class="text-gray-400 hover:text-gray-500"
-                            >
+                            <a href="#" class="hover:text-lightGray">
                                 <span class="sr-only">Twitter</span>
                                 <svg
-                                    class="h-6 w-6 text-SecondColor"
+                                    class="h-6 w-6 text-SecondColor hover:text-lightGray"
                                     fill="currentColor"
                                     viewBox="0 0 24 24"
                                     aria-hidden="true"
@@ -555,13 +618,10 @@
                                 </svg>
                             </a>
 
-                            <a
-                                href="#"
-                                class="text-gray-400 hover:text-gray-500"
-                            >
+                            <a href="#" class="hover:text-darkGray">
                                 <span class="sr-only">GitHub</span>
                                 <svg
-                                    class="h-6 w-6 text-SecondColor"
+                                    class="h-6 w-6 text-SecondColor hover:text-lightGray"
                                     fill="currentColor"
                                     viewBox="0 0 24 24"
                                     aria-hidden="true"
@@ -574,13 +634,10 @@
                                 </svg>
                             </a>
 
-                            <a
-                                href="#"
-                                class="text-gray-400 hover:text-gray-500"
-                            >
+                            <a href="#" class="hover:text-darkGray">
                                 <span class="sr-only">Dribbble</span>
                                 <svg
-                                    class="h-6 w-6 text-SecondColor"
+                                    class="h-6 w-6 text-SecondColor hover:text-lightGray"
                                     fill="currentColor"
                                     viewBox="0 0 24 24"
                                     aria-hidden="true"
@@ -600,40 +657,40 @@
                         <div class="md:grid md:grid-cols-2 md:gap-8">
                             <div>
                                 <h3
-                                    class="text-base font-medium text-SecondColor hover:text-thirdColor"
+                                    class="text-base font-medium text-SecondColor hover:text-lightGray"
                                 >
-                                    Solutions
+                                    Menu
                                 </h3>
                                 <ul role="list" class="mt-4 space-y-4">
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
-                                            >Marketing</a
+                                            class="text-base text-SecondColor hover:text-lightGray"
+                                            >Homepage</a
                                         >
                                     </li>
 
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
-                                            >Analytics</a
+                                            class="text-base text-SecondColor hover:text-lightGray"
+                                            >Product</a
                                         >
                                     </li>
 
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
-                                            >Commerce</a
+                                            class="text-base text-SecondColor hover:text-lightGray"
+                                            >Profile</a
                                         >
                                     </li>
 
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
-                                            >Insights</a
+                                            class="text-base text-SecondColor hover:text-lightGray"
+                                            >Login</a
                                         >
                                     </li>
                                 </ul>
@@ -648,7 +705,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >Pricing</a
                                         >
                                     </li>
@@ -656,7 +713,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >Documentation</a
                                         >
                                     </li>
@@ -664,7 +721,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >Guides</a
                                         >
                                     </li>
@@ -672,7 +729,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >API Status</a
                                         >
                                     </li>
@@ -690,7 +747,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >About</a
                                         >
                                     </li>
@@ -698,7 +755,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >Blog</a
                                         >
                                     </li>
@@ -706,7 +763,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >Jobs</a
                                         >
                                     </li>
@@ -714,7 +771,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >Press</a
                                         >
                                     </li>
@@ -722,7 +779,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >Partners</a
                                         >
                                     </li>
@@ -738,7 +795,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >Claim</a
                                         >
                                     </li>
@@ -746,7 +803,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >Privacy</a
                                         >
                                     </li>
@@ -754,7 +811,7 @@
                                     <li>
                                         <a
                                             href="#"
-                                            class="text-base text-SecondColor hover:text-thirdColor"
+                                            class="text-base text-SecondColor hover:text-lightGray"
                                             >Terms</a
                                         >
                                     </li>
