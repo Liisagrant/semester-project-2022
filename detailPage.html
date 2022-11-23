@@ -187,58 +187,73 @@
                 </div>
             </nav>
         </header>
-        <main class="">
-            <div class="mx-auto my-16">
-                <div
-                    class="flex flex-wrap mx-8 bg-white rounded-md sm:justify-center"
-                >
+        <main class="bg-white m-8 rounded-md">
+            <div class="flex flex-col center md:flex-row">
+                <div class="">
                     <img
-                        class="rounded-md object-cover p-2"
                         src="/media/fastbike.jpg"
-                        alt="disc"
+                        alt="Product image"
+                        class="h-50 rounded-t-md md:rounded-r-none md:rounded-l-md"
                     />
-                    <div>
-                        <h1 class="p-2 font-bold">SuperFast Biky</h1>
-                        <p class="p-2 text-green font-bold">
-                            Current Bid: 104 $
-                        </p>
-                        <p class="p-2 max-w-md">
-                            molestiae quas vel sint commodi repudiandae
-                            consequuntur voluptatum laborum numquam blanditiis
-                            harum quisquam eius sed odit fugiat iusto fuga
-                            praesentium optio, eaque rerum! Provident similique
-                            accusantium nemo autem. Veritatis obcaecati tenetur
-                            iure eius earum ut molestias architecto voluptate
-                            aliquam nihil, eveniet aliquid culpa officia aut!
-                            Impedit sit sunt quaerat, odit, tenetur error, harum
-                            nesciunt ipsum debitis quas aliquid. Reprehenderit,
-                            quia. Quo neque error repudiandae fuga? Ipsa
-                            laudantium molestias eos sapiente officiis modi at
-                        </p>
-                        <div>
-                            <div
-                                class="flex flex-row justify-between bg-red w-40 rounded"
+                </div>
+                <div>
+                    <h1 class="p-2 text-lg font-bold">SuperFast Biky</h1>
+                    <p class="px-2 text-green font-semibold">
+                        Current Bid: 104 $
+                    </p>
+                    <p class="p-2 text-xs md:max-w-md">
+                        molestiae quas vel sint commodi repudiandae consequuntur
+                        voluptatum laborum numquam blanditiis harum quisquam
+                        eius sed odit fugiat iusto fuga praesentium optio, eaque
+                        rerum! Provident similique accusantium nemo autem.
+                        Veritatis obcaecati tenetur iure eius earum ut molestias
+                        architecto voluptate aliquam nihil, eveniet aliquid
+                        culpa officia aut!
+                    </p>
+                    <div class="flex flex-row justify-end p-2 md:h-14">
+                        <button
+                            type="submit"
+                            class="flex justify-center rounded-l-md bg-darkGray p-2 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                        >
+                            <svg
+                                class="h-4 m-auto"
+                                viewBox="0 0 49 49"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
                             >
-                                <button
-                                    type="button"
-                                    class="relative w-24 cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
-                                    aria-haspopup="listbox"
-                                    aria-expanded="true"
-                                    aria-labelledby="listbox-label"
-                                >
-                                    <span class="block truncate">100 $</span>
-                                </button>
-                                <div class="flex flex-col p-1">
-                                    <button>
-                                        <span> + </span>
-                                    </button>
-                                    <button>
-                                        <span> - </span>
-                                    </button>
-                                </div>
-                                <div class="text-center">BID</div>
-                            </div>
+                                <path
+                                    d="M48.4922 24.8472C48.4922 38.044 37.7999 48.7364 24.603 48.7364C11.4062 48.7364 0.713867 38.044 0.713867 24.8472C0.713867 11.6503 11.4062 0.958008 24.603 0.958008C37.7999 0.958008 48.4922 11.6503 48.4922 24.8472ZM26.2406 35.8189L39.293 22.7665C40.1984 21.861 40.1984 20.3969 39.293 19.501L37.6554 17.8634C36.7499 16.958 35.2857 16.958 34.3899 17.8634L24.603 27.6503L14.8162 17.8634C13.9107 16.958 12.4465 16.958 11.5507 17.8634L9.91312 19.501C9.00765 20.4065 9.00765 21.8707 9.91312 22.7665L22.9655 35.8189C23.871 36.7243 25.3351 36.7243 26.2406 35.8189Z"
+                                    fill="white"
+                                />
+                            </svg>
+                        </button>
+                        <div
+                            class="bg-white py-2 p-4 border-y-2 border-darkGray"
+                        >
+                            120$
                         </div>
+                        <button
+                            type="submit"
+                            class="flex justify-center bg-darkGray p-2 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                        >
+                            <svg
+                                class="h-4 m-auto"
+                                viewBox="0 0 48 48"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M0 23.8892C0 10.6923 10.6923 0 23.8892 0C37.086 0 47.7783 10.6923 47.7783 23.8892C47.7783 37.086 37.086 47.7783 23.8892 47.7783C10.6923 47.7783 0 37.086 0 23.8892ZM22.2516 12.9175L9.19926 25.9698C8.29378 26.8753 8.29378 28.3395 9.19926 29.2353L10.8368 30.8729C11.7423 31.7784 13.2065 31.7784 14.1023 30.8729L23.8892 21.086L33.676 30.8729C34.5815 31.7784 36.0457 31.7784 36.9415 30.8729L38.5791 29.2353C39.4846 28.3299 39.4846 26.8657 38.5791 25.9698L25.5267 12.9175C24.6213 12.012 23.1571 12.012 22.2516 12.9175V12.9175Z"
+                                    fill="white"
+                                />
+                            </svg>
+                        </button>
+                        <button
+                            type="submit"
+                            class="flex justify-center rounded-r-md bg-red py-2 px-2 text-md font-bold text-black shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                        >
+                            <span class="m-auto">ADD BID</span>
+                        </button>
                     </div>
                 </div>
             </div>
