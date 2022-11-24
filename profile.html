@@ -204,114 +204,236 @@
                 </div>
             </nav>
         </header>
-        <div class="mx-auto max-w-lg px-4 sm:px-6 lg:px-8">
-            <div class="mx-auto my-8 bg-lightGray p-2 rounded-md">
-                <h2
-                    class="text-2xl font-bold tracking-tight text-mainColor mt-8 sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl"
-                >
-                    <span class="block xl:inline mt-4 text-center"
-                        >Add a New Product Today!</span
+        <div class="flex h-full">
+            <div class="flex min-w-0 flex-1 flex-col overflow-hidden">
+                <div class="relative z-0 flex flex-1 overflow-hidden">
+                    <main
+                        class="relative z-0 flex-1 overflow-y-auto focus:outline-none xl:order-last"
                     >
-                    <form action="#" method="POST" class="space-y-6">
-                        <div>
-                            <label
-                                for="productName"
-                                class="block text-sm font-medium text-gray-700 mt-4"
-                                >Product Name</label
-                            >
-                            <div class="mt-1">
-                                <input
-                                    id="productName"
-                                    name="productName"
-                                    type="text"
-                                    required
-                                    class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                                />
+                        <article>
+                            <div>
+                                <div>
+                                    <img
+                                        class="h-32 w-full object-cover lg:h-48"
+                                        src="./media/profile-top-img.jpg"
+                                        alt=""
+                                    />
+                                </div>
+                                <div
+                                    class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8"
+                                >
+                                    <div
+                                        class="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5"
+                                    >
+                                        <div class="flex">
+                                            <img
+                                                class="h-24 w-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32"
+                                                src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div
+                                            class="mt-6 sm:flex sm:min-w-0 sm:flex-1 sm:items-center sm:justify-end sm:space-x-6 sm:pb-1"
+                                        >
+                                            <div
+                                                class="mt-6 min-w-0 flex-1 sm:hidden 2xl:block"
+                                            >
+                                                <h1
+                                                    class="truncate text-2xl font-bold text-gray-900"
+                                                >
+                                                    Ricardo Cooper
+                                                </h1>
+                                            </div>
+                                            <div
+                                                class="justify-stretch mt-6 flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-4"
+                                            >
+                                                <button
+                                                    type="button"
+                                                    class="inline-flex justify-center bg-lightGray rounded-md px-4 py-2 text-sm font-medium text-gray-700 hover:bg-mainColor"
+                                                >
+                                                    <span>Update Profile</span>
+                                                </button>
+                                                <div
+                                                    class="inline-flex justify-center bg-white border-2 border-SecondColor rounded-md px-4 py-2 text-sm font-medium text-gray-700 hover:bg-mainColor"
+                                                >
+                                                    <span
+                                                        >Current Credit:
+                                                        100$</span
+                                                    >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="mt-6 hidden min-w-0 flex-1 sm:block 2xl:hidden"
+                                    >
+                                        <h1
+                                            class="truncate text-2xl font-bold text-gray-900"
+                                        >
+                                            Ricardo Cooper
+                                        </h1>
+                                        <h2>lisa@noroff.no</h2>
+                                    </div>
+                                    <h2
+                                        class="text-2xl font-bold tracking-tight text-mainColor mt-8 sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl"
+                                    >
+                                        Products that are or have been in
+                                        auction
+                                    </h2>
+                                    <ul
+                                        role="list"
+                                        class="space-y-12 my-8 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8"
+                                    >
+                                        <li
+                                            class="bg-lightGray px-2 py-2 rounded-lg"
+                                        >
+                                            <div class="space-y-4">
+                                                <div
+                                                    class="aspect-w-3 aspect-h-2"
+                                                >
+                                                    <img
+                                                        class="rounded-lg object-cover shadow-lg"
+                                                        src="/media/fastbike.jpg"
+                                                        alt="disc"
+                                                    />
+                                                </div>
+
+                                                <div class="space-y-2">
+                                                    <div
+                                                        class="flex justify-between"
+                                                    >
+                                                        <div
+                                                            class="space-y-1 text-lg font-medium leading-6"
+                                                        >
+                                                            <h3>Fast Bike</h3>
+                                                            <p
+                                                                class="text-green font-bold"
+                                                            >
+                                                                Current Bid: 104
+                                                                $
+                                                            </p>
+                                                            <h4
+                                                                class="text-base"
+                                                            >
+                                                                Remaining time:
+                                                                35 min
+                                                            </h4>
+                                                        </div>
+                                                        <div>
+                                                            <button
+                                                                type="submit"
+                                                                class="flex justify-center rounded-md bg-darkGray py-2 px-2 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                                            >
+                                                                view
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li
+                                            class="bg-lightGray px-2 py-2 rounded-lg"
+                                        >
+                                            <div class="space-y-4">
+                                                <div
+                                                    class="aspect-w-3 aspect-h-2"
+                                                >
+                                                    <img
+                                                        class="rounded-lg object-cover shadow-lg"
+                                                        src="/media/fastbike.jpg"
+                                                        alt="disc"
+                                                    />
+                                                </div>
+
+                                                <div class="space-y-2">
+                                                    <div
+                                                        class="flex justify-between"
+                                                    >
+                                                        <div
+                                                            class="space-y-1 text-lg font-medium leading-6"
+                                                        >
+                                                            <h3>Fast Bike</h3>
+                                                            <p
+                                                                class="text-green font-bold"
+                                                            >
+                                                                Current Bid: 104
+                                                                $
+                                                            </p>
+                                                            <h4
+                                                                class="text-base"
+                                                            >
+                                                                Remaining time:
+                                                                35 min
+                                                            </h4>
+                                                        </div>
+                                                        <div>
+                                                            <button
+                                                                type="submit"
+                                                                class="flex justify-center rounded-md bg-darkGray py-2 px-2 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                                            >
+                                                                view
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li
+                                            class="bg-lightGray px-2 py-2 rounded-lg"
+                                        >
+                                            <div class="space-y-4">
+                                                <div
+                                                    class="aspect-w-3 aspect-h-2"
+                                                >
+                                                    <img
+                                                        class="rounded-lg object-cover shadow-lg"
+                                                        src="/media/fastbike.jpg"
+                                                        alt="disc"
+                                                    />
+                                                </div>
+
+                                                <div class="space-y-2">
+                                                    <div
+                                                        class="flex justify-between"
+                                                    >
+                                                        <div
+                                                            class="space-y-1 text-lg font-medium leading-6"
+                                                        >
+                                                            <h3>Fast Bike</h3>
+                                                            <p
+                                                                class="text-green font-bold"
+                                                            >
+                                                                Current Bid: 104
+                                                                $
+                                                            </p>
+                                                            <h4
+                                                                class="text-base"
+                                                            >
+                                                                Remaining time:
+                                                                35 min
+                                                            </h4>
+                                                        </div>
+                                                        <div>
+                                                            <button
+                                                                type="submit"
+                                                                class="flex justify-center rounded-md bg-darkGray py-2 px-2 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                                            >
+                                                                view
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <span
-                            id="productNameError"
-                            class="hidden text-sm text-red-500"
-                            >Please enter a Title to ypour product
-                        </span>
-                        <div class="space-y-1">
-                            <label
-                                for="imageUrl"
-                                class="block text-sm font-medium text-gray-700"
-                                >image url</label
-                            >
-                            <div class="mt-1">
-                                <input
-                                    id="imageUrl"
-                                    name="imageUrl"
-                                    type="text"
-                                    class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                                />
-                            </div>
-                        </div>
-                        <div class="space-y-1">
-                            <label
-                                for="timeAuction"
-                                class="block text-sm font-medium text-gray-700"
-                                >What time does the auction end?</label
-                            >
-                            <div class="mt-1">
-                                <input
-                                    id="timeAuction"
-                                    name="timeAuction"
-                                    type="text"
-                                    class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                                />
-                                <span
-                                    id="productTimeError"
-                                    class="hidden text-sm text-red-500"
-                                    >Enter a time for auction to end
-                                </span>
-                            </div>
-                        </div>
-                        <div>
-                            <label
-                                for="AboutProduct"
-                                class="block text-sm font-medium text-gray-700"
-                                >About product</label
-                            >
-                            <div class="mt-1">
-                                <textarea
-                                    rows="4"
-                                    name="comment"
-                                    id="comment"
-                                    class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                                ></textarea>
-                                <span
-                                    id="productNameError"
-                                    class="hidden text-sm text-red-500"
-                                    >Please enter a short description about your
-                                    product
-                                </span>
-                            </div>
-                        </div>
-                        <div class="flex flex-row">
-                            <button
-                                type="submit"
-                                class="flex w-full justify-center rounded-md bg-darkGray py-2 px-4 m-2 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                            >
-                                Add Itemto auction
-                            </button>
-                            <button
-                                type="submit"
-                                class="flex w-full justify-center rounded-md bg-darkGray py-2 px-4 m-2 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                            >
-                                Cancel
-                            </button>
-                        </div>
-                        <span
-                            id="generalError"
-                            class="text-sm text-red-500 flex"
-                        ></span>
-                    </form>
-                </h2>
+                        </article>
+                    </main>
+                </div>
             </div>
         </div>
+
         <footer class="bg-mainColor" aria-labelledby="footer-heading">
             <h2 id="footer-heading" class="sr-only">Footer</h2>
             <div class="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
