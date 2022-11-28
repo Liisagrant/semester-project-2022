@@ -27,6 +27,24 @@ const getUserName = () => {
     }
 };
 
+const getUserAvatar = () => {
+    const user = getFromStorage(userKey);
+    if (userKey) {
+        return user.avatar;
+    } else {
+        return null;
+    }
+};
+
+const getUserCredit = () => {
+    const user = getFromStorage(userKey);
+    if (userKey) {
+        return user.credits;
+    } else {
+        return null;
+    }
+};
+
 const saveToStorage = (key, value) => {
     localStorage.setItem(key, JSON.stringify(value));
 };
