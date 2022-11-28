@@ -23,6 +23,7 @@
         <title>LogIn</title>
         <script type="module" src="./js/main.js" defer></script>
         <script type="module" src="./js/nav.js" defer></script>
+        <script type="module" src="./js/logIn.js" defer></script>
     </head>
     <body class="bg-lightGray">
         <header class="bg-mainColor fixed top-0 left-0 right-0 z-20">
@@ -209,7 +210,12 @@
                         </div>
 
                         <div class="mt-6">
-                            <form action="#" method="POST" class="space-y-6">
+                            <form
+                                id="logInForm"
+                                action="#"
+                                method="POST"
+                                class="space-y-6"
+                            >
                                 <div>
                                     <label
                                         for="email"
@@ -222,20 +228,19 @@
                                             name="email"
                                             type="email"
                                             autocomplete="email"
-                                            required
                                             class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                                         />
                                     </div>
                                 </div>
                                 <span
-                                    id="emailErrorNotValid"
-                                    class="hidden text-sm text-red-500 font-Lato"
+                                    id="emailNotValid"
+                                    class="hidden text-sm text-errorRed font-Lato font-bold"
                                     >Please enter a valid email. It must be a
                                     stud.no or stud.noroff.no email address.
                                 </span>
                                 <span
                                     id="emailError"
-                                    class="hidden text-sm text-red-500 font-Lato"
+                                    class="hidden text-sm text-errorRed font-Lato font-bold"
                                     >Email is required
                                 </span>
                                 <div class="space-y-1">
@@ -250,13 +255,12 @@
                                             name="password"
                                             type="password"
                                             autocomplete="current-password"
-                                            required
                                             class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                                         />
                                     </div>
                                     <span
                                         id="passwordError"
-                                        class="hidden text-sm text-red-500 font-Lato"
+                                        class="hidden text-sm text-errorRed font-Lato font-bold"
                                         >Password is required
                                     </span>
                                 </div>
@@ -294,7 +298,7 @@
                                 </div>
                                 <span
                                     id="generalError"
-                                    class="text-sm text-red-500 flex"
+                                    class="text-sm text-errorRed font-bold flex"
                                 ></span>
                             </form>
                         </div>
