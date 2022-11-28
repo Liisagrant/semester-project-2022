@@ -12,6 +12,7 @@ module.exports = {
             green: '#1B4518',
             red: '#F5ADAD',
             soldRed: '#E75656',
+            errorRed: '#890A0A',
         },
         extend: {
             fontFamily: {

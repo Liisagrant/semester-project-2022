@@ -2,11 +2,11 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>SignUp</title>
         <script type="module" src="./js/main.js" defer></script>
         <script type="module" src="./js/nav.js" defer></script>
+        <script type="module" src="./js/signUp.js" defer></script>
     </head>
     <body>
         <header class="bg-mainColor fixed top-0 left-0 right-0 z-20">
@@ -189,7 +189,7 @@
                     <div class="mt-8">
                         <div class="mt-6">
                             <form
-                                id="signup-form"
+                                id="signUp-form"
                                 action="#"
                                 method="POST"
                                 class="space-y-6"
@@ -202,7 +202,7 @@
                                     >
                                     <div class="mt-1">
                                         <input
-                                            id="firstname"
+                                            id="firstName"
                                             name="firstname"
                                             type="text"
                                             autocomplete="firstname"
@@ -210,8 +210,8 @@
                                         />
                                     </div>
                                     <span
-                                        id="firstnameError"
-                                        class="hidden text-sm text-red-500 font-Lato"
+                                        id="firstNameError"
+                                        class="hidden text-sm text-errorRed font-Lato font-bold"
                                         >Please enter your first name
                                     </span>
                                 </div>
@@ -232,12 +232,12 @@
                                     </div>
                                     <span
                                         id="emailError"
-                                        class="hidden text-sm text-red-500 font-Lato"
+                                        class="hidden text-sm text-errorRed font-Lato font-bold"
                                         >Please enter valid email
                                     </span>
                                     <span
-                                        id="emailErrorNotValid"
-                                        class="hidden text-sm text-red-500 font-Lato"
+                                        id="emailNotValid"
+                                        class="hidden text-sm text-errorRed font-Lato font-bold"
                                     >
                                         This email is not valid. It must be a
                                         noroff.no or Noroff.stud.no address
@@ -260,7 +260,7 @@
                                     </div>
                                     <span
                                         id="passwordError"
-                                        class="hidden text-sm text-red-500 font-Lato"
+                                        class="hidden text-sm text-errorRed font-Lato font-bold"
                                         >Please enter a password with least 8
                                         characters
                                     </span>
@@ -282,34 +282,34 @@
                                     </div>
                                     <span
                                         id="confirmpasswordError"
-                                        class="hidden text-sm text-red-500 font-Lato"
+                                        class="hidden text-sm text-errorRed font-Lato font-bold"
                                         >Please enter a password with least 8
                                         characters
                                     </span>
                                     <span
                                         id="passwordErrorNotMatch"
-                                        class="hidden text-sm text-red-500 font-Lato"
+                                        class="hidden text-sm text-errorRed font-Lato font-bold"
                                         >Password does not match
                                     </span>
                                 </div>
                                 <div class="space-y-1">
                                     <label
-                                        for="Image-url"
+                                        for="Avatar"
                                         class="block text-sm font-medium text-gray-700 font-Poppins"
                                         >Image url (This is optinal and can be
                                         added later)</label
                                     >
                                     <div class="mt-1">
                                         <input
-                                            id="img-url"
+                                            id="avatar"
                                             name="img-url"
                                             type="img-url"
                                             class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                                         />
                                     </div>
                                     <span
-                                        id="imageUrlError"
-                                        class="hidden text-sm text-red-500 font-Lato"
+                                        id="avatarError"
+                                        class="hidden text-sm text-errorRed font-Lato font-bold"
                                         >Sorry. This url is not valid
                                     </span>
                                 </div>
@@ -323,7 +323,7 @@
                                 </div>
                             </form>
                             <div
-                                id="error-signup-user"
+                                id="generalError"
                                 class="text-center mt-6 text-red-500"
                             ></div>
                         </div>
