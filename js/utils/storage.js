@@ -62,4 +62,11 @@ const clearStorage = () => {
     localStorage.clear();
 };
 
-export { getUserName, saveToken, saveUser, getToken, clearStorage };
+export {
+    getUserName,
+    saveToken,
+    saveUser,
+    getToken,
+    getUserAvatar,
+    clearStorage,
+};
