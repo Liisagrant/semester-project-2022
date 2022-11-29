@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ['./*.{html,js}', './js/*.js', './js/components/nav.js'],
+    content: ['./*.{html,js}', './js/*.js', './js/components/createNavbar.js'],
     theme: {
         colors: {
             mainColor: '#314657',
@@ -13,6 +13,7 @@ module.exports = {
             red: '#F5ADAD',
             soldRed: '#E75656',
             errorRed: '#890A0A',
+            onPageColor: '#526E85',
         },
         extend: {
             fontFamily: {
