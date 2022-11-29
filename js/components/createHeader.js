@@ -1,4 +1,4 @@
-import { getUserName } from '../utils/storage';
+import { getUserName, getUserAvatar } from '../utils/storage';
 
 const myNavBar = () => {
     const navbarMobile = document.querySelector('#navLinks-mobile');
@@ -7,8 +7,8 @@ const myNavBar = () => {
         const userName = getUserName();
         let navbarLinksMobile;
         navbarLinksMobile = `
-                        <div class="space-y-1 px-2 pt-2 pb-3">
-                                            <a
+                        <div class="flex flex-col">
+                    <a
                         href="./sign-up.html"
                         class="bg-gray-900 font-Poppins text-SecondColor hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium"
                         aria-current="page"
@@ -30,7 +30,7 @@ const myNavBar = () => {
         `;
         if (userName) {
             navbarLinksMobile = `
-            <div class="space-y-1 px-2 pt-2 pb-3">
+            <div class="flex flex-col">
                     <a
                         href="#"
                         class="text-SecondColor font-Poppins hover:text-lightGray block rounded-md py-2 px-3 text-base font-medium"
@@ -116,4 +116,4 @@ const myNavBar = () => {
     }
 };
 
-export default myNavBar;
+export { myNavBar };
