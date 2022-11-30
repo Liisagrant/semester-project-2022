@@ -1,5 +1,6 @@
 import { GET_LISTINGS_URL } from './settings/api';
 import { getToken, getUserName } from './utils/storage';
+import { formatDate } from './utils/dateFix';
 const listingContainer = document.querySelector('#listingsContainer');
 
 const userName = getUserName();
@@ -30,20 +31,20 @@ const showListings = (data) => {
                 const id = listing.id;
                 const listingBody = listing.description;
                 const created = listing.created;
-                const bidEnd = listing.endsAt;
+                // const bidEnd = listing.endsAt;
                 // const media = listing.media;
-                // const bid = listing._count.bids;
-                let bid = [];
+                const dateFormat = formatDate(listing.endsAt);
+                const bid = listing._count.bids;
 
                 let listingMedia = `                                    <img
-                                        class="rounded-lg h-60 w-full shadow-lg"
+                                        class="rounded-lg object-cover h-full w-full shadow-lg"
                                         src="${listing.media[0]}"
                                         alt="product Image"
                                     />`;
                 if (!listing.media[0]) {
                     listingMedia = `
                                     <img
-                                        class="rounded-lg h-60 w-full shadow-lg"
+                                        class="rounded-lg object-cover h-full w-full shadow-lg"
                                         src="./media/No-Photo.jpg"
                                         alt="Product image"
                                     />
@@ -51,9 +52,10 @@ const showListings = (data) => {
                 }
 
                 return `
-                        <li class="bg-lightGray px-2 py-2 rounded-lg">
+                <a h="" class="mx-2">
+                        <li class="bg-lightGray px-2 py-2 rounded-lg hover:scale-105 transition duration-500 cursor-pointer z-0">
                             <div class="space-y-4">
-                                <div class="aspect-w-3 aspect-h-2">
+                                <div class="w-full h-60">
                                 ${listingMedia}
                                 </div>
 
@@ -69,21 +71,16 @@ const showListings = (data) => {
                                                 Current Bid:${bid} $
                                             </p>
                                             <h4 class="text-base font-Roboto">
-                                                Remaining time: ${bidEnd}
+                                                Remaining time: ${dateFormat}
                                             </h4>
                                         </div>
                                         <div>
-                                            <button
-                                                type="submit"
-                                                class="flex font-Roboto justify-center rounded-md bg-darkGray py-2 px-2 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                                            >
-                                                view
-                                            </button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </li>
+                        </a>
             `;
             })
             .join('');
