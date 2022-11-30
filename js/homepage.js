@@ -1,9 +1,15 @@
 import { GET_LISTINGS_URL } from './settings/api';
-import { getToken, getUserName } from './utils/storage';
+import { getToken, getUserName, getUserAvatar } from './utils/storage';
 import { formatDate } from './utils/dateFix';
 const listingContainer = document.querySelector('#listingsContainer');
 
+const avatar = getUserAvatar();
 const userName = getUserName();
+const accessToken = getToken();
+console.log(userName);
+console.log(accessToken);
+console.log(avatar);
+
 let data = [];
 
 async function getAllListings() {
