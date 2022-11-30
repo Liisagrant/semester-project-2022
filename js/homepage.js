@@ -32,7 +32,9 @@ const showListings = (data) => {
                 const created = listing.created;
                 const bidEnd = listing.endsAt;
                 // const media = listing.media;
-                const bid = listing._count.bids;
+                // const bid = listing._count.bids;
+                let bid = [];
+
                 let listingMedia = `                                    <img
                                         class="rounded-lg h-60 w-full shadow-lg"
                                         src="${listing.media[0]}"
