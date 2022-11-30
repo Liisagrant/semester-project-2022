@@ -45,7 +45,7 @@ const showListings = (data) => {
                     listingMedia = `
                                     <img
                                         class="rounded-lg object-cover h-full w-full shadow-lg"
-                                        src="./media/No-Photo.jpg"
+                                        src="./media/no-photo.jpg"
                                         alt="Product image"
                                     />
                     `;
