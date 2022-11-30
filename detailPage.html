@@ -23,6 +23,7 @@
         <title>Vite App</title>
         <script type="module" src="./js/main.js" defer></script>
         <script type="module" src="./js/nav.js" defer></script>
+        <script type="module" src="./js/getListingById.js" defer></script>
     </head>
     <body class="bg-mainColor">
         <header class="bg-mainColor fixed top-0 left-0 right-0 z-20">
@@ -159,8 +160,11 @@
             <div
                 class="bg-white mt-24 mb-16 mx-2 rounded-md max-w-xl lg:mt-44 md:max-w-2xl lg:max-w-4xl"
             >
-                <div class="flex flex-col center md:flex-row">
-                    <div class="">
+                <div
+                    class="flex flex-col center md:flex-row"
+                    id="singelListingContainer"
+                >
+                    <!-- <div>
                         <img
                             src="/media/fastbike.jpg"
                             alt="Product image"
@@ -235,7 +239,7 @@
                                 <span class="m-auto">ADD BID</span>
                             </button>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </main>
