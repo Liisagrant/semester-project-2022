@@ -9,29 +9,31 @@ const myNavBar = () => {
         let navbarLinksMobile;
         navbarLinksMobile = `
                         <div class="flex flex-col p-2">
-                    <a
-                        href="#"
-                        class="text-SecondColor font-Poppins hover:text-lightGray flex justify-center rounded-md py-2 px-3 inline-flex items-center text-sm font-medium  ${
+                                        <a
+                        href="./homePage.html"
+                        class="text-SecondColor font-Poppins hover:text-lightGray flex justify-center block rounded-md py-2 px-3 text-base font-medium ${
                             pathname === '/homepage.html'
                                 ? 'bg-onPageColor'
                                 : ''
                         }"
                         aria-current="page"
                         >Home</a
-                    >    
+                    >
                     <a
-                        href="./sign-up.html"
+                        href="./sigUp.html"
                         class="bg-gray-900 font-Poppins text-SecondColor hover:text-lightGray flex justify-center rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
-                            pathname === '/sign-up.html' ? 'bg-onPageColor' : ''
+                            pathname === './sign-up.html'
+                                ? 'bg-onPageColor'
+                                : ''
                         }"
                         aria-current="page"
                         >SignUp</a
                     >
 
                     <a
-                        href="#"
+                        href="./index.html"
                         class="text-SecondColor font-Poppins hover:text-lightGray flex justify-center rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
-                            pathname === '/index.html' ? 'bg-onPageColor' : ''
+                            pathname === './index.html' ? 'bg-onPageColor' : ''
                         }"
                         >LogIn</a
                     >
@@ -41,7 +43,7 @@ const myNavBar = () => {
             navbarLinksMobile = `
             <div class="flex flex-col p-2">
                     <a
-                        href="#"
+                        href="./homePage.html"
                         class="text-SecondColor font-Poppins hover:text-lightGray flex justify-center block rounded-md py-2 px-3 text-base font-medium ${
                             pathname === '/homepage.html'
                                 ? 'bg-onPageColor'
@@ -52,7 +54,7 @@ const myNavBar = () => {
                     >
 
                     <a
-                        href="#"
+                        href="./listingPage.html"
                         class="text-SecondColor font-Poppins hover:text-lightGray flex justify-center block rounded-md py-2 px-3 text-base font-medium ${
                             pathname === '/listingpage.html'
                                 ? 'bg-onPageColor'
@@ -62,7 +64,7 @@ const myNavBar = () => {
                     >
 
                     <a
-                        href="#"
+                        href="./addListing.html"
                         class="text-SecondColor font-Poppins hover:text-lightGray flex justify-center block rounded-md py-2 px-3 text-base font-medium ${
                             pathname === '/addListing.html'
                                 ? 'bg-onPageColor'
@@ -72,7 +74,7 @@ const myNavBar = () => {
                     >
 
                     <a
-                        href="#"
+                        href="./profile.html"
                         class="text-SecondColor font-Poppins hover:text-lightGray flex justify-center block rounded-md py-2 px-3 text-base font-medium ${
                             pathname === '/profile.html' ? 'bg-onPageColor' : ''
                         }"
@@ -86,7 +88,7 @@ const myNavBar = () => {
             let navbarLinksDesktop;
             navbarLinksDesktop = `
                                 <a
-                        href="#"
+                        href="./homePage.html"
                         class="bg-gray-900 text-SecondColor hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
                             pathname === '/homepage.html'
                                 ? 'bg-onPageColor'
@@ -97,7 +99,7 @@ const myNavBar = () => {
                     >
 
                     <a
-                        href="./sign-up.html"
+                        href="./signUp.html"
                         class="text-SecondColor font-Poppins hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
                             pathname === '/sign-up.html' ? 'bg-onPageColor' : ''
                         }"
@@ -106,7 +108,7 @@ const myNavBar = () => {
                     >
 
                     <a
-                        href="#"
+                        href="./index.html"
                         class="text-SecondColor font-Poppins hover:text-lightGray hover:text-thirdColor rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
                             pathname === '/index.html' ? 'bg-onPageColor' : ''
                         }"
@@ -116,7 +118,7 @@ const myNavBar = () => {
             if (userName) {
                 navbarLinksDesktop = `
                         <a
-                        href="#"
+                        href="./homePage.html"
                         class="bg-gray-900 text-SecondColor hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
                             pathname === '/homepage.html'
                                 ? 'bg-onPageColor'
@@ -127,7 +129,7 @@ const myNavBar = () => {
                     >
 
                     <a
-                        href="#"
+                        href="./listingPage.html"
                         class="text-SecondColor font-Poppins hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
                             pathname === '/listingpage.html'
                                 ? 'bg-onPageColor'
@@ -137,7 +139,7 @@ const myNavBar = () => {
                     >
 
                     <a
-                        href="#"
+                        href="./addListing.html"
                         class="text-SecondColor font-Poppins hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
                             pathname === '/addListing.html'
                                 ? 'bg-onPageColor'
@@ -147,7 +149,7 @@ const myNavBar = () => {
                     >
 
                     <a
-                        href="#"
+                        href="./profile.html"
                         class="text-SecondColor font-Poppins hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
                             pathname === '/profile.html' ? 'bg-onPageColor' : ''
                         }"
