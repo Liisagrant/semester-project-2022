@@ -1,6 +1,7 @@
 import { GET_LISTINGS_URL } from './settings/api';
 import { getToken, getUserName, getUserAvatar } from './utils/storage';
 import { formatDate } from './utils/dateFix';
+
 const listingContainer = document.querySelector('#listingsContainer');
 
 const avatar = getUserAvatar();
@@ -13,54 +14,54 @@ console.log(avatar);
 let data = [];
 
 async function getAllListings() {
-    const response = await fetch(GET_LISTINGS_URL, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    });
+  const response = await fetch(GET_LISTINGS_URL, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
 
-    if (response.ok) {
-        data = await response.json();
-        showListings(data);
-    } else {
-        const error = await response.json();
-        const errorMessage = `Sorry, there is an error ${error}`;
-    }
+  if (response.ok) {
+    data = await response.json();
+    showListings(data);
+  } else {
+    const error = await response.json();
+    const errorMessage = `Sorry, there is an error ${error}`;
+  }
 }
 
 const showListings = (data) => {
-    listingContainer.innerHTML = '';
-    if (!data.length) {
-        listingContainer.innerHTML = 'Sorry no listings today';
-    } else {
-        const listOfListings = data
-            .map((listing) => {
-                const title = listing.title;
-                const id = listing.id;
-                const listingBody = listing.description;
-                const created = listing.created;
-                // const bidEnd = listing.endsAt;
-                // const media = listing.media;
-                const dateFormat = formatDate(listing.endsAt);
-                const bid = listing._count.bids;
+  listingContainer.innerHTML = '';
+  if (!data.length) {
+    listingContainer.innerHTML = 'Sorry no listings today';
+  } else {
+    const listOfListings = data
+      .map((listing) => {
+        const { title } = listing;
+        const { id } = listing;
+        const listingBody = listing.description;
+        const { created } = listing;
+        // const bidEnd = listing.endsAt;
+        // const media = listing.media;
+        const dateFormat = formatDate(listing.endsAt);
+        const bid = listing._count.bids;
 
-                let listingMedia = `                                    <img
+        let listingMedia = `                                    <img
                                         class="rounded-lg object-cover h-full w-full shadow-lg"
                                         src="${listing.media[0]}"
                                         alt="product Image"
                                     />`;
-                if (!listing.media[0]) {
-                    listingMedia = `
+        if (!listing.media[0]) {
+          listingMedia = `
                                     <img
                                         class="rounded-lg object-cover h-full w-full shadow-lg"
                                         src="./media/no-photo.jpg"
                                         alt="Product image"
                                     />
                     `;
-                }
+        }
 
-                return `
+        return `
                 <a href="detailPage.html?id=${id}" class="mx-2">
                         <li class="bg-lightGray px-2 py-2 rounded-lg hover:scale-105 transition duration-500 cursor-pointer z-0">
                             <div class="space-y-4">
@@ -91,12 +92,12 @@ const showListings = (data) => {
                         </li>
                         </a>
             `;
-            })
-            .join('');
-        listingContainer.insertAdjacentHTML('beforeend', listOfListings);
-    }
+      })
+      .join('');
+    listingContainer.insertAdjacentHTML('beforeend', listOfListings);
+  }
 };
 
 getAllListings().then(() => {
-    showListings(data);
+  showListings(data);
 });
