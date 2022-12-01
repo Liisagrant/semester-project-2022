@@ -2,6 +2,13 @@ import { checkLength, validImgUrl } from './utils/validation';
 import { getToken, getUserName } from './utils/storage';
 import { CREATE_LISTING_URL } from './settings/api';
 
+import { getToken } from './utils/storage';
+
+const accessToken = getToken();
+if (!accessToken) {
+    location.href = '/notLoggedIn.html';
+}
+
 var today = new Date().toISOString().slice(0, 16);
 
 const deadLine = (document.getElementsByName('listingEndDate')[0].min = today);

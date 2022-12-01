@@ -29,7 +29,6 @@ const headerInfo = () => {
                 aria-expanded="false"
                 aria-haspopup="true"
             >
-            <span>CREDIT<span>
                 <span class="sr-only">Open user menu</span>
                 <img
                     class="h-8 w-8 rounded-full"
