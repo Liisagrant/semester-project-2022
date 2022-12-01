@@ -8,40 +8,40 @@ const ID = searchParam.get('id');
 const accessToken = getToken();
 
 const singelListingContainer = document.querySelector(
-    '#singelListingContainer'
+  '#singelListingContainer',
 );
 
 const getListingById = async () => {
-    const response = await fetch(`${GET_LISTING_BY_ID_URL}/${ID}`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    });
+  const response = await fetch(`${GET_LISTING_BY_ID_URL}/${ID}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
 
-    const data = await response.json();
-    const title = data.title;
-    const description = data.description;
-    const timeEnd = formatDate(data.endsAt);
-    const currentBid = data._count.bids;
+  const data = await response.json();
+  const { title } = data;
+  const { description } = data;
+  const timeEnd = formatDate(data.endsAt);
+  const currentBid = data._count.bids;
 
-    let listingMedia = `                                  
+  let listingMedia = `                                  
                             <img
                             src="${data.media[0]}"
                             alt="Product image"
                             class="h-50 md:h-96 lg:h-80 rounded-t-md md:rounded-r-none md:rounded-l-md"
                         /> `;
-    if (!data.media[0]) {
-        listingMedia = `
+  if (!data.media[0]) {
+    listingMedia = `
                                                  <img
                             src="/media/no-photo.jpg"
                             alt="Product image"
                             class="h-50 md:h-96 lg:h-80 rounded-t-md md:rounded-r-none md:rounded-l-md"
                         />
                     `;
-    }
+  }
 
-    singelListingContainer.innerHTML = `
+  singelListingContainer.innerHTML = `
                         <div>
                         ${listingMedia}
                     </div>
@@ -109,7 +109,7 @@ const getListingById = async () => {
                         </div>
                     </div>
     `;
-    document.title = `${title}`;
+  document.title = `${title}`;
 };
 
 getListingById();

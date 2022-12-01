@@ -2,12 +2,13 @@
     "name": "semester-project-2022",
     "private": true,
     "version": "0.0.0",
-    "type": "module",
     "scripts": {
         "format": "npx prettier --write .",
         "dev": "vite",
         "build": "vite build",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "lint": "npx eslint .",
+        "lint-fix": "npx eslint --fix ."
     },
     "devDependencies": {
         "autoprefixer": "^10.4.13",

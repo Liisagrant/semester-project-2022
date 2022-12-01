@@ -1,7 +1,7 @@
 const validEmail = (email) => {
     const regEx =
         /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@(stud.noroff.no|noroff.no)$/;
-    return email.match(regEx) ? true : false;
+    return !!email.match(regEx);
 };
 
 const validatePassword = (password, confirmPassword) => {
@@ -15,17 +15,15 @@ const validatePassword = (password, confirmPassword) => {
     }
     if (password !== confirmPassword) {
         return false;
-    } else {
-        return true;
     }
+    return true;
 };
 
 const checkLength = (value, len) => {
     if (value.trim().length >= len) {
         return true;
-    } else {
-        return false;
     }
+    return false;
 };
 
 const validImgUrl = (url) => {
@@ -33,9 +31,8 @@ const validImgUrl = (url) => {
         /(?:https?):\/\/(\w+:?\w*)?(\S+)(:\d+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
     if (typeof url === 'object') {
         return urlPattern.test(url.value);
-    } else {
-        return urlPattern.test(url);
     }
+    return urlPattern.test(url);
 };
 
 // function isValidAvatar(url) {
