@@ -210,39 +210,16 @@
                         </span>
                         </div>
                         <div class="space-y-1">
-                            <label
-                                for="deadLine"
-                                class="block text-sm font-medium text-gray-700 font-Roboto"
-                                >What time does the auction end?(required) (year,month, day, time)</label
-                            >
-                            <div class="mt-1 flex flex-row">
-                                <input
-                                placeholder="year"
-                                    id="deadLine-year"
-                                    name="timeAuction"
-                                    type="text"
-                                    class="block w-16 text-xs appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                                />
-                                <input
-                                    placeholder="Month"
-                                    id="deadLine-month"
-                                    name="timeAuction"
-                                    type="text"
-                                    class="block text-xs w-16 appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                                />
-                                <input
-                                placeholder="Day"
-                                    id="deadLine-day"
-                                    name="timeAuction"
-                                    type="text"
-                                    class="block w-16 text-xs appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                                />
-                                <span
-                                    id="deadLineError"
-                                    class="hidden text-sm text-red-500 font-Lato"
-                                    >Enter a time for auction to end
-                                </span>
-                            </div>
+                        <div class="flex flex-col gap-y-1">    
+                            <label for="listingEndDate" class="block text-sm font-medium text-gray-700 font-Roboto">Auction ends at: (required) </label>    
+                            <input
+                            id="listingEndDate"
+                            name="listingEndDate"
+                            type="datetime-local"
+                            class="form-control text-xs col-md-6 relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                            placeholder="2020-01-01T00:00:00.000Z"
+                            required
+                            /></div>
                         </div>
                         <div>
                             <label

@@ -1,6 +1,11 @@
-import { checkLength, validImgUrl, validDate } from './utils/validation';
+import { checkLength, validImgUrl } from './utils/validation';
 import { getToken, getUserName } from './utils/storage';
 import { CREATE_LISTING_URL } from './settings/api';
+
+var today = new Date().toISOString().slice(0, 16);
+
+const deadLine = (document.getElementsByName('listingEndDate')[0].min = today);
+console.log(deadLine);
 
 const addListingForm = document.querySelector('#addListingForm');
 console.log(addListingForm);
@@ -12,10 +17,7 @@ const imageUrl = document.querySelector('#imageUrl');
 const imageUrlError = document.querySelector('#imageUrlError');
 console.log(imageUrl);
 console.log(imageUrlError);
-const deadLine = document.querySelector('#deadLine');
 const deadLineError = document.querySelector('#deadLineError');
-console.log(deadLine);
-console.log(deadLineError);
 const aboutProduct = document.querySelector('#aboutProduct');
 console.log(aboutProduct);
 

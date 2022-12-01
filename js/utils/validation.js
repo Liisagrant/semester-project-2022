@@ -35,14 +35,6 @@ const validImgUrl = (url) => {
     return urlPattern.test(url);
 };
 
-const validDate = (date, value) => {
-    const date_regex =
-        /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/;
-    if (!date_regex.test(date.value)) {
-        return false;
-    }
-};
-
 // function isValidAvatar(url) {
 //     async function checkAvatar(url) {
 //         try {
@@ -55,4 +47,4 @@ const validDate = (date, value) => {
 //     }
 // }
 
-export { validEmail, validatePassword, checkLength, validImgUrl, validDate };
+export { validEmail, validatePassword, checkLength, validImgUrl };
