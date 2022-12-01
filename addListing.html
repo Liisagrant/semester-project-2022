@@ -24,9 +24,11 @@
         <title>:: Add item ::</title>
         <script type="module" src="./js/main.js" defer></script>
         <script type="module" src="./js/nav.js" defer></script>
+        <script type="module" src="./js/addListing.js" defer></script>
+
     </head>
     <body class="white">
-                <header class="bg-mainColor fixed top-0 left-0 right-0 z-20">
+        <header class="bg-mainColor fixed top-0 left-0 right-0 z-20">
             <div
                 class="mx-auto max-w-7xl px-2 sm:px-4 lg:divide-y lg:divide-gray-700 lg:px-8"
             >
@@ -165,16 +167,16 @@
                     <span class="block xl:inline mt-4 text-center font-Poppins"
                         >Add a New Product Today!</span
                     >
-                    <form action="#" method="POST" class="space-y-6">
+                    <form id="addListingForm" action="#" method="POST" class="space-y-6">
                         <div>
                             <label
                                 for="productName"
                                 class="block text-sm font-medium text-gray-700 mt-4 font-Roboto"
-                                >Product Name</label
+                                >Product Name(required)</label
                             >
                             <div class="mt-1">
                                 <input
-                                    id="productName"
+                                    id="producTitle"
                                     name="productName"
                                     type="text"
                                     required
@@ -183,7 +185,7 @@
                             </div>
                         </div>
                         <span
-                            id="productNameError"
+                            id="productTitleError"
                             class="hidden text-sm text-red-500 font-Lato"
                             >Please enter a Title to ypour product
                         </span>
@@ -201,22 +203,42 @@
                                     class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                                 />
                             </div>
+                                                    <span
+                            id="imageUrlError"
+                            class="hidden text-sm text-red-500 font-Lato"
+                            >Not a valid image url
+                        </span>
                         </div>
                         <div class="space-y-1">
                             <label
-                                for="timeAuction"
+                                for="deadLine"
                                 class="block text-sm font-medium text-gray-700 font-Roboto"
-                                >What time does the auction end?</label
+                                >What time does the auction end?(required) (year,month, day, time)</label
                             >
-                            <div class="mt-1">
+                            <div class="mt-1 flex flex-row">
                                 <input
-                                    id="timeAuction"
+                                placeholder="year"
+                                    id="deadLine-year"
                                     name="timeAuction"
                                     type="text"
-                                    class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                                    class="block w-16 text-xs appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                                />
+                                <input
+                                    placeholder="Month"
+                                    id="deadLine-month"
+                                    name="timeAuction"
+                                    type="text"
+                                    class="block text-xs w-16 appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                                />
+                                <input
+                                placeholder="Day"
+                                    id="deadLine-day"
+                                    name="timeAuction"
+                                    type="text"
+                                    class="block w-16 text-xs appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                                 />
                                 <span
-                                    id="productTimeError"
+                                    id="deadLineError"
                                     class="hidden text-sm text-red-500 font-Lato"
                                     >Enter a time for auction to end
                                 </span>
@@ -224,23 +246,17 @@
                         </div>
                         <div>
                             <label
-                                for="AboutProduct"
+                                for="aboutProduct"
                                 class="block text-sm font-medium text-gray-700 font-Roboto"
                                 >About product</label
                             >
                             <div class="mt-1">
                                 <textarea
                                     rows="4"
-                                    name="comment"
-                                    id="comment"
+                                    name="AboutProduct"
+                                    id="aboutProduct"
                                     class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                                 ></textarea>
-                                <span
-                                    id="productNameError"
-                                    class="hidden text-sm text-red-500 font-Lato"
-                                    >Please enter a short description about your
-                                    product
-                                </span>
                             </div>
                         </div>
                         <div class="flex flex-row">
