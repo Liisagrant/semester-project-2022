@@ -8,61 +8,96 @@ const ID = searchParam.get('id');
 const accessToken = getToken();
 
 const singelListingContainer = document.querySelector(
-  '#singelListingContainer',
+    '#singelListingContainer'
 );
 
+const generalErrorMessege = document.querySelector('#generalErrorMessage');
+
+const SINGLE_LISTING_INFO = `${GET_LISTING_BY_ID_URL}/${ID}?_bids=true&_seller=true`;
 const getListingById = async () => {
-  const response = await fetch(`${GET_LISTING_BY_ID_URL}/${ID}`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+    const response = await fetch(`${SINGLE_LISTING_INFO}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+    if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+        const title = data.title;
+        const description = data.description;
+        const timeEnd = formatDate(data.endsAt);
+        const seller = data.seller.name;
+        const sellerAvatar = data.seller.avatar;
+        const ListingImage = data.media[0];
+        let bid = data.bids;
+        console.log(bid);
+        bid.sort(function (x, y) {
+            return y.amount - x.amount;
+        });
 
-  const data = await response.json();
-  const { title } = data;
-  const { description } = data;
-  const timeEnd = formatDate(data.endsAt);
-  const currentBid = data._count.bids;
+        let topBid = 0;
+        if (bid[0]) {
+            topBid = bid[0].amount;
+        }
+        let bidValue = topBid + 0;
 
-  let listingMedia = `                                  
+        if (!bidValue) {
+            `${0}`;
+        }
+
+        let listingMedia = `                                  
                             <img
-                            src="${data.media[0]}"
+                            src="${ListingImage}"
                             alt="Product image"
-                            class="h-50 md:h-96 lg:h-80 rounded-t-md md:rounded-r-none md:rounded-l-md"
-                        /> `;
-  if (!data.media[0]) {
-    listingMedia = `
-                                                 <img
+                            class="object-cover h-full w-full rounded-t-md md:rounded-r-none md:rounded-l-md"
+                        />                    
+    `;
+        if (!ListingImage) {
+            listingMedia = `
+                                    <img
                             src="/media/no-photo.jpg"
                             alt="Product image"
-                            class="h-50 md:h-96 lg:h-80 rounded-t-md md:rounded-r-none md:rounded-l-md"
-                        />
+                            class="object-cover h-full w-full rounded-t-md md:rounded-r-none md:rounded-l-md"
+                        /> 
+                    
                     `;
-  }
+        }
 
-  singelListingContainer.innerHTML = `
-                        <div>
-                        ${listingMedia}
+        let listingMediaAvatar = `                                  
+                <img class="h-10 w-10 flex-shrink-0 rounded-full bg-gray-300" src="${sellerAvatar}" alt="seller avatar">     
+    `;
+        if (!sellerAvatar) {
+            listingMediaAvatar = `
+                                
+            <img class="h-10 w-10 flex-shrink-0 rounded-full bg-gray-300" src="/media/no-photo.jpg" alt="seller avatar">
+                    `;
+        }
+
+        singelListingContainer.innerHTML = `
+
+                <div class="flex flex-col md:flex-row">
+                    <div class="h-40 md:h-80">
+                    ${listingMedia}
                     </div>
                     <div>
                         <h1 class="p-2 text-lg font-bold font-Poppins">
                             ${title}
                         </h1>
                         <p class="px-2 text-green font-semibold font-Roboto">
-                            Current Bid: ${currentBid}
+                            Current Bid: ${bidValue}$
                         </p>
                         <p class="p-2 text-xs font-Lato md:max-w-md">
                             ${description}
                         </p>
                         <div
-                            class="bg-lightGray rounded-md text-sm w-56 mx-auto md:mx-2 lg:mx-4 my-4"
+                            class="bg-lightGray rounded-md text-sm w-70 mx-4 my-4"
                         >
                             <p class="p-2 text-center font-Poppins">
-                                Auction ends at: ${timeEnd}
+                                Bid end at: ${timeEnd}
                             </p>
                         </div>
-                        <div class="flex flex-row justify-end p-2 md:h-14">
+                    <div class="flex flex-row justify-center p-2 md:h-14">
                             <button
                                 type="submit"
                                 class="flex justify-center font-Roboto rounded-l-md bg-darkGray p-2 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
@@ -81,8 +116,7 @@ const getListingById = async () => {
                             </button>
                             <div
                                 class="bg-white py-2 p-4 border-y-2 border-darkGray font-Roboto"
-                            >
-                                ${currentBid}
+                            >${bidValue}$
                             </div>
                             <button
                                 type="submit"
@@ -107,9 +141,28 @@ const getListingById = async () => {
                                 <span class="m-auto">ADD BID</span>
                             </button>
                         </div>
-                    </div>
+                            <div class="flex w-60 items-center justify-center space-x-2 px-4 py-2 mx-auto">
+      <div class="flex-1 truncate">
+        <div class="flex items-center space-x-3">
+          <h3 class="truncate text-sm font-medium text-gray-900">${seller}</h3>
+          <span class="inline-block flex-shrink-0 rounded-full bg-lightGreen px-2 py-0.5 text-xs font-medium text-green-800">Seller</span>
+        </div>
+      </div>
+      ${listingMediaAvatar}
+    </div>
+    <div>
+    </div>
+            </div>
+            </div>
+
     `;
-  document.title = `${title}`;
+        document.title = `${title}`;
+    } else {
+        const err = await response.json();
+        const message = `Sorry, something went wrong${err}`;
+        generalErrorMessege.innerHTML = `${message}`;
+        console.log(message);
+    }
 };
 
 getListingById();
