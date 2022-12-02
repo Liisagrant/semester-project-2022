@@ -11,23 +11,27 @@ const myNavBar = () => {
                         <div class="flex flex-col p-2">
 
                     <a
-                        href="./signUp.html"
-                        class="text-SecondColor font-Poppins hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
-                            pathname === '/sign-up.html' ? 'bg-onPageColor' : ''
+                        href="./homePage.html"
+                        class="text-SecondColor font-Poppins hover:text-lightGray flex justify-center block rounded-md py-2 px-3 text-base font-medium ${
+                            pathname === '/homepage.html'
+                                ? 'bg-onPageColor'
+                                : ''
                         }"
                         aria-current="page"
-                        >SignUp</a
+                        >Home</a
                     >
 
                     <a
-                        href="./index.html"
-                        class="text-SecondColor font-Poppins hover:text-lightGray hover:text-thirdColor rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
-                            pathname === '/index.html' ? 'bg-onPageColor' : ''
+                        href="./listingPage.html"
+                        class="text-SecondColor font-Poppins hover:text-lightGray flex justify-center block rounded-md py-2 px-3 text-base font-medium ${
+                            pathname === '/listingpage.html'
+                                ? 'bg-onPageColor'
+                                : ''
                         }"
-                        >LogIn</a
+                        >Items in action</a
                     >
                     <a
-                        href="./sigUp.html"
+                        href="./signUp.html"
                         class="bg-gray-900 font-Poppins text-SecondColor hover:text-lightGray flex justify-center rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
                             pathname === './sign-up.html'
                                 ? 'bg-onPageColor'
