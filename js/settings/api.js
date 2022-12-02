@@ -8,7 +8,7 @@ const LOG_IN_URL = `${BASE_URL}api/v1/auction/auth/login`;
 const SIGN_UP_URL = `${BASE_URL}api/v1/auction/auth/register`;
 
 // Listings
-const GET_LISTINGS_URL = `${BASE_URL}api/v1/auction/listings`;
+const GET_LISTINGS_URL = `${BASE_URL}api/v1/auction/listings?&limit=12`;
 const GET_LISTING_BY_ID_URL = `${BASE_URL}api/v1/auction/listings`;
 const CREATE_LISTING_URL = `${BASE_URL}api/v1/auction/listings`;
 
