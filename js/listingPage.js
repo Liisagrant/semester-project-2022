@@ -1,4 +1,4 @@
-import { GET_LISTINGS_URL } from './settings/api';
+import { GET_ALL_LISTINGS_URL } from './settings/api';
 import { getToken, getUserName, getUserAvatar } from './utils/storage';
 import { formatDate } from './utils/dateFix';
 
@@ -14,7 +14,7 @@ console.log(avatar);
 let data = [];
 
 async function getAllListings() {
-    const response = await fetch(GET_LISTINGS_URL, {
+    const response = await fetch(GET_ALL_LISTINGS_URL, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
