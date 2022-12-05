@@ -4,7 +4,7 @@ const xclose = document.querySelector('#x');
 const menu = document.querySelector('#menu');
 
 mobileMenuBtn.addEventListener('click', () => {
-  mobielMenu.classList.toggle('hidden');
-  xclose.classList.toggle('hidden');
-  menu.classList.toggle('hidden');
+    mobielMenu.classList.toggle('hidden');
+    xclose.classList.toggle('hidden');
+    menu.classList.toggle('hidden');
 });
