@@ -2,8 +2,6 @@ import { checkLength, validImgUrl } from './utils/validation';
 import { getToken, getUserName } from './utils/storage';
 import { CREATE_LISTING_URL } from './settings/api';
 
-import { getToken } from './utils/storage';
-
 const accessToken = getToken();
 if (!accessToken) {
     location.href = '/notLoggedIn.html';
