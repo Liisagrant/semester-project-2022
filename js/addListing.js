@@ -103,10 +103,10 @@ addListingForm.addEventListener('submit', (event) => {
     if (formValid) {
     }
     const listingData = {
-        title: title.value.trim(),
-        description: desc.value.trim(),
+        title: title.value,
+        description: desc.value,
         tags: listingTags,
-        media: imagesIsvalid.length > 0 ? imagesIsvalid : null,
+        media: [imageUrl1.value, imageUrl2.value, imageUrl3.value],
         endsAt: deadline.value,
     };
     console.log(listingData);
