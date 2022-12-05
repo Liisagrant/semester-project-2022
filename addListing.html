@@ -152,7 +152,7 @@
                 >
                     <span class="block xl:inline mt-4 text-center font-Poppins"
                         >Add a New Product Today!</span
-                    >
+                    ></h2>
                     <form id="addListingForm" action="#" method="POST" class="space-y-6">
                         <div>
                             <label
@@ -165,7 +165,6 @@
                                     id="producTitle"
                                     name="productName"
                                     type="text"
-                                    required
                                     class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                                 />
                             </div>
@@ -177,20 +176,102 @@
                         </span>
                         <div class="space-y-1">
                             <label
-                                for="imageUrl"
+                                for="1"
                                 class="block text-sm font-medium text-gray-700 font-Roboto"
-                                >image url</label
+                                >Tag 1(optional)</label
                             >
                             <div class="mt-1">
                                 <input
-                                    id="imageUrl"
+                                    id="tag1"
+                                    type="text"
+                                    class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                                />
+                            </div>
+                        </div>
+                        <div class="space-y-1">
+                            <label
+                                for="1"
+                                class="block text-sm font-medium text-gray-700 font-Roboto"
+                                >Tag 2(optional)</label
+                            >
+                            <div class="mt-1">
+                                <input
+                                    id="tag2"
+                                    type="text"
+                                    class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                                />
+                            </div>
+                        </div>
+                                                <div class="space-y-1">
+                            <label
+                                for="1"
+                                class="block text-sm font-medium text-gray-700 font-Roboto"
+                                >Tag 3(optional)</label
+                            >
+                            <div class="mt-1">
+                                <input
+                                    id="tag3"
+                                    type="text"
+                                    class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                                />
+                            </div>
+                        </div>
+                        <div class="space-y-1">
+                            <label
+                                for="1"
+                                class="block text-sm font-medium text-gray-700 font-Roboto"
+                                >image url 1(optinal)</label
+                            >
+                            <div class="mt-1">
+                                <input
+                                    id="imageUrl1"
                                     name="imageUrl"
                                     type="text"
                                     class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                                 />
                             </div>
-                                                    <span
-                            id="imageUrlError"
+                        <span
+                            id="imageUrlError1"
+                            class="hidden text-sm text-red-500 font-Lato"
+                            >Not a valid image url
+                        </span>
+                        </div>
+                                                <div class="space-y-1">
+                            <label
+                                for="imageUrl2"
+                                class="block text-sm font-medium text-gray-700 font-Roboto"
+                                >image url 2(optinal)</label
+                            >
+                            <div class="mt-1">
+                                <input
+                                    id="imageUrl2"
+                                    name="imageUrl"
+                                    type="text"
+                                    class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                                />
+                            </div>
+                        <span
+                            id="imageUrlError2"
+                            class="hidden text-sm text-red-500 font-Lato"
+                            >Not a valid image url
+                        </span>
+                        </div>
+                                                <div class="space-y-1">
+                            <label
+                                for="imageUrl3"
+                                class="block text-sm font-medium text-gray-700 font-Roboto"
+                                >image url 3(optinal)</label
+                            >
+                            <div class="mt-1">
+                                <input
+                                    id="imageUrl3"
+                                    name="imageUrl"
+                                    type="text"
+                                    class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                                />
+                            </div>
+                        <span
+                            id="imageUrlError3"
                             class="hidden text-sm text-red-500 font-Lato"
                             >Not a valid image url
                         </span>
@@ -204,8 +285,12 @@
                             type="datetime-local"
                             class="form-control text-xs col-md-6 relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                             placeholder="2020-01-01T00:00:00.000Z"
-                            required
                             /></div>
+                                                    <span
+                            id="deadlineError"
+                            class="hidden text-sm text-red-500 font-Lato"
+                            >
+                        </span>
                         </div>
                         <div>
                             <label
@@ -229,19 +314,12 @@
                             >
                                 Add Itemto auction
                             </button>
-                            <button
-                                type="submit"
-                                class="flex w-full font-Roboto justify-center rounded-md bg-darkGray py-2 px-4 m-2 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                            >
-                                Cancel
-                            </button>
                         </div>
                         <span
                             id="generalError"
                             class="text-sm text-red-500 flex"
                         ></span>
                     </form>
-                </h2>
             </div>
         </div>
         <footer class="bg-mainColor" aria-labelledby="footer-heading">
