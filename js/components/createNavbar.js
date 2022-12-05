@@ -1,4 +1,5 @@
 import { getUserName } from '../utils/storage';
+import { getUserCredit, getUserAvatar } from '../utils/storage';
 
 const myNavBar = () => {
     const { pathname } = document.location;
@@ -6,6 +7,8 @@ const myNavBar = () => {
     const navbarDesktop = document.querySelector('#navLinks-desktop');
     if (navbarMobile) {
         const userName = getUserName();
+        const credits = getUserCredit();
+        const avatar = getUserAvatar();
         let navbarLinksMobile;
         navbarLinksMobile = `
                         <div class="flex flex-col p-2">
@@ -17,7 +20,6 @@ const myNavBar = () => {
                                 ? 'bg-onPageColor'
                                 : ''
                         }"
-                        aria-current="page"
                         >Home</a
                     >
 
@@ -37,7 +39,6 @@ const myNavBar = () => {
                                 ? 'bg-onPageColor'
                                 : ''
                         }"
-                        aria-current="page"
                         >SignUp</a
                     >
 
@@ -48,6 +49,9 @@ const myNavBar = () => {
                         }"
                         >LogIn</a
                     >
+                    <div class="p-2 font-bold font-poppins text-SecondColor">
+                    <span>Current Credit:${credits}</span>
+                    </div>
                 </div>
         `;
         if (userName) {
@@ -60,7 +64,6 @@ const myNavBar = () => {
                                 ? 'bg-onPageColor'
                                 : ''
                         }"
-                        aria-current="page"
                         >Home</a
                     >
 
@@ -91,6 +94,26 @@ const myNavBar = () => {
                         }"
                         >Profile</a
                     >
+                    <div class="p-2 font-bold font-poppins text-SecondColor">
+                    <span>Current Credit:${credits}</span>
+                    </div>
+                    <div class="flex justify-center">
+                                                     <button
+                                    type="button"
+                                    class="flex rounded-full bg-gray-800 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                                    id="user-menu-button"
+                                    aria-expanded="false"
+                                    aria-haspopup="true"
+                                >
+                                    <span class="sr-only">Open user menu</span>
+                                    <img
+                                        class="h-8 w-8 rounded-full"
+                                        src="${avatar}"
+                                        alt="Profile Photo"
+                                    />
+                                </button>
+                                </div>
+
                 </div>
             `;
         }

@@ -1,10 +1,10 @@
-import { getUserAvatar } from '../utils/storage';
+import { getUserAvatar, getUserCredit } from '../utils/storage';
 
 const headerInfo = () => {
-  const userInfoContainer = document.querySelector('#userAvatar');
-  if (userInfoContainer) {
-    const avatar = getUserAvatar();
-    let userAvatar = `
+    const userAvatarContainer = document.querySelector('#userAvatar');
+    if (userAvatarContainer) {
+        const avatar = getUserAvatar();
+        let userAvatar = `
                                  <button
                                     type="button"
                                     class="flex rounded-full bg-gray-800 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -20,8 +20,8 @@ const headerInfo = () => {
                                     />
                                 </button>
     `;
-    if (!avatar) {
-      userAvatar = `
+        if (!avatar) {
+            userAvatar = `
             <button
                 type="button"
                 class="flex rounded-full bg-gray-800 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -36,10 +36,27 @@ const headerInfo = () => {
                     alt="Profile Photo"
                 />
             </button>`;
+        }
+        userAvatarContainer.innerHTML = `${userAvatar}`;
     }
 
-    userInfoContainer.innerHTML = `${userAvatar}`;
-  }
+    const userCreditContainer = document.querySelector('#userCredit');
+    if (userCreditContainer) {
+        const credits = getUserCredit();
+        let userCredit = `
+                            <div class="p-2 font-bold font-poppins text-SecondColor">
+                    <span>Current Credit:${credits}</span>
+                    </div>
+        `;
+        if (!credits) {
+            userCredit = `
+                                <div class="p-2 font-bold font-poppins text-SecondColor">
+                    <span>Current Credit:No Data, Please logIn</span>
+                    </div>
+        `;
+        }
+        userCreditContainer.innerHTML = `${userCredit}`;
+    }
 };
 
 export { headerInfo };

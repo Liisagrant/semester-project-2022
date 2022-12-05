@@ -26,21 +26,23 @@
         <script type="module" src="./js/getListingById.js" defer></script>
     </head>
     <body class="bg-mainColor">
-        <header class="bg-mainColor fixed top-0 left-0 right-0 z-20">
-            <div
+        <header
+            class="bg-mainColor fixed top-0 left-0 right-0 z-20"
+        >
+                        <div
                 class="mx-auto max-w-7xl px-2 sm:px-4 lg:divide-y lg:divide-gray-700 lg:px-8"
             >
                 <div class="relative flex h-16 justify-between">
                     <div class="relative z-10 flex px-2 lg:px-0">
                         <div class="flex flex-shrink-0 items-center">
-                            <a href="./homePage.html">
+                            <a href="/">
                             <img
                                 class="block h-20 w-auto"
                                 src="/media/Sniper.svg"
                                 alt="Sniper"
                             />
-                            </a>
                         </div>
+                        </a>
                     </div>
                     <div
                         class="relative z-0 flex flex-1 items-center justify-center px-2 sm:absolute sm:inset-0"
@@ -123,8 +125,9 @@
                     <div
                         class="hidden lg:relative lg:z-10 lg:ml-4 lg:flex lg:items-center"
                     >
-                        <div class="relative ml-4 flex-shrink-0">
-                            <div id="userAvatar">
+                        <div class="flex flex-row relative ml-4 flex-shrink-0">
+                            <div id="userCredit"></div>
+                            <div class="h-8 w-8" id="userAvatar">
                             </div> 
                         </div> 
                     </div>
@@ -142,7 +145,7 @@
                 id="navLinks-mobile"
             >
             </nav>
-        </header>
+    </header>
         <main class="bg-lightGray flex justify-center">
             <div
                 class="bg-white mt-24 mb-16 mx-2 rounded-md max-w-xl lg:mt-44 md:max-w-2xl lg:max-w-4xl"
