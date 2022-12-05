@@ -1,10 +1,10 @@
 import { getUserAvatar } from '../utils/storage';
 
 const headerInfo = () => {
-    const userInfoContainer = document.querySelector('#userAvatar');
-    if (userInfoContainer) {
-        const avatar = getUserAvatar();
-        let userAvatar = `
+  const userInfoContainer = document.querySelector('#userAvatar');
+  if (userInfoContainer) {
+    const avatar = getUserAvatar();
+    let userAvatar = `
                                  <button
                                     type="button"
                                     class="flex rounded-full bg-gray-800 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -20,8 +20,8 @@ const headerInfo = () => {
                                     />
                                 </button>
     `;
-        if (!avatar) {
-            userAvatar = `
+    if (!avatar) {
+      userAvatar = `
             <button
                 type="button"
                 class="flex rounded-full bg-gray-800 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -36,10 +36,10 @@ const headerInfo = () => {
                     alt="Profile Photo"
                 />
             </button>`;
-        }
-
-        userInfoContainer.innerHTML = `${userAvatar}`;
     }
+
+    userInfoContainer.innerHTML = `${userAvatar}`;
+  }
 };
 
 export { headerInfo };

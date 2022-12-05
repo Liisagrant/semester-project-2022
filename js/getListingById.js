@@ -8,53 +8,51 @@ const ID = searchParam.get('id');
 const accessToken = getToken();
 
 const singelListingContainer = document.querySelector(
-    '#singelListingContainer'
+  '#singelListingContainer',
 );
 
 const generalErrorMessege = document.querySelector('#generalErrorMessage');
 
 const SINGLE_LISTING_INFO = `${GET_LISTING_BY_ID_URL}/${ID}?_bids=true&_seller=true`;
 const getListingById = async () => {
-    const response = await fetch(`${SINGLE_LISTING_INFO}`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    });
-    if (response.ok) {
-        const data = await response.json();
-        console.log(data);
-        const title = data.title;
-        const description = data.description;
-        const timeEnd = formatDate(data.endsAt);
-        const seller = data.seller.name;
-        const sellerAvatar = data.seller.avatar;
-        const ListingImage = data.media[0];
-        let bid = data.bids;
-        console.log(bid);
-        bid.sort(function (x, y) {
-            return y.amount - x.amount;
-        });
+  const response = await fetch(`${SINGLE_LISTING_INFO}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  if (response.ok) {
+    const data = await response.json();
+    console.log(data);
+    const { title } = data;
+    const { description } = data;
+    const timeEnd = formatDate(data.endsAt);
+    const seller = data.seller.name;
+    const sellerAvatar = data.seller.avatar;
+    const ListingImage = data.media[0];
+    const bid = data.bids;
+    console.log(bid);
+    bid.sort((x, y) => y.amount - x.amount);
 
-        let topBid = 0;
-        if (bid[0]) {
-            topBid = bid[0].amount;
-        }
-        let bidValue = topBid + 0;
+    let topBid = 0;
+    if (bid[0]) {
+      topBid = bid[0].amount;
+    }
+    const bidValue = topBid + 0;
 
-        if (!bidValue) {
-            `${0}`;
-        }
+    if (!bidValue) {
+      `${0}`;
+    }
 
-        let listingMedia = `                                  
+    let listingMedia = `                                  
                             <img
                             src="${ListingImage}"
                             alt="Product image"
                             class="object-cover h-full w-full rounded-t-md md:rounded-r-none md:rounded-l-md"
                         />                    
     `;
-        if (!ListingImage) {
-            listingMedia = `
+    if (!ListingImage) {
+      listingMedia = `
                                     <img
                             src="/media/no-photo.jpg"
                             alt="Product image"
@@ -62,19 +60,19 @@ const getListingById = async () => {
                         /> 
                     
                     `;
-        }
+    }
 
-        let listingMediaAvatar = `                                  
+    let listingMediaAvatar = `                                  
                 <img class="h-10 w-10 flex-shrink-0 rounded-full bg-gray-300" src="${sellerAvatar}" alt="seller avatar">     
     `;
-        if (!sellerAvatar) {
-            listingMediaAvatar = `
+    if (!sellerAvatar) {
+      listingMediaAvatar = `
                                 
             <img class="h-10 w-10 flex-shrink-0 rounded-full bg-gray-300" src="/media/no-photo.jpg" alt="seller avatar">
                     `;
-        }
+    }
 
-        singelListingContainer.innerHTML = `
+    singelListingContainer.innerHTML = `
 
                 <div class="flex flex-col md:flex-row">
                     <div class="h-40 md:h-80">
@@ -156,13 +154,13 @@ const getListingById = async () => {
             </div>
 
     `;
-        document.title = `${title}`;
-    } else {
-        const err = await response.json();
-        const message = `Sorry, something went wrong${err}`;
-        generalErrorMessege.innerHTML = `${message}`;
-        console.log(message);
-    }
+    document.title = `${title}`;
+  } else {
+    const err = await response.json();
+    const message = `Sorry, something went wrong${err}`;
+    generalErrorMessege.innerHTML = `${message}`;
+    console.log(message);
+  }
 };
 
 getListingById();
