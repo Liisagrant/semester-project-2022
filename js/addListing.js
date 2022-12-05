@@ -1,6 +1,6 @@
 import { getToken, getUserName } from './utils/storage';
 import { CREATE_LISTING_URL } from './settings/api';
-import { validImgUrl } from './utils/validation';
+import { validImgUrl, checkLength } from './utils/validation';
 
 const accessToken = getToken();
 if (!accessToken) {
@@ -41,11 +41,11 @@ var today = new Date().toISOString().slice(0, 16);
 
 document.getElementsByName('listingEndDate')[0].min = today;
 
-const deadline = document.querySelector('#listingEndDate');
+const deadline = document.querySelector('#deadline');
 console.log(deadline);
 
-const deadLineError = document.querySelector('#deadlineError');
-console.log(deadLineError);
+const deadlineError = document.querySelector('#deadlineError');
+console.log(deadlineError);
 
 const desc = document.querySelector('#aboutProduct');
 console.log(aboutProduct);
@@ -55,28 +55,58 @@ const generalError = document.querySelector('#generalError');
 addListingForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    console.log(title.value.trim());
+    let isTitle = false;
+    if (checkLength(title.value, 1) === true) {
+        titleError.classList.add('hidden');
+        isTitle = true;
+    } else {
+        titleError.classList.remove('hidden');
+    }
 
-    console.log(tag1.value.trim());
-    console.log(tag2.value.trim());
-    console.log(tag3.value.trim());
+    let isImageValid1 = false;
+    isImageValid1 = validImgUrl(imageUrl1.value) || imageUrl1.value === '';
+    if (isImageValid1) {
+        imageUrlError1.classList.add('hidden');
+    } else {
+        imageUrlError1.classList.remove('hidden');
+    }
 
-    console.log(imageUrl1.value.trim());
-    console.log(imageUrl2.value.trim());
-    console.log(imageUrl3.value.trim());
+    let isImageValid2 = false;
+    isImageValid2 = validImgUrl(imageUrl2.value) || imageUrl2.value === '';
+    if (isImageValid2) {
+        imageUrlError2.classList.add('hidden');
+    } else {
+        imageUrlError2.classList.remove('hidden');
+    }
 
-    console.log(deadline.value);
+    let isImageValid3 = false;
+    isImageValid3 = validImgUrl(imageUrl3.value) || imageUrl3.value === '';
+    if (isImageValid3) {
+        imageUrlError3.classList.add('hidden');
+    } else {
+        imageUrlError3.classList.remove('hidden');
+    }
 
-    console.log(desc.value.trim());
+    let isDeadline = false;
+    if (deadline.value) {
+        deadlineError.classList.add('hidden');
+        isDeadline = true;
+    } else {
+        deadlineError.classList.remove('hidden');
+    }
 
     const listingTags = [tag1.value, tag2.value, tag3.value];
-    const listingImages = [imageUrl1.value, imageUrl2.value, imageUrl3.value];
 
+    let imagesIsvalid = imageUrl1 && imageUrl2 && imageUrl3;
+
+    let formValid = isTitle && imagesIsvalid && isDeadline;
+    if (formValid) {
+    }
     const listingData = {
         title: title.value.trim(),
         description: desc.value.trim(),
         tags: listingTags,
-        media: listingImages.length > 0 ? listingImages : null,
+        media: imagesIsvalid.length > 0 ? imagesIsvalid : null,
         endsAt: deadline.value,
     };
     console.log(listingData);
@@ -104,3 +134,20 @@ addListingForm.addEventListener('submit', (event) => {
     }
     createListing();
 });
+
+// console.log(title.value.trim());
+
+// console.log(tag1.value.trim());
+// console.log(tag2.value.trim());
+// console.log(tag3.value.trim());
+
+// console.log(imageUrl1.value.trim());
+// console.log(imageUrl2.value.trim());
+// console.log(imageUrl3.value.trim());
+
+// console.log(deadline.value);
+
+// console.log(desc.value.trim());
+
+// const listingTags = [tag1.value, tag2.value, tag3.value];
+// const listingImages = [imageUrl1.value, imageUrl2.value, imageUrl3.value];
