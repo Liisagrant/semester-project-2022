@@ -13,6 +13,7 @@ const accessToken = getToken();
 console.log(userName);
 console.log(accessToken);
 console.log(avatar);
+
 const logOutBtnMobil = document.querySelector('#logoutbtnMobil');
 const logOutBtn = document.querySelector('#logoutbtn');
 if (logOutBtn) {

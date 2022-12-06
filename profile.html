@@ -171,34 +171,15 @@
                     >
                         <div>
                             <form
-                                id="updateProfile-form"
+                                id="updateAvatarForm"
                                 action="#"
                                 method="POST"
                                 class="space-y-6"
                             >
+                            <h2 class="font-Poppins text-center font-bold">Add a new Url to update your Avatar</h2>
                                 <div class="space-y-1">
                                     <label
-                                        for="userName"
-                                        class="block text-sm font-medium text-gray-700 font-Roboto"
-                                        >Update User Name</label
-                                    >
-                                    <div class="mt-1">
-                                        <input
-                                            id="userName"
-                                            name="userName"
-                                            type="userName"
-                                            class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                                        />
-                                    </div>
-                                    <span
-                                        id="imageUrlError"
-                                        class="hidden text-sm text-red-500 font-Lato"
-                                        >Sorry. This User name is not valid
-                                    </span>
-                                </div>
-                                <div class="space-y-1">
-                                    <label
-                                        for="Image-url"
+                                        for="img-url"
                                         class="block text-sm font-medium text-gray-700 font-Roboto"
                                         >Image url</label
                                     >
@@ -212,9 +193,15 @@
                                     </div>
                                     <span
                                         id="imageUrlError"
-                                        class="hidden text-sm text-red-500 font-Lato"
-                                        >Sorry. This url is not valid
+                                        class="hidden text-sm text-errorRed font-Lato font-bold"
+                                        >Sorry. This url is not valid.
                                     </span>
+                                    <span
+                                        id="imageUrlError2"
+                                        class="hidden text-sm text-errorRed font-Lato font-bold"
+                                        > If you want to update this fild it can not be empty
+                                    </span>
+                                    
                                 </div>
                                 <div class="flex flex-row">
                                     <button
@@ -223,13 +210,6 @@
                                         class="flex w-full justify-center font-Roboto rounded-md bg-darkGray py-2 m-1 px-4 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                                     >
                                         Update
-                                    </button>
-                                    <button
-                                        id="cancelBtnForm"
-                                        type="submit"
-                                        class="flex w-full justify-center font-Roboto rounded-md bg-darkGray py-2 m-1 px-4 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                                    >
-                                        Cancel
                                     </button>
                                 </div>
                             </form>
@@ -245,8 +225,48 @@
                         class="relative z-0 flex-1 overflow-y-auto focus:outline-none xl:order-last"
                     >
                         <article>
-                            <div id="profileInfoUser"></div>
-                            <div class="mx-2 lg:mx-auto max-w-5xl">
+                             <div >
+                                    <img
+                                        class="h-32 w-full object-cover mt-16 lg:mt-28 lg:h-48"
+                                        src="./media/profile-top-img.jpg"
+                                        alt=""
+                                    />
+                                </div>
+                                <div
+                                    class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8"
+                                >
+                                    <div
+                                        class="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5" 
+                                    >
+                                        <div class="flex" id="profielAvatar">
+                                        </div>
+                                        <div
+                                            class="mt-6 sm:flex sm:min-w-0 sm:flex-1 sm:items-center sm:justify-end sm:space-x-6 sm:pb-1"
+                                        >
+                                            <div
+                                                class="justify-stretch mt-6 flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-4"
+                                            >
+                                                <button
+                                                    id="updateAvatar"
+                                                    type="button"
+                                                    class="inline-flex justify-center font-Roboto bg-lightGray rounded-md px-4 py-2 text-sm font-medium text-gray-700 hover:bg-mainColor"
+                                                >
+                                                    <span>Update Profile</span>
+                                                </button>
+                                                <div
+                                                    id="profielCredits"
+                                                    class="inline-flex justify-center font-Roboto bg-white border-2 border-SecondColor rounded-md px-4 py-2 text-sm font-medium text-gray-700 hover:bg-mainColor"
+                                                >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        id="profielNameEmail"
+                                        class="mt-6 min-w-0 flex-1 sm:block"
+                                    >
+                                    </div>
+                            <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
                                     <div class="mt-4">
                                     <h2
                                         class="text-2xl font-bold font-Poppins tracking-tight text-mainColor mt-8 sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl"
