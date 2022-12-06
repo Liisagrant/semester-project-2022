@@ -14,7 +14,6 @@ if (!accessToken) {
 const avatar = getUserAvatar();
 
 const profileUserContainer = document.querySelector('#profileInfoUser');
-console.log(profileUserContainer);
 
 const getUserInfo = async () => {
     const response = await fetch(GET_PROFILE_URL, {
@@ -24,15 +23,16 @@ const getUserInfo = async () => {
             Authorization: `Bearer ${accessToken}`,
         },
     });
-    console.log(response);
-    const data = await response.json();
-    const name = data.name;
-    const email = data.email;
-    const avatar = data.avatar;
-    const credits = data.credits;
-    console.log(data);
+    if (response.ok) {
+        console.log(response);
+        const data = await response.json();
+        const name = data.name;
+        const email = data.email;
+        const avatar = data.avatar;
+        const credits = data.credits;
+        console.log(data);
 
-    profileUserContainer.innerHTML = `
+        profileUserContainer.innerHTML = `
       <div >
                                     <img
                                         class="h-32 w-full object-cover mt-16 lg:mt-28 lg:h-48"
@@ -90,6 +90,7 @@ const getUserInfo = async () => {
                                         </h2>
                                     </div>
     `;
+    }
 };
 
 getUserInfo();
