@@ -1,7 +1,32 @@
-import { getUserAvatar, getUserCredit } from '../utils/storage';
+import { getUserAvatar, getUserCredit, getUserName } from '../utils/storage';
 
 const headerInfo = () => {
     const userAvatarContainer = document.querySelector('#userAvatar');
+    const signOutDesktop = document.querySelector('#signOutDesktop');
+    const userName = getUserName();
+    if (signOutDesktop) {
+        const userName = getUserName();
+        let signOutbtnDesktop = `
+                                    <button
+                                        id="logoutbtn"
+                                        type="submit"
+                                        class="flex w-30 mx-2 font-Roboto justify-center rounded-md bg-lightGray py-2 px-4 text-sm font-medium text-black shadow-sm hover:bg-SecondColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                    >
+                                        Sign Out
+                                    </button>
+                `;
+        if (!userName) {
+            let signOutbtnDesktop = `
+                                    <button
+                                        type="submit"
+                                        class="hidden"
+                                    >
+                                    </button>
+                `;
+        }
+        signOutDesktop.innerHTML = `${signOutbtnDesktop}`;
+    }
+
     if (userAvatarContainer) {
         const avatar = getUserAvatar();
         let userAvatar = `
