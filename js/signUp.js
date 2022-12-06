@@ -1,4 +1,3 @@
-import { check } from 'prettier';
 import { SIGN_UP_URL } from './settings/api';
 import {
     validEmail,
@@ -26,7 +25,7 @@ const passwordErrorNotMatch = document.querySelector('#passwordErrorNotMatch');
 const avatar = document.querySelector('#avatar');
 const avatarError = document.querySelector('#avatarError');
 
-const errorSignupUser = document.querySelector('#error-signup-user');
+const errorSignupUser = document.querySelector('#generalError');
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -125,10 +124,10 @@ async function signUp(url, data) {
             location.href = './index.html';
         } else {
             const err = await response.json();
-            const message = `Error: ${err.message}`;
+            const message = `${err.errors[0].message}`;
             throw new Error(message);
         }
     } catch (err) {
-        errorSignupUser.innerHTML = `Sorry we have an error! ${err.message}`;
+        errorSignupUser.innerHTML = `${err}`;
     }
 }
