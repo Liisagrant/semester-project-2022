@@ -13,8 +13,11 @@ const GET_ALL_LISTINGS_URL = `${BASE_URL}api/v1/auction/listings?_bids=true`;
 const GET_LISTING_BY_ID_URL = `${BASE_URL}api/v1/auction/listings`;
 const CREATE_LISTING_URL = `${BASE_URL}api/v1/auction/listings`;
 
-//Profiel
+//Profile
 const GET_PROFILE_URL = `${BASE_URL}api/v1/auction/profiles/${userName}?_listings=true`;
+
+//Update Avatar
+const UPDATE_AVATAR_URL = `${BASE_URL}api/v1/auction/profiles/${userName}/media`;
 
 export {
     BASE_URL,
@@ -25,4 +28,5 @@ export {
     CREATE_LISTING_URL,
     GET_ALL_LISTINGS_URL,
     GET_PROFILE_URL,
+    UPDATE_AVATAR_URL,
 };
