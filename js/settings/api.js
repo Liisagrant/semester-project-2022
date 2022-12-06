@@ -13,6 +13,9 @@ const GET_ALL_LISTINGS_URL = `${BASE_URL}api/v1/auction/listings?_bids=true`;
 const GET_LISTING_BY_ID_URL = `${BASE_URL}api/v1/auction/listings`;
 const CREATE_LISTING_URL = `${BASE_URL}api/v1/auction/listings`;
 
+//Profiel
+const GET_PROFILE_URL = `${BASE_URL}api/v1/auction/profiles/${userName}?_listings=true`;
+
 export {
     BASE_URL,
     SIGN_UP_URL,
@@ -21,4 +24,5 @@ export {
     GET_LISTING_BY_ID_URL,
     CREATE_LISTING_URL,
     GET_ALL_LISTINGS_URL,
+    GET_PROFILE_URL,
 };
