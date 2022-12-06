@@ -5,6 +5,7 @@ const myNavBar = () => {
     const { pathname } = document.location;
     const navbarMobile = document.querySelector('#navLinks-mobile');
     const navbarDesktop = document.querySelector('#navLinks-desktop');
+    const signOutMobil = document.querySelector('#signOutMobil');
     if (navbarMobile) {
         const userName = getUserName();
         const credits = getUserCredit();
@@ -52,6 +53,7 @@ const myNavBar = () => {
                     <div class="p-2 font-bold font-poppins text-SecondColor">
                     <span>Current Credit:${credits}</span>
                     </div>
+                    
                 </div>
         `;
         if (userName) {
@@ -113,6 +115,13 @@ const myNavBar = () => {
                                     />
                                 </button>
                                 </div>
+                                    <button
+                                        id="logoutbtnMobil"
+                                        type="submit"
+                                        class="flex w-30 mt-2 font-Roboto justify-center rounded-md bg-lightGray py-2 px-4 text-sm font-medium text-black shadow-sm hover:bg-SecondColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                    >
+                                        Sign Out
+                                    </button>
 
                 </div>
             `;
