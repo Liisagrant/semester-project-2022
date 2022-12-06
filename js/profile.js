@@ -1,9 +1,16 @@
-import { getToken } from './utils/storage';
+import {
+    getToken,
+    getUserAvatar,
+    getUserCredit,
+    getUserName,
+} from './utils/storage';
 
 const accessToken = getToken();
 if (!accessToken) {
     location.href = '/notLoggedIn.html';
 }
+
+const avatar = getUserAvatar();
 
 const updateBtn = document.querySelector('#updateBtn');
 const form = document.querySelector('#updateProfile-form');
