@@ -127,27 +127,10 @@ addListingForm.addEventListener('submit', (event) => {
             console.log('yaya all goood');
         } else {
             const err = await response.json();
-            console.log(err);
-            console.log('no good:(');
+            const message = `${err.errors[0].message}`;
+            generalError.innerHTML = `${message}`;
         }
         addListingForm.reset();
     }
     createListing();
 });
-
-// console.log(title.value.trim());
-
-// console.log(tag1.value.trim());
-// console.log(tag2.value.trim());
-// console.log(tag3.value.trim());
-
-// console.log(imageUrl1.value.trim());
-// console.log(imageUrl2.value.trim());
-// console.log(imageUrl3.value.trim());
-
-// console.log(deadline.value);
-
-// console.log(desc.value.trim());
-
-// const listingTags = [tag1.value, tag2.value, tag3.value];
-// const listingImages = [imageUrl1.value, imageUrl2.value, imageUrl3.value];
