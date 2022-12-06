@@ -6,6 +6,7 @@ import {
 } from './utils/storage';
 import { validImgUrl } from './utils/validation';
 import { GET_PROFILE_URL, UPDATE_AVATAR_URL } from './settings/api';
+import { formatDate } from './utils/dateFix';
 
 const accessToken = getToken();
 if (!accessToken) {
@@ -13,12 +14,13 @@ if (!accessToken) {
 }
 
 const avatar = getUserAvatar();
-
 const profileAvatarContainer = document.querySelector('#profielAvatar');
 const profileCreditsContainer = document.querySelector('#profielCredits');
 const profileNameAndEmailContainer =
     document.querySelector('#profielNameEmail');
+const listingContainer = document.querySelector('#listingsContainer');
 
+//Get User InFo
 const getUserInfo = async () => {
     const response = await fetch(GET_PROFILE_URL, {
         method: 'GET',
@@ -34,7 +36,10 @@ const getUserInfo = async () => {
         const email = data.email;
         const avatar = data.avatar;
         const credits = data.credits;
+        const listings = data.listings;
+        console.log(listings);
         console.log(data);
+
         profileAvatarContainer.innerHTML = `
                                             <img
                                                 class="h-24 w-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32"
@@ -60,11 +65,75 @@ const getUserInfo = async () => {
                                             </h2>
         
         `;
+
+        for (let list of listings) {
+            console.log(list);
+            const id = list.id;
+            console.log(id);
+            const title = list.title;
+            const timeEnd = formatDate(list.endsAt);
+            const image = list.media[0];
+            console.log(image);
+
+            let listingMedia = `                                    <img
+                                        class="rounded-lg object-cover h-full w-full shadow-lg"
+                                        src="${image}"
+                                        alt="product Image"
+                                    />`;
+            if (!image) {
+                listingMedia = `
+                                    <img
+                                        class="rounded-lg object-cover h-full w-full shadow-lg"
+                                        src="./media/no-photo.jpg"
+                                        alt="Product image"
+                                    />
+                    `;
+            }
+
+            let listing = `
+             <a href="detailPage.html?id=${id}" class="mx-2">
+                                        <li
+                                            class="bg-lightGray px-2 py-2 rounded-lg hover:scale-105 transition duration-500 cursor-pointer z-0"
+                                        >
+                                            <div class="space-y-4">
+                                                <div
+                                                    class="aspect-w-3 aspect-h-2"
+                                                >
+                                                                            <div class="w-full h-60">
+                                ${listingMedia}
+                                </div>
+                                
+                                                </div>
+
+                                                <div class="space-y-2">
+                                                    <div
+                                                        class="flex justify-between"
+                                                    >
+                                                        <div
+                                                            class="space-y-1 text-lg font-medium font-Poppins leading-6"
+                                                        >
+                                                            <h3>${title}</h3>
+                                                            <h4
+                                                                class="text-sm font-Roboto"
+                                                            >
+                                                                Remaining time:
+                                                                ${timeEnd}
+                                                            </h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        </a>
+            `;
+            listingContainer.innerHTML += listing;
+        }
     }
 };
 
 getUserInfo();
 
+//GET Modal And Update avatar
 const updateBtn = document.querySelector('#updateAvatar');
 console.log(updateBtn);
 const form = document.querySelector('#updateAvatarForm');
