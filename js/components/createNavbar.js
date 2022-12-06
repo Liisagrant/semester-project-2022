@@ -50,9 +50,6 @@ const myNavBar = () => {
                         }"
                         >LogIn</a
                     >
-                    <div class="p-2 font-bold font-poppins text-SecondColor">
-                    <span>Current Credit:${credits}</span>
-                    </div>
                     
                 </div>
         `;
