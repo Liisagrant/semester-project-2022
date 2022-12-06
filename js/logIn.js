@@ -73,14 +73,14 @@ if (logInForm) {
                     };
 
                     saveUser(userToSave);
-                    location.href = '/homePage.html';
+                    location.href = './homePage.html';
                 } else {
-                    const errorError = await response.json();
-                    const message = `Error: ${errorError.message}`;
+                    const err = await response.json();
+                    const message = `${err.errors[0].message}`;
                     throw new Error(message);
                 }
-            })().catch((errorError) => {
-                alloverError.innerHTML = `Sorry we have an error!${errorError.message}`;
+            })().catch((err) => {
+                generalError.innerHTML = `${err}`;
             });
         } else {
             console.log('This did absoloutely not work');
