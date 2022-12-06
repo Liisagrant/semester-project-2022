@@ -155,11 +155,6 @@ const getListingById = async () => {
 
     `;
         document.title = `${title}`;
-    } else {
-        const err = await response.json();
-        const message = `Sorry, something went wrong${err}`;
-        generalErrorMessege.innerHTML = `${message}`;
-        console.log(message);
     }
 };
 
