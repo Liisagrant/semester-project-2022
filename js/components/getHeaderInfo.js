@@ -16,13 +16,7 @@ const headerInfo = () => {
                                     </button>
                 `;
         if (!userName) {
-            let signOutbtnDesktop = `
-                                    <button
-                                        type="submit"
-                                        class="hidden"
-                                    >
-                                    </button>
-                `;
+            signOutbtnDesktop = '';
         }
         signOutDesktop.innerHTML = `${signOutbtnDesktop}`;
     }
@@ -69,16 +63,12 @@ const headerInfo = () => {
     if (userCreditContainer) {
         const credits = getUserCredit();
         let userCredit = `
-                            <div class="p-2 font-bold font-poppins text-SecondColor">
-                    <span>Current Credit:${credits}</span>
+                    <div class="p-2 font-bold font-poppins text-SecondColor">
+                        <span>Current Credit:${credits}</span>
                     </div>
         `;
         if (!credits) {
-            userCredit = `
-                                <div class="p-2 font-bold font-poppins text-SecondColor">
-                    <span>Current Credit:No Data, Please logIn</span>
-                    </div>
-        `;
+            userCredit = '';
         }
         userCreditContainer.innerHTML = `${userCredit}`;
     }
