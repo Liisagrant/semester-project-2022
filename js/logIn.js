@@ -73,7 +73,7 @@ if (logInForm) {
                     };
 
                     saveUser(userToSave);
-                    location.href = '/homepage.html';
+                    location.href = '/homePage.html';
                 } else {
                     const errorError = await response.json();
                     const message = `Error: ${errorError.message}`;

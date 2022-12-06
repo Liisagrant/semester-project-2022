@@ -1,9 +1,4 @@
-import {
-    getToken,
-    getUserAvatar,
-    getUserCredit,
-    getUserName,
-} from './utils/storage';
+import { getToken } from './utils/storage';
 import { validImgUrl } from './utils/validation';
 import { GET_PROFILE_URL, UPDATE_AVATAR_URL } from './settings/api';
 import { formatDate } from './utils/dateFix';
@@ -13,14 +8,14 @@ if (!accessToken) {
     location.href = '/notLoggedIn.html';
 }
 
-const avatar = getUserAvatar();
 const profileAvatarContainer = document.querySelector('#profielAvatar');
 const profileCreditsContainer = document.querySelector('#profielCredits');
 const profileNameAndEmailContainer =
     document.querySelector('#profielNameEmail');
 const listingContainer = document.querySelector('#listingsContainer');
+const generalError = document.querySelector('#generalError');
 
-//Get User InFo
+//Get Profile User Info and user listings
 const getUserInfo = async () => {
     const response = await fetch(GET_PROFILE_URL, {
         method: 'GET',
@@ -39,6 +34,12 @@ const getUserInfo = async () => {
         const listings = data.listings;
         console.log(listings);
         console.log(data);
+        console.log(generalError);
+        if (!listings.length) {
+            generalError.classList.remove('hidden');
+        } else {
+            generalError.classList.add('hidden');
+        }
 
         profileAvatarContainer.innerHTML = `
                                             <img
@@ -133,7 +134,7 @@ const getUserInfo = async () => {
 
 getUserInfo();
 
-//GET Modal And Update avatar
+//Modal and Update avatar
 const updateBtn = document.querySelector('#updateAvatar');
 console.log(updateBtn);
 const form = document.querySelector('#updateAvatarForm');
