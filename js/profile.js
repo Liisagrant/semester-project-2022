@@ -40,8 +40,7 @@ const getUserInfo = async () => {
         } else {
             generalError.classList.add('hidden');
         }
-
-        profileAvatarContainer.innerHTML = `
+        let userAvatar = `
                                             <img
                                                 class="h-24 w-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32"
                                                 src="${avatar}"
@@ -49,6 +48,14 @@ const getUserInfo = async () => {
                                             />
         
         `;
+        if (!avatar) {
+            userAvatar = ` <img
+                    class="h-24 w-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32"
+                    src="./media/no-photo.jpg"
+                    alt="User Avatar"
+                />`;
+        }
+        profileAvatarContainer.innerHTML = `${userAvatar}`;
         profileCreditsContainer.innerHTML = `
                                             <span
                                                 >Current Credit:

@@ -182,14 +182,17 @@ Bidform.addEventListener('submit', (event) => {
         });
         if (response.ok) {
             console.log('yaaay');
-            errorBid.classList.add('hidden');
             bidGood.classList.remove('hidden');
+            errorBid.classList.add('hidden');
         } else {
             const err = response.json();
             console.log(err);
             console.log('faild:( so sad');
         }
         Bidform.reset();
+        setTimeout(function () {
+            location.reload();
+        }, 30000);
     };
     addBid();
 });
