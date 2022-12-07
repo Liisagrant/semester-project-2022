@@ -53,16 +53,15 @@ const getListingById = async () => {
         if (!bidValue) {
             `${0}`;
         }
-        console.log(bidValue);
 
         let discListing = `
-                            <p class="p-2 text-xs font-Lato md:max-w-md">
+                            <p class="text-xs font-Lato md:max-w-md">
                             ${description}
                         </p>
             `;
         if (!description) {
             discListing = `
-                            <p class="p-2 text-xs font-Lato md:max-w-md">
+                            <p class="text-xs font-Lato md:max-w-md">
                             No description made on this listing
                         </p>
                 `;
@@ -102,7 +101,7 @@ const getListingById = async () => {
 
         sellerAvatarContainer.innerHTML = `${listingMediaAvatar}`;
         sellerNameContainer.innerHTML = `${seller}`;
-        timeEndContainer.innerHTML = `<p class="px-1 text-center font-Poppins">Bid end at:  ${timeEnd}</p>`;
+        timeEndContainer.innerHTML = `Bid end at:  ${timeEnd}`;
         currentBidContainer.innerHTML = `Current Bid: ${bidValue}$`;
         titleContainer.innerHTML = `${title}`;
         document.title = `${title}`;
@@ -165,6 +164,10 @@ Bidform.addEventListener('submit', (event) => {
     console.log('inputBid', inputBid.value);
     const bidValue = getListingById();
 
+    if (inputBid.value <= bidValue) {
+        errorBid.classList.remove('hidden');
+    }
+
     const amountBid = {
         amount: parseInt(inputBid.value),
     };
@@ -179,6 +182,8 @@ Bidform.addEventListener('submit', (event) => {
         });
         if (response.ok) {
             console.log('yaaay');
+            errorBid.classList.add('hidden');
+            bidGood.classList.remove('hidden');
         } else {
             const err = response.json();
             console.log(err);

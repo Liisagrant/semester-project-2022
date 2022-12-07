@@ -197,13 +197,13 @@
                     <div class="h-40 md:80 md:h-96" id="listingImage">
                     </div>
                     <div class="m-4">
-                        <h1 class="p-2 text-lg font-bold font-Poppins" id="titleContainer">
+                        <h1 class="text-lg font-bold font-Poppins" id="titleContainer">
                         </h1>
-                        <p class="px-2 text-green font-semibold font-Roboto" id="currentBidContainer">
+                        <p class="text-green font-semibold font-Roboto" id="currentBidContainer">
                         </p>
                         <div id="disc"></div>
                         <div
-                            class="bg-lightGray rounded-md text-sm w-60 mx-auto my-4"
+                            class="text-mainColor text-sm mt-2 mb-8 mx-auto"
                         >
                             <div id="timeEnd"></div>
                         </div>
@@ -212,7 +212,7 @@
                                 class="bg-white py-2 font-Roboto"
                             ></div>
                         <div class="space-y-1">
-                            <form id="addBidForm" class="m-auto">
+                            <form id="addBidForm">
                                 <label
                                     for="placeBid"
                                     class="block text-sm font-medium text-gray-700 font-Roboto"
@@ -235,8 +235,12 @@
                             </button>
                             </form>
                         </div>
-                        <!-- <span class="text-sm font-bold text-errorRed mx-16 hidden" id="errorBid">Bid too low</span>
-                        <span class="text-sm font-bold text-black mx-16 hidden" id="bidGood">Your bid is added! Good luck</span> -->
+                        <div id="errorBid" class="hidden">
+                            <span class="text-sm font-bold text-errorRed mx-16">Bid too low</span> 
+                        </div>
+                        <div id="bidGood" class="hidden">
+                            <span class="text-sm font-bold text-black mx-16 ">Your bid is added! Good luck🥳</span> 
+                        </div>
 
                                                                 <button
                                                                 id="seeBidsMadeBtn"
@@ -246,13 +250,13 @@
                                         veiw all bids made
                                     </button>
                                                                 <div class="flex w-60 items-center justify-center space-x-2 px-4 py-2 mx-auto">
-                    <div class="flex-1 truncate">
+                    <div class="flex-1 truncate mt-8">
         <div class="flex items-center space-x-3">
           <h3 class="truncate text-sm font-medium text-gray-900" id="sellerName"></h3>
           <span class="inline-block flex-shrink-0 rounded-full bg-lightGreen px-1 py-0.5 text-xs font-medium text-green-800">Seller</span>
         </div>
       </div>
-      <div id="sellerAvatar"></div>
+      <div class="mt-8" id="sellerAvatar"></div>
     </div>
     <div>
     </div>
