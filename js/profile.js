@@ -1,6 +1,10 @@
-import { getToken } from './utils/storage';
+import { getToken, updateLocalStorageInfo } from './utils/storage';
 import { validImgUrl } from './utils/validation';
-import { GET_PROFILE_URL, UPDATE_AVATAR_URL } from './settings/api';
+import {
+    GET_PROFILE_URL,
+    UPDATE_AVATAR_URL,
+    GET_USER_PROFILE_URL,
+} from './settings/api';
 import { formatDate } from './utils/dateFix';
 
 const accessToken = getToken();
@@ -200,7 +204,7 @@ form.addEventListener('submit', (event) => {
                 body: JSON.stringify(avatarData),
             });
             if (response.ok) {
-                location.reload();
+                updateLocalStorageInfo(GET_USER_PROFILE_URL);
             } else {
                 const error = await response.json();
                 console.log(error);

@@ -1,5 +1,5 @@
-import { getToken } from './utils/storage';
-import { GET_LISTING_BY_ID_URL } from './settings/api';
+import { getToken, updateLocalStorageInfo } from './utils/storage';
+import { GET_LISTING_BY_ID_URL, GET_USER_PROFILE_URL } from './settings/api';
 import { formatDate } from './utils/dateFix';
 
 const paramstring = window.location.search;
@@ -166,6 +166,8 @@ Bidform.addEventListener('submit', (event) => {
 
     if (inputBid.value <= bidValue) {
         errorBid.classList.remove('hidden');
+    } else {
+        errorBid.classList.remove('hidden');
     }
 
     const amountBid = {
@@ -184,6 +186,7 @@ Bidform.addEventListener('submit', (event) => {
             console.log('yaaay');
             bidGood.classList.remove('hidden');
             errorBid.classList.add('hidden');
+            updateLocalStorageInfo(GET_USER_PROFILE_URL);
         } else {
             const err = response.json();
             console.log(err);

@@ -57,6 +57,34 @@ const clearStorage = () => {
     localStorage.clear();
 };
 
+const accessToken = getToken();
+
+const updateLocalStorageInfo = (url) => {
+    const getUserData = async () => {
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${accessToken}`,
+            },
+        });
+        if (response.ok) {
+            const data = await response.json();
+            const userToSave = {
+                name: data.name,
+                email: data.email,
+                avatar: data.avatar,
+                credits: data.credits,
+            };
+            saveUser(userToSave);
+            location.reload();
+        } else {
+            console.log('sorry user er ikke updatert i localStorage');
+        }
+    };
+    getUserData();
+};
+
 export {
     getUserName,
     saveToken,
@@ -65,4 +93,5 @@ export {
     getUserAvatar,
     getUserCredit,
     clearStorage,
+    updateLocalStorageInfo,
 };

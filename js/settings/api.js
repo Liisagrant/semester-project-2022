@@ -15,6 +15,7 @@ const CREATE_LISTING_URL = `${BASE_URL}api/v1/auction/listings`;
 
 //Profile
 const GET_PROFILE_URL = `${BASE_URL}api/v1/auction/profiles/${userName}?_listings=true&_bids=true`;
+const GET_USER_PROFILE_URL = `${BASE_URL}api/v1/auction/profiles/${userName}`;
 
 //Update Avatar
 const UPDATE_AVATAR_URL = `${BASE_URL}api/v1/auction/profiles/${userName}/media`;
@@ -29,4 +30,5 @@ export {
     GET_ALL_LISTINGS_URL,
     GET_PROFILE_URL,
     UPDATE_AVATAR_URL,
+    GET_USER_PROFILE_URL,
 };
