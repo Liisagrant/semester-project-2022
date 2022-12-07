@@ -84,7 +84,7 @@ const showListings = (data) => {
                                         <div
                                             class="space-y-1 text-lg font-medium font-Poppins leading-6"
                                         >
-                                            <h3>F${title}</h3>
+                                            <h3>${title}</h3>
                                             <p
                                                 class="text-green font-bold font-Roboto"
                                             >
