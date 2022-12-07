@@ -143,17 +143,16 @@ const updateAvatarUrl = document.querySelector('#img-url');
 console.log(updateAvatarUrl);
 const avatarUrlError = document.querySelector('#imageUrlError');
 const avtarUrlError2 = document.querySelector('#imageUrlError2');
-const x = document.querySelector('#x');
+const modal = document.querySelector('#modal');
+const close = document.querySelector('#close');
+console.log(close);
 
 updateBtn.addEventListener('click', (e) => {
     modalBg.classList.remove('hidden');
+    modal.classList.remove('hidden');
 });
 
-modalBg.onclick = () => {
-    modalBg.classList.add('hidden');
-};
-
-x.onclick = () => {
+close.onclick = () => {
     modalBg.classList.add('hidden');
 };
 

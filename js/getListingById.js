@@ -41,7 +41,7 @@ const getListingById = async () => {
         const sellerAvatar = data.seller.avatar;
         const ListingImage = data.media[0];
         const bid = data.bids;
-        console.log(bid);
+        console.log(bid.length);
         bid.sort((x, y) => y.amount - x.amount);
 
         let topBid = 0;
@@ -53,6 +53,7 @@ const getListingById = async () => {
         if (!bidValue) {
             `${0}`;
         }
+        console.log(bidValue);
 
         let discListing = `
                             <p class="p-2 text-xs font-Lato md:max-w-md">
@@ -101,8 +102,7 @@ const getListingById = async () => {
 
         sellerAvatarContainer.innerHTML = `${listingMediaAvatar}`;
         sellerNameContainer.innerHTML = `${seller}`;
-        bidValueContainer.innerHTML = `${bidValue}`;
-        timeEndContainer.innerHTML = `Bid end at:  ${timeEnd}`;
+        timeEndContainer.innerHTML = `<p class="px-1 text-center font-Poppins">Bid end at:  ${timeEnd}</p>`;
         currentBidContainer.innerHTML = `Current Bid: ${bidValue}$`;
         titleContainer.innerHTML = `${title}`;
         document.title = `${title}`;
@@ -151,3 +151,40 @@ modalBg.onclick = () => {
 x.onclick = () => {
     modalBg.classList.add('hidden');
 };
+
+//Bid On a listing
+const BID_ON_LISTIN_URL = `https:api.noroff.dev/api/v1/auction/listings${ID}/bids`;
+const Bidform = document.querySelector('#addBidForm');
+const inputBid = document.querySelector('#placeBid');
+const errorBid = document.querySelector('#errorBid');
+const bidGood = document.querySelector('#bidGood');
+
+Bidform.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    console.log('inputBid', inputBid.value);
+    const bidValue = getListingById();
+
+    const amountBid = {
+        amount: parseInt(inputBid.value),
+    };
+    const addBid = async () => {
+        const response = await fetch(`${GET_LISTING_BY_ID_URL}/${ID}/bids`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${accessToken}`,
+            },
+            body: JSON.stringify(amountBid),
+        });
+        if (response.ok) {
+            console.log('yaaay');
+        } else {
+            const err = response.json();
+            console.log(err);
+            console.log('faild:( so sad');
+        }
+        Bidform.reset();
+    };
+    addBid();
+});
