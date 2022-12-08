@@ -112,7 +112,8 @@ const getListingById = async () => {
       console.log(seller);
 
       let listing = `
-                <li class="py-4">
+                  <ul role="list" class="divide-y divide-gray-200">
+                    <li class="py-4">
                     <div class="flex space-x-3">
                         <div class="flex-1 space-y-1">
                          <div class="flex items-center justify-between">
@@ -122,6 +123,7 @@ const getListingById = async () => {
                     </div>
                     </div>
                 </li>
+                            </ul>
             `;
       bidList.innerHTML += listing;
     }
@@ -147,32 +149,27 @@ x.onclick = () => {
 };
 
 //Bid On a listing
-const BID_ON_LISTIN_URL = `https:api.noroff.dev/api/v1/auction/listings${ID}/bids`;
-const Bidform = document.querySelector('#addBidForm');
+const BID_ON_LISTIN_URL = `${GET_LISTING_BY_ID_URL}/${ID}/bids`;
+const bidForm = document.querySelector('#addBidForm');
 const inputBid = document.querySelector('#placeBid');
 const errorBid = document.querySelector('#errorBid');
-const bidGood = document.querySelector('#bidGood');
+const successBid = document.querySelector('#successBid');
 
-Bidform.addEventListener('submit', (event) => {
+bidForm.addEventListener('submit', (event) => {
   event.preventDefault();
 
   console.log('inputBid', inputBid.value);
   const bidValue = getListingById();
 
-  let isError = false;
   if (inputBid.value <= bidValue) {
     errorBid.classList.remove('hidden');
-    isError = true;
-  } else {
-    errorBid.classList.add('hidden');
-    isError = false;
   }
 
   const amountBid = {
     amount: parseInt(inputBid.value),
   };
   const addBid = async () => {
-    const response = await fetch(`${GET_LISTING_BY_ID_URL}/${ID}/bids`, {
+    const response = await fetch(BID_ON_LISTIN_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -182,15 +179,20 @@ Bidform.addEventListener('submit', (event) => {
     });
     if (response.ok) {
       console.log('yaaay');
-      errorBid.classList.add('hidden');
-      bidGood.classList.remove('hidden');
+      errorBid.innerHTML = ``;
+      successBid.innerHTML = `Your Bid is added. Good Luck`;
+      bidForm.reset();
+      setTimeout(function () {
+        location.reload();
+        updateLocalStorageInfo(GET_USER_PROFILE_URL);
+      }, 30000);
     } else {
       const err = await response.json();
       const message = `${err.errors[0].message}`;
+      errorBid.innerHTML = `${message}`;
+
       throw new Error(message);
     }
-
-    // updateLocalStorageInfo(GET_USER_PROFILE_URL);
   };
   addBid();
 });
