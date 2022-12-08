@@ -159,7 +159,7 @@ const myNavBar = () => {
       if (userName) {
         navbarLinksDesktop = `
                         <a
-                        href="./homePage.html"
+                        href="./homepage.html"
                         class="bg-gray-900 text-SecondColor hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
                           pathname === '/homepage.html' ? 'bg-onPageColor' : ''
                         }"
@@ -168,7 +168,7 @@ const myNavBar = () => {
                     >
 
                     <a
-                        href="./listingPage.html"
+                        href="./listingpage.html"
                         class="text-SecondColor font-Poppins hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
                           pathname === '/listingpage.html'
                             ? 'bg-onPageColor'
