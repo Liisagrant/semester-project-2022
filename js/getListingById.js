@@ -7,15 +7,10 @@ const searchParam = new URLSearchParams(paramstring);
 const ID = searchParam.get('id');
 const accessToken = getToken();
 
-const singelListingContainer = document.querySelector(
-    '#singelListingContainer'
-);
-
 const generalErrorMessege = document.querySelector('#generalErrorMessage');
 const listingImageContainer = document.querySelector('#listingImage');
 const sellerAvatarContainer = document.querySelector('#sellerAvatar');
 const sellerNameContainer = document.querySelector('#sellerName');
-const bidValueContainer = document.querySelector('#bidValue');
 const timeEndContainer = document.querySelector('#timeEnd');
 const discContainer = document.querySelector('#disc');
 const currentBidContainer = document.querySelector('#currentBidContainer');
@@ -164,10 +159,13 @@ Bidform.addEventListener('submit', (event) => {
     console.log('inputBid', inputBid.value);
     const bidValue = getListingById();
 
+    let isError = false;
     if (inputBid.value <= bidValue) {
         errorBid.classList.remove('hidden');
+        isError = true;
     } else {
-        errorBid.classList.remove('hidden');
+        errorBid.classList.add('hidden');
+        isError = false;
     }
 
     const amountBid = {
@@ -184,18 +182,15 @@ Bidform.addEventListener('submit', (event) => {
         });
         if (response.ok) {
             console.log('yaaay');
-            bidGood.classList.remove('hidden');
             errorBid.classList.add('hidden');
-            updateLocalStorageInfo(GET_USER_PROFILE_URL);
+            bidGood.classList.remove('hidden');
         } else {
-            const err = response.json();
-            console.log(err);
-            console.log('faild:( so sad');
+            const err = await response.json();
+            const message = `${err.errors[0].message}`;
+            throw new Error(message);
         }
-        Bidform.reset();
-        setTimeout(function () {
-            location.reload();
-        }, 30000);
+
+        // updateLocalStorageInfo(GET_USER_PROFILE_URL);
     };
     addBid();
 });

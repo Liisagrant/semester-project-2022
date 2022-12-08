@@ -1,12 +1,12 @@
 import { getUserAvatar, getUserCredit, getUserName } from '../utils/storage';
 
 const headerInfo = () => {
-    const userAvatarContainer = document.querySelector('#userAvatar');
-    const signOutDesktop = document.querySelector('#signOutDesktop');
+  const userAvatarContainer = document.querySelector('#userAvatar');
+  const signOutDesktop = document.querySelector('#signOutDesktop');
+  const userName = getUserName();
+  if (signOutDesktop) {
     const userName = getUserName();
-    if (signOutDesktop) {
-        const userName = getUserName();
-        let signOutbtnDesktop = `
+    let signOutbtnDesktop = `
                                     <button
                                         id="logoutbtn"
                                         type="submit"
@@ -15,15 +15,15 @@ const headerInfo = () => {
                                         Sign Out
                                     </button>
                 `;
-        if (!userName) {
-            signOutbtnDesktop = '';
-        }
-        signOutDesktop.innerHTML = `${signOutbtnDesktop}`;
+    if (!userName) {
+      signOutbtnDesktop = '';
     }
+    signOutDesktop.innerHTML = `${signOutbtnDesktop}`;
+  }
 
-    if (userAvatarContainer) {
-        const avatar = getUserAvatar();
-        let userAvatar = `
+  if (userAvatarContainer) {
+    const avatar = getUserAvatar();
+    let userAvatar = `
                                  <button
                                     type="button"
                                     class="flex rounded-full bg-gray-800 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -39,8 +39,8 @@ const headerInfo = () => {
                                     />
                                 </button>
     `;
-        if (!avatar) {
-            userAvatar = `
+    if (!avatar) {
+      userAvatar = `
             <button
                 type="button"
                 class="flex rounded-full bg-gray-800 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -55,23 +55,23 @@ const headerInfo = () => {
                     alt="Profile Photo"
                 />
             </button>`;
-        }
-        userAvatarContainer.innerHTML = `${userAvatar}`;
     }
+    userAvatarContainer.innerHTML = `${userAvatar}`;
+  }
 
-    const userCreditContainer = document.querySelector('#userCredit');
-    if (userCreditContainer) {
-        const credits = getUserCredit();
-        let userCredit = `
+  const userCreditContainer = document.querySelector('#userCredit');
+  if (userCreditContainer) {
+    const credits = getUserCredit();
+    let userCredit = `
                     <div class="p-2 font-bold font-poppins text-SecondColor">
                         <span>Current Credit:${credits}</span>
                     </div>
         `;
-        if (!credits) {
-            userCredit = '';
-        }
-        userCreditContainer.innerHTML = `${userCredit}`;
+    if (!credits) {
+      userCredit = '';
     }
+    userCreditContainer.innerHTML = `${userCredit}`;
+  }
 };
 
 export { headerInfo };
