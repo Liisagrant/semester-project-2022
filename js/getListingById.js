@@ -20,60 +20,60 @@ console.log(bidList);
 
 const SINGLE_LISTING_INFO = `${GET_LISTING_BY_ID_URL}/${ID}?_bids=true&_seller=true`;
 const getListingById = async () => {
-    const response = await fetch(`${SINGLE_LISTING_INFO}`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    });
-    if (response.ok) {
-        const data = await response.json();
-        console.log(data);
-        const title = data.title;
-        const description = data.description;
-        const timeEnd = formatDate(data.endsAt);
-        const seller = data.seller.name;
-        const sellerAvatar = data.seller.avatar;
-        const ListingImage = data.media[0];
-        const bid = data.bids;
-        console.log(bid.length);
-        bid.sort((x, y) => y.amount - x.amount);
+  const response = await fetch(`${SINGLE_LISTING_INFO}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  if (response.ok) {
+    const data = await response.json();
+    console.log(data);
+    const title = data.title;
+    const description = data.description;
+    const timeEnd = formatDate(data.endsAt);
+    const seller = data.seller.name;
+    const sellerAvatar = data.seller.avatar;
+    const ListingImage = data.media[0];
+    const bid = data.bids;
+    console.log(bid.length);
+    bid.sort((x, y) => y.amount - x.amount);
 
-        let topBid = 0;
-        if (bid[0]) {
-            topBid = bid[0].amount;
-        }
-        const bidValue = topBid + 0;
+    let topBid = 0;
+    if (bid[0]) {
+      topBid = bid[0].amount;
+    }
+    const bidValue = topBid + 0;
 
-        if (!bidValue) {
-            `${0}`;
-        }
+    if (!bidValue) {
+      `${0}`;
+    }
 
-        let discListing = `
+    let discListing = `
                             <p class="text-xs font-Lato md:max-w-md">
                             ${description}
                         </p>
             `;
-        if (!description) {
-            discListing = `
+    if (!description) {
+      discListing = `
                             <p class="text-xs font-Lato md:max-w-md">
                             No description made on this listing
                         </p>
                 `;
-        }
+    }
 
-        discContainer.innerHTML = `${discListing}`;
-        console.log(disc);
+    discContainer.innerHTML = `${discListing}`;
+    console.log(disc);
 
-        let listingMedia = `                                  
+    let listingMedia = `                                  
                             <img
                             src="${ListingImage}"
                             alt="Product image"
                             class="object-cover h-full w-full rounded-t-md md:rounded-r-none md:rounded-l-md"
                         />                    
     `;
-        if (!ListingImage) {
-            listingMedia = `
+    if (!ListingImage) {
+      listingMedia = `
                                     <img
                             src="/media/no-photo.jpg"
                             alt="Product image"
@@ -81,37 +81,37 @@ const getListingById = async () => {
                         /> 
                     
                     `;
-        }
-        listingImageContainer.innerHTML = `${listingMedia}`;
+    }
+    listingImageContainer.innerHTML = `${listingMedia}`;
 
-        let listingMediaAvatar = `                                  
+    let listingMediaAvatar = `                                  
                 <img class="h-10 w-10 flex-shrink-0 rounded-full bg-gray-300" src="${sellerAvatar}" alt="seller avatar">     
     `;
-        if (!sellerAvatar) {
-            listingMediaAvatar = `
+    if (!sellerAvatar) {
+      listingMediaAvatar = `
                                 
             <img class="h-10 w-10 flex-shrink-0 rounded-full bg-gray-300" src="/media/no-photo.jpg" alt="seller avatar">
                     `;
-        }
+    }
 
-        sellerAvatarContainer.innerHTML = `${listingMediaAvatar}`;
-        sellerNameContainer.innerHTML = `${seller}`;
-        timeEndContainer.innerHTML = `Bid end at:  ${timeEnd}`;
-        currentBidContainer.innerHTML = `Current Bid: ${bidValue}$`;
-        titleContainer.innerHTML = `${title}`;
-        document.title = `${title}`;
+    sellerAvatarContainer.innerHTML = `${listingMediaAvatar}`;
+    sellerNameContainer.innerHTML = `${seller}`;
+    timeEndContainer.innerHTML = `Bid end at:  ${timeEnd}`;
+    currentBidContainer.innerHTML = `Current Bid: ${bidValue}$`;
+    titleContainer.innerHTML = `${title}`;
+    document.title = `${title}`;
 
-        if (!bid.length) {
-            bidList.innerHTML = `<p class="text-center">No bids made on this listing<p>`;
-        }
+    if (!bid.length) {
+      bidList.innerHTML = `<p class="text-center">No bids made on this listing<p>`;
+    }
 
-        for (let data of bid) {
-            console.log(data);
-            const seller = data.bidderName;
-            const amount = data.amount;
-            console.log(seller);
+    for (let data of bid) {
+      console.log(data);
+      const seller = data.bidderName;
+      const amount = data.amount;
+      console.log(seller);
 
-            let listing = `
+      let listing = `
                 <li class="py-4">
                     <div class="flex space-x-3">
                         <div class="flex-1 space-y-1">
@@ -123,9 +123,9 @@ const getListingById = async () => {
                     </div>
                 </li>
             `;
-            bidList.innerHTML += listing;
-        }
+      bidList.innerHTML += listing;
     }
+  }
 };
 
 getListingById();
@@ -135,15 +135,15 @@ const seeBidsMadeBtn = document.querySelector('#seeBidsMadeBtn');
 const x = document.querySelector('#x');
 
 seeBidsMadeBtn.onclick = () => {
-    modalBg.classList.remove('hidden');
+  modalBg.classList.remove('hidden');
 };
 
 modalBg.onclick = () => {
-    modalBg.classList.add('hidden');
+  modalBg.classList.add('hidden');
 };
 
 x.onclick = () => {
-    modalBg.classList.add('hidden');
+  modalBg.classList.add('hidden');
 };
 
 //Bid On a listing
@@ -154,43 +154,43 @@ const errorBid = document.querySelector('#errorBid');
 const bidGood = document.querySelector('#bidGood');
 
 Bidform.addEventListener('submit', (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    console.log('inputBid', inputBid.value);
-    const bidValue = getListingById();
+  console.log('inputBid', inputBid.value);
+  const bidValue = getListingById();
 
-    let isError = false;
-    if (inputBid.value <= bidValue) {
-        errorBid.classList.remove('hidden');
-        isError = true;
+  let isError = false;
+  if (inputBid.value <= bidValue) {
+    errorBid.classList.remove('hidden');
+    isError = true;
+  } else {
+    errorBid.classList.add('hidden');
+    isError = false;
+  }
+
+  const amountBid = {
+    amount: parseInt(inputBid.value),
+  };
+  const addBid = async () => {
+    const response = await fetch(`${GET_LISTING_BY_ID_URL}/${ID}/bids`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${accessToken}`,
+      },
+      body: JSON.stringify(amountBid),
+    });
+    if (response.ok) {
+      console.log('yaaay');
+      errorBid.classList.add('hidden');
+      bidGood.classList.remove('hidden');
     } else {
-        errorBid.classList.add('hidden');
-        isError = false;
+      const err = await response.json();
+      const message = `${err.errors[0].message}`;
+      throw new Error(message);
     }
 
-    const amountBid = {
-        amount: parseInt(inputBid.value),
-    };
-    const addBid = async () => {
-        const response = await fetch(`${GET_LISTING_BY_ID_URL}/${ID}/bids`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: `Bearer ${accessToken}`,
-            },
-            body: JSON.stringify(amountBid),
-        });
-        if (response.ok) {
-            console.log('yaaay');
-            errorBid.classList.add('hidden');
-            bidGood.classList.remove('hidden');
-        } else {
-            const err = await response.json();
-            const message = `${err.errors[0].message}`;
-            throw new Error(message);
-        }
-
-        // updateLocalStorageInfo(GET_USER_PROFILE_URL);
-    };
-    addBid();
+    // updateLocalStorageInfo(GET_USER_PROFILE_URL);
+  };
+  addBid();
 });
