@@ -37,6 +37,8 @@ const imageUrlError3 = document.querySelector('#imageUrlError3');
 console.log(imageUrl3);
 console.log(imageUrlError3);
 
+const imgInput = document.querySelectorAll('.imgInput');
+
 const listingAddedMessage = document.querySelector('#listingAdded');
 const formBox = document.querySelector('#formBox');
 
@@ -104,58 +106,45 @@ addListingForm.addEventListener('submit', (event) => {
 
   const formValid = isTitle && imagesIsvalid && isDeadline;
   if (formValid) {
-  }
-  let listingData = {
-    title: title.value,
-    description: desc.value,
-    tags: listingTags,
-    media: [imageUrl1.value, imageUrl2.value, imageUrl3.value],
-    endsAt: deadline.value,
-  };
-
-  if (!imageUrl2.value) {
-    listingData = {
-      title: title.value,
-      description: desc.value,
-      tags: listingTags,
-      media: [imageUrl1.value],
-      endsAt: deadline.value,
-    };
-  }
-
-  if (!imageUrl3.value) {
-    listingData = {
-      title: title.value,
-      description: desc.value,
-      tags: listingTags,
-      media: [imageUrl1.value],
-      endsAt: deadline.value,
-    };
-  }
-
-  console.log(listingData);
-
-  async function createListing() {
-    const response = await fetch(CREATE_LISTING_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${accessToken}`,
-      },
-      body: JSON.stringify(listingData),
-    });
-    console.log('create list response', response);
-    if (response.ok) {
-      const data = await response.json();
-      console.log(data);
-      console.log('yaya all goood');
-      formBox.classList.add('hidden');
-      listingAddedMessage.classList.remove('hidden');
-    } else {
-      const err = await response.json();
-      const message = `${err.errors[0].message}`;
-      generalError.innerHTML = `${message}`;
+    let listingMedia = [];
+    for (let i = 0; i < imgInput.length; i++) {
+      if (imgInput[i].value) {
+        listingMedia.push(imgInput[i].value);
+      }
     }
+    let listingData = {
+      title: title.value,
+      description: desc.value,
+      tags: listingTags,
+      media: listingMedia,
+      endsAt: deadline.value,
+    };
+
+    console.log(listingData);
+
+    async function createListing() {
+      const response = await fetch(CREATE_LISTING_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${accessToken}`,
+        },
+        body: JSON.stringify(listingData),
+      });
+      console.log('create list response', response);
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+        console.log('yaya all goood');
+        formBox.classList.add('hidden');
+        listingAddedMessage.classList.remove('hidden');
+        window.scrollTo(0, 0);
+      } else {
+        const err = await response.json();
+        const message = `${err.errors[0].message}`;
+        generalError.innerHTML = `${message}`;
+      }
+    }
+    createListing();
   }
-  createListing();
 });
