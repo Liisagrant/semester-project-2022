@@ -11,6 +11,8 @@ console.log(userName);
 console.log(accessToken);
 console.log(avatar);
 
+let GET_LISTING_ALL_URL = `${GET_ALL_LISTINGS_URL}?sort=created&sortOrder=desc&_bids=true`;
+
 const searchBar = document.querySelector('#search');
 let data = [];
 
@@ -22,7 +24,22 @@ searchBar.addEventListener('keyup', (e) => {
   showListings(filteredPosts);
 });
 
-const GET_LISTING_ALL_URL = `${GET_ALL_LISTINGS_URL}?sort=created&sortOrder=desc&_bids=true`;
+const newBtn = document.querySelector('#newest');
+const oldBtn = document.querySelector('#oldest');
+
+oldBtn.addEventListener('click', () => {
+  GET_LISTING_ALL_URL = `${GET_ALL_LISTINGS_URL}?sort=created&sortOrder=asc&_bids=true`;
+  getAllListings().then(() => {
+    showListings(data);
+  });
+});
+
+newBtn.addEventListener('click', () => {
+  GET_LISTING_ALL_URL = `${GET_ALL_LISTINGS_URL}?sort=created&sortOrder=desc&_bids=true`;
+  getAllListings().then(() => {
+    showListings(data);
+  });
+});
 
 async function getAllListings() {
   const response = await fetch(GET_LISTING_ALL_URL, {
