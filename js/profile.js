@@ -14,7 +14,8 @@ if (!accessToken) {
 
 const profileAvatarContainer = document.querySelector('#profielAvatar');
 const profileCreditsContainer = document.querySelector('#profielCredits');
-const profileNameAndEmailContainer = document.querySelector('#profielNameEmail');
+const profileNameAndEmailContainer =
+  document.querySelector('#profielNameEmail');
 const listingContainer = document.querySelector('#listingsContainer');
 const generalError = document.querySelector('#generalError');
 
@@ -58,6 +59,7 @@ const getUserInfo = async () => {
                     alt="User Avatar"
                 />`;
     }
+
     profileAvatarContainer.innerHTML = `${userAvatar}`;
     profileCreditsContainer.innerHTML = `
                                             <span
@@ -208,6 +210,6 @@ form.addEventListener('submit', (event) => {
         const error = await response.json();
         console.log(error);
       }
-    }());
+    })();
   }
 });
