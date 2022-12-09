@@ -11,8 +11,6 @@ console.log(userName);
 console.log(accessToken);
 console.log(avatar);
 
-let GET_LISTINGS_AUCTION_URL = `${GET_ALL_LISTINGS_URL}?sort=created&sortOrder=asc&_bids=true`;
-
 const searchBar = document.querySelector('#search');
 let data = [];
 
@@ -24,8 +22,10 @@ searchBar.addEventListener('keyup', (e) => {
   showListings(filteredPosts);
 });
 
+const GET_LISTING_ALL_URL = `${GET_ALL_LISTINGS_URL}?sort=created&sortOrder=desc&_bids=true`;
+
 async function getAllListings() {
-  const response = await fetch(GET_LISTINGS_AUCTION_URL, {
+  const response = await fetch(GET_LISTING_ALL_URL, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -49,8 +49,8 @@ const showListings = (data) => {
   } else {
     const listOfListings = data
       .map((data) => {
-        const id = data;
-        const title = data.title;
+        const { id } = data;
+        const { title } = data;
         const timeEnd = formatDate(data.endsAt);
         const ListingImage = data.media[0];
         const bid = data.bids;
@@ -89,7 +89,6 @@ const showListings = (data) => {
                                 <div class="w-full h-60">
                                 ${listingMedia}
                                 </div>
-
                                 <div class="space-y-2">
                                     <div class="flex justify-between">
                                         <div
