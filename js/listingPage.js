@@ -19,10 +19,7 @@ let data = [];
 searchBar.addEventListener('keyup', (e) => {
   const searchString = e.target.value.toLowerCase();
   const filteredPosts = data.filter((listing) => {
-    return (
-      (listing.title && listing.title.toLowerCase().includes(searchString)) ||
-      (listing.body && listing.body.toLowerCase().includes(searchString))
-    );
+    return listing.title && listing.title.toLowerCase().includes(searchString);
   });
   showListings(filteredPosts);
 });
@@ -52,8 +49,8 @@ const showListings = (data) => {
   } else {
     const listOfListings = data
       .map((data) => {
-        const { id } = data;
-        const { title } = data;
+        const id = data;
+        const title = data.title;
         const timeEnd = formatDate(data.endsAt);
         const ListingImage = data.media[0];
         const bid = data.bids;
