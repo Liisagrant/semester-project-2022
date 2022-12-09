@@ -11,10 +11,24 @@ console.log(userName);
 console.log(accessToken);
 console.log(avatar);
 
+let GET_LISTINGS_AUCTION_URL = `${GET_ALL_LISTINGS_URL}?sort=created&sortOrder=asc&_bids=true`;
+
+const searchBar = document.querySelector('#search');
 let data = [];
 
+searchBar.addEventListener('keyup', (e) => {
+  const searchString = e.target.value.toLowerCase();
+  const filteredPosts = data.filter((listing) => {
+    return (
+      (listing.title && listing.title.toLowerCase().includes(searchString)) ||
+      (listing.body && listing.body.toLowerCase().includes(searchString))
+    );
+  });
+  showListings(filteredPosts);
+});
+
 async function getAllListings() {
-  const response = await fetch(GET_ALL_LISTINGS_URL, {
+  const response = await fetch(GET_LISTINGS_AUCTION_URL, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
