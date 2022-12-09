@@ -26,7 +26,7 @@ const headerInfo = () => {
     let userAvatar = `
                                  <button
                                     type="button"
-                                    class="flex rounded-full bg-gray-800 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                                    class="flex rounded-full bg-gray-800 text-sm text-white focus:outline-none"
                                     id="user-menu-button"
                                     aria-expanded="false"
                                     aria-haspopup="true"
@@ -43,7 +43,7 @@ const headerInfo = () => {
       userAvatar = `
             <button
                 type="button"
-                class="flex rounded-full bg-gray-800 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                class="flex rounded-full bg-gray-800 text-sm text-white focus:outline-none"
                 id="user-menu-button"
                 aria-expanded="false"
                 aria-haspopup="true"
