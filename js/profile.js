@@ -84,15 +84,24 @@ const getUserInfo = async () => {
       const { id } = list;
       console.log(id);
       const { title } = list;
-      const timeEnd = formatDate(list.endsAt);
+      const timeEnd = formatDate(list.endsAt).slice(0, 10);
       const image = list.media[0];
       console.log(image);
 
-      let listingMedia = `                                    <img
+      let today = new Date().toISOString({
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+      });
+
+      let listingMedia = `
+                                    <img
                                         class="rounded-lg object-cover h-full w-full shadow-lg"
                                         src="${image}"
-                                        alt="product Image"
-                                    />`;
+                                        alt="Product image"
+                                    />
+                    `;
+
       if (!image) {
         listingMedia = `
                                     <img
@@ -103,7 +112,21 @@ const getUserInfo = async () => {
                     `;
       }
 
-      const listing = `
+      let timeIs = `
+                   <h4 class="text-base font-Roboto">
+                                                              Remaining time: Auction has ended
+                                                          </h4>
+                    `;
+
+      if (timeEnd > today) {
+        timeIs = `
+                                                    <h4 class="text-base font-Roboto">
+                                                              Remaining time: ${timeEnd}
+                                                          </h4>
+                                `;
+      }
+
+      let listing = `
              <a href="detailPage.html?id=${id}" class="mx-2">
                                         <li
                                             class="bg-lightGray px-2 py-2 rounded-lg hover:scale-105 transition duration-500 cursor-pointer z-0"
@@ -130,7 +153,7 @@ const getUserInfo = async () => {
                                                                 class="text-sm font-Roboto"
                                                             >
                                                                 Remaining time:
-                                                                ${timeEnd}
+                                                              ${timeIs}
                                                             </h4>
                                                         </div>
                                                     </div>
@@ -139,6 +162,7 @@ const getUserInfo = async () => {
                                         </li>
                                         </a>
             `;
+
       listingContainer.innerHTML += listing;
     }
   }

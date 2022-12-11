@@ -31,7 +31,7 @@ const getListingById = async () => {
     console.log(data);
     const title = data.title;
     const description = data.description;
-    const timeEnd = formatDate(data.endsAt);
+    const timeEnd = formatDate(data.endsAt).slice(0, 10);
     const seller = data.seller.name;
     const sellerAvatar = data.seller.avatar;
     const ListingImage = data.media[0];
@@ -189,9 +189,8 @@ bidForm.addEventListener('submit', (event) => {
       successBid.innerHTML = `Your Bid is added. Good Luck`;
       bidForm.reset();
       setTimeout(function () {
-        location.reload();
         updateLocalStorageInfo(GET_USER_PROFILE_URL);
-      }, 30000);
+      }, 4000);
     } else {
       const err = await response.json();
       const message = `${err.errors[0].message}`;

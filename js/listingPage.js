@@ -1,6 +1,7 @@
 import { GET_ALL_LISTINGS_URL } from './settings/api';
 import { getToken, getUserName, getUserAvatar } from './utils/storage';
 import { formatDate } from './utils/dateFix';
+import moment from 'moment';
 
 const listingContainer = document.querySelector('#listingsContainer');
 
@@ -12,6 +13,9 @@ console.log(accessToken);
 console.log(avatar);
 
 let GET_LISTING_ALL_URL = `${GET_ALL_LISTINGS_URL}?sort=created&sortOrder=desc&_bids=true`;
+
+let now = moment(); //todays date
+console.log('now', now);
 
 const searchBar = document.querySelector('#search');
 let data = [];
@@ -68,11 +72,34 @@ const showListings = (data) => {
       .map((data) => {
         const { id } = data;
         const { title } = data;
-        const timeEnd = formatDate(data.endsAt);
+        const timeEnd = formatDate(data.endsAt).slice(0, 10);
         const ListingImage = data.media[0];
         const bid = data.bids;
-        console.log(bid);
+        // console.log(bid);
         bid.sort((x, y) => y.amount - x.amount);
+        let endDate = moment(data.endsAt);
+        let durationLeft = moment.duration(endDate.diff(now));
+        let secondsLeft = durationLeft.asSeconds();
+        let minutesLeft = durationLeft.asMinutes();
+        let hoursLeft = durationLeft.asHours();
+        let daysLeft = durationLeft.asDays();
+        console.log('minutesLeft: ', minutesLeft);
+        console.log('secondsLeft: ', secondsLeft);
+        console.log('hoursLeft: ', hoursLeft);
+        console.log('daysLeft: ', daysLeft);
+        let remainingHours =
+          hoursLeft < 0
+            ? 'This Auction has ended'
+            : 'Remaining time: ' +
+              Math.trunc(daysLeft) +
+              ' Days, and ' +
+              Math.trunc(hoursLeft) +
+              ' Hours ';
+        let timeIs = `
+                                        <h4 class="text-base font-Roboto">
+                                                  ${remainingHours}
+                                              </h4>
+                    `;
 
         let topBid = 0;
         if (bid[0]) {
@@ -117,9 +144,7 @@ const showListings = (data) => {
                                             >
                                                 Currently highest Bid:${bidValue} $
                                             </p>
-                                            <h4 class="text-base font-Roboto">
-                                                Remaining time: ${timeEnd}
-                                            </h4>
+                        ${timeIs}
                                         </div>
                                         <div>
                                         </div>
