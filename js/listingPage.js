@@ -1,6 +1,7 @@
 import { GET_ALL_LISTINGS_URL } from './settings/api';
 import { getToken, getUserName, getUserAvatar } from './utils/storage';
 import { formatDate } from './utils/dateFix';
+import moment from 'moment';
 
 const listingContainer = document.querySelector('#listingsContainer');
 
@@ -68,11 +69,39 @@ const showListings = (data) => {
       .map((data) => {
         const { id } = data;
         const { title } = data;
-        const timeEnd = formatDate(data.endsAt);
+        const timeEnd = formatDate(data.endsAt).slice(0, 10);
         const ListingImage = data.media[0];
         const bid = data.bids;
         console.log(bid);
         bid.sort((x, y) => y.amount - x.amount);
+        console.log(data);
+
+        let today = new Date().toISOString({
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+        });
+        console.log('today', today);
+        console.log('endTime', timeEnd);
+        var now = moment(new Date()); //todays date
+
+        var end = moment(data.endsAt); // another date
+        console.log('end', end);
+        var duration = moment.duration(now.diff(end));
+        var days = duration.asDays();
+        console.log('difference in days', days);
+        console.log('now', now);
+
+        console.log(now.diff(data.endsAt, 'hours'));
+        let remainingHours =
+          now.diff(data.endsAt, 'hours') < 0
+            ? 'Remaining time: This Auction has ended'
+            : 'Remaining Hours: ' + now.diff(data.endsAt, 'hours') + ' hours';
+        let timeIs = `
+                                        <h4 class="text-base font-Roboto">
+                                                  ${remainingHours}
+                                              </h4>
+                    `;
 
         let topBid = 0;
         if (bid[0]) {
@@ -117,9 +146,7 @@ const showListings = (data) => {
                                             >
                                                 Currently highest Bid:${bidValue} $
                                             </p>
-                                            <h4 class="text-base font-Roboto">
-                                                Remaining time: ${timeEnd}
-                                            </h4>
+                        ${timeIs}
                                         </div>
                                         <div>
                                         </div>

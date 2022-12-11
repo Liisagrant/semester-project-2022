@@ -40,11 +40,31 @@ const showListings = (data) => {
       .map((data) => {
         const { id } = data;
         const { title } = data;
-        const timeEnd = formatDate(data.endsAt);
+        const timeEnd = formatDate(data.endsAt).slice(0, 10);
         const ListingImage = data.media[0];
         const bid = data.bids;
         console.log(bid);
         bid.sort((x, y) => y.amount - x.amount);
+
+        let today = new Date().toISOString({
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+        });
+        console.log('today', today);
+        let timeIs = `
+                                        <h4 class="text-base font-Roboto">
+                                                  Remaining time:This Auction has ended
+                                              </h4>
+                    `;
+
+        if (timeEnd > today) {
+          timeIs = `
+                                                    <h4 class="text-base font-Roboto">
+                                                              Remaining time: ${timeEnd}
+                                                          </h4>
+                                `;
+        }
 
         let topBid = 0;
         if (bid[0]) {
@@ -91,7 +111,7 @@ const showListings = (data) => {
                                                 Currently highest Bid:${bidValue} $
                                             </p>
                                             <h4 class="text-base font-Roboto">
-                                                Remaining time: ${timeEnd}
+                                                Remaining time: ${timeIs}
                                             </h4>
                                         </div>
                                         <div>
