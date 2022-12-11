@@ -15,7 +15,7 @@ console.log(avatar);
 let GET_LISTING_ALL_URL = `${GET_ALL_LISTINGS_URL}?sort=created&sortOrder=desc&_bids=true`;
 
 let now = moment(); //todays date
-console.log("now", now)
+console.log('now', now);
 
 const searchBar = document.querySelector('#search');
 let data = [];
@@ -64,36 +64,38 @@ async function getAllListings() {
 }
 
 const showListings = (data) => {
-    listingContainer.innerHTML = '';
-    if (!data.length) {
-        listingContainer.innerHTML = 'Sorry no listings today';
-    } else {
-
-
-        const listOfListings = data
-            .map((data) => {
-                const {id} = data;
-                const {title} = data;
-                const timeEnd = formatDate(data.endsAt).slice(0, 10);
-                const ListingImage = data.media[0];
-                const bid = data.bids;
-                // console.log(bid);
-                bid.sort((x, y) => y.amount - x.amount);
-                let endDate = moment(data.endsAt);
-                let durationLeft = moment.duration(endDate.diff(now));
-                let secondsLeft = durationLeft.asSeconds();
-                let minutesLeft = durationLeft.asMinutes();
-                let hoursLeft = durationLeft.asHours();
-                let daysLeft = durationLeft.asDays();
-                console.log("minutesLeft: ", minutesLeft);
-                console.log("secondsLeft: ", secondsLeft);
-                console.log("hoursLeft: ", hoursLeft);
-                console.log("daysLeft: ", daysLeft);
-                let remainingHours =
-                    hoursLeft < 0
-                        ? 'Remaining time: This Auction has ended'
-                        : 'Remaining: ' + Math.trunc(daysLeft) + ' Days, ' + Math.trunc(hoursLeft) + ' Hours, ' + Math.trunc(minutesLeft) + ' Minutes, ' + Math.trunc(secondsLeft) + ' Seconds, ';
-                let timeIs = `
+  listingContainer.innerHTML = '';
+  if (!data.length) {
+    listingContainer.innerHTML = 'Sorry no listings today';
+  } else {
+    const listOfListings = data
+      .map((data) => {
+        const { id } = data;
+        const { title } = data;
+        const timeEnd = formatDate(data.endsAt).slice(0, 10);
+        const ListingImage = data.media[0];
+        const bid = data.bids;
+        // console.log(bid);
+        bid.sort((x, y) => y.amount - x.amount);
+        let endDate = moment(data.endsAt);
+        let durationLeft = moment.duration(endDate.diff(now));
+        let secondsLeft = durationLeft.asSeconds();
+        let minutesLeft = durationLeft.asMinutes();
+        let hoursLeft = durationLeft.asHours();
+        let daysLeft = durationLeft.asDays();
+        console.log('minutesLeft: ', minutesLeft);
+        console.log('secondsLeft: ', secondsLeft);
+        console.log('hoursLeft: ', hoursLeft);
+        console.log('daysLeft: ', daysLeft);
+        let remainingHours =
+          hoursLeft < 0
+            ? 'This Auction has ended'
+            : 'Remaining time: ' +
+              Math.trunc(daysLeft) +
+              ' Days, and ' +
+              Math.trunc(hoursLeft) +
+              ' Hours ';
+        let timeIs = `
                                         <h4 class="text-base font-Roboto">
                                                   ${remainingHours}
                                               </h4>
