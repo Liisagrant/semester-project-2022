@@ -1,6 +1,7 @@
 import { getToken, updateLocalStorageInfo } from './utils/storage';
 import { GET_LISTING_BY_ID_URL, GET_USER_PROFILE_URL } from './settings/api';
 import { formatDate } from './utils/dateFix';
+import moment from 'moment';
 
 const paramstring = window.location.search;
 const searchParam = new URLSearchParams(paramstring);
@@ -17,6 +18,9 @@ const currentBidContainer = document.querySelector('#currentBidContainer');
 const titleContainer = document.querySelector('#titleContainer');
 const bidList = document.querySelector('#bidList');
 console.log(bidList);
+
+let now = moment(); //todays date
+console.log('now', now);
 
 const SINGLE_LISTING_INFO = `${GET_LISTING_BY_ID_URL}/${ID}?_bids=true&_seller=true`;
 const getListingById = async () => {
@@ -38,6 +42,20 @@ const getListingById = async () => {
     const bid = data.bids;
     console.log(bid.length);
     bid.sort((x, y) => y.amount - x.amount);
+    let endDate = moment(data.endsAt);
+    let durationLeft = moment.duration(endDate.diff(now));
+    let hoursLeft = durationLeft.asHours();
+    let daysLeft = durationLeft.asDays();
+
+    let remainingHours =
+      hoursLeft < 0
+        ? 'Remaining time: This Auction has ended'
+        : 'Remaining: ' + Math.trunc(daysLeft) + ' Days';
+    let timeIs = `
+                                        <h4 class="text-base font-Roboto">
+                                                  ${remainingHours}
+                                              </h4>
+                    `;
 
     let topBid = 0;
     if (bid[0]) {
@@ -96,7 +114,7 @@ const getListingById = async () => {
 
     sellerAvatarContainer.innerHTML = `${listingMediaAvatar}`;
     sellerNameContainer.innerHTML = `${seller}`;
-    timeEndContainer.innerHTML = `Bid end at:  ${timeEnd}`;
+    timeEndContainer.innerHTML = `${remainingHours}`;
     currentBidContainer.innerHTML = `Current Bid: ${bidValue}$`;
     titleContainer.innerHTML = `${title}`;
     document.title = `${title}`;
