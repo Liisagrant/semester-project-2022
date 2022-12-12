@@ -63,7 +63,7 @@ const headerInfo = () => {
   if (userCreditContainer) {
     const credits = getUserCredit();
     let userCredit = `
-                    <div class="p-2 font-bold font-poppins text-SecondColor">
+                    <div class="p-2 font-bold font-poppins text-white">
                         <span>Current Credit:${credits}</span>
                     </div>
         `;

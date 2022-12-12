@@ -6,11 +6,15 @@ import {
   GET_USER_PROFILE_URL,
 } from './settings/api';
 import { formatDate } from './utils/dateFix';
+import moment from 'moment';
 
 const accessToken = getToken();
 if (!accessToken) {
   location.href = '/notLoggedIn.html';
 }
+
+let now = moment(); //todays date
+console.log('now', now);
 
 const profileAvatarContainer = document.querySelector('#profielAvatar');
 const profileCreditsContainer = document.querySelector('#profielCredits');
@@ -84,15 +88,32 @@ const getUserInfo = async () => {
       const { id } = list;
       console.log(id);
       const { title } = list;
-      const timeEnd = formatDate(list.endsAt).slice(0, 10);
       const image = list.media[0];
       console.log(image);
+      let endDate = moment(list.endsAt);
+      let durationLeft = moment.duration(endDate.diff(now));
+      let days = Math.floor(durationLeft / (1000 * 60 * 60 * 24));
+      let hours = Math.floor(
+        (durationLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
 
-      let today = new Date().toISOString({
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-      });
+      let minutes = Math.floor((durationLeft % (1000 * 60 * 60)) / (1000 * 60));
+
+      console.log(days, hours, minutes);
+
+      let remainingHours = `Remaining time: ${days}d , ${hours}h and ${minutes} minutes`;
+      let timeIs = `
+                                          <h4 class="text-base font-Roboto">
+                                               ${remainingHours}
+                                           </h4>
+        `;
+      if (minutes < 0) {
+        timeIs = `
+                                          <h4 class="text-base font-Roboto text-errorRed">
+                                               This auction has ended
+                                           </h4>
+        `;
+      }
 
       let listingMedia = `
                                     <img
@@ -110,20 +131,6 @@ const getUserInfo = async () => {
                                         alt="Product image"
                                     />
                     `;
-      }
-
-      let timeIs = `
-                   <h4 class="text-base font-Roboto">
-                                                              Remaining time: Auction has ended
-                                                          </h4>
-                    `;
-
-      if (timeEnd > today) {
-        timeIs = `
-                                                    <h4 class="text-base font-Roboto">
-                                                              Remaining time: ${timeEnd}
-                                                          </h4>
-                                `;
       }
 
       let listing = `
@@ -149,12 +156,8 @@ const getUserInfo = async () => {
                                                             class="space-y-1 text-lg font-medium font-Poppins leading-6"
                                                         >
                                                             <h3>${title}</h3>
-                                                            <h4
-                                                                class="text-sm font-Roboto"
-                                                            >
-                                                                Remaining time:
                                                               ${timeIs}
-                                                            </h4>
+                                                         
                                                         </div>
                                                     </div>
                                                 </div>

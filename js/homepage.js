@@ -49,24 +49,30 @@ const showListings = (data) => {
         bid.sort((x, y) => y.amount - x.amount);
         let endDate = moment(data.endsAt);
         let durationLeft = moment.duration(endDate.diff(now));
-        let hoursLeft = durationLeft.asHours();
-        let daysLeft = durationLeft.asDays();
-        console.log('hoursLeft: ', hoursLeft);
-        console.log('daysLeft: ', daysLeft);
-        let remainingHours =
-          hoursLeft < 0
-            ? 'This Auction has ended'
-            : 'Remaining time: ' +
-              Math.trunc(daysLeft) +
-              ' Days, and ' +
-              Math.trunc(hoursLeft) +
-              ' Hours';
+        let days = Math.floor(durationLeft / (1000 * 60 * 60 * 24));
+        let hours = Math.floor(
+          (durationLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
 
+        let minutes = Math.floor(
+          (durationLeft % (1000 * 60 * 60)) / (1000 * 60)
+        );
+
+        console.log(days, hours, minutes);
+
+        let remainingHours = `Remaining time: ${days}d , ${hours}h and ${minutes} minutes`;
         let timeIs = `
-                                        <h4 class="text-base font-Roboto">
-                                                  ${remainingHours}
-                                              </h4>
-                    `;
+                                          <h4 class="text-base font-Roboto">
+                                               ${remainingHours}
+                                           </h4>
+        `;
+        if (minutes < 0) {
+          timeIs = `
+                                          <h4 class="text-base font-Roboto text-errorRed">
+                                               This auction has ended
+                                           </h4>
+        `;
+        }
 
         let topBid = 0;
         if (bid[0]) {

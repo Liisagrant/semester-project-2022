@@ -44,18 +44,28 @@ const getListingById = async () => {
     bid.sort((x, y) => y.amount - x.amount);
     let endDate = moment(data.endsAt);
     let durationLeft = moment.duration(endDate.diff(now));
-    let hoursLeft = durationLeft.asHours();
-    let daysLeft = durationLeft.asDays();
+    let days = Math.floor(durationLeft / (1000 * 60 * 60 * 24));
+    let hours = Math.floor(
+      (durationLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
 
-    let remainingHours =
-      hoursLeft < 0
-        ? 'Remaining time: This Auction has ended'
-        : 'Remaining: ' + Math.trunc(daysLeft) + ' Days';
+    let minutes = Math.floor((durationLeft % (1000 * 60 * 60)) / (1000 * 60));
+
+    console.log(days, hours, minutes);
+
+    let remainingHours = `Remaining time: ${days}d , ${hours}h and ${minutes} minutes`;
     let timeIs = `
-                                        <h4 class="text-base font-Roboto">
-                                                  ${remainingHours}
-                                              </h4>
-                    `;
+                                          <h4 class="text-base font-Roboto">
+                                               ${remainingHours}
+                                           </h4>
+        `;
+    if (minutes < 0) {
+      timeIs = `
+                                          <h4 class="text-base font-Roboto text-errorRed">
+                                               This auction has ended
+                                           </h4>
+        `;
+    }
 
     let topBid = 0;
     if (bid[0]) {
@@ -114,7 +124,7 @@ const getListingById = async () => {
 
     sellerAvatarContainer.innerHTML = `${listingMediaAvatar}`;
     sellerNameContainer.innerHTML = `${seller}`;
-    timeEndContainer.innerHTML = `${remainingHours}`;
+    timeEndContainer.innerHTML = `${timeIs}`;
     currentBidContainer.innerHTML = `Current Bid: ${bidValue}$`;
     titleContainer.innerHTML = `${title}`;
     document.title = `${title}`;

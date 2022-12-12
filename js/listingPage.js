@@ -1,6 +1,5 @@
 import { GET_ALL_LISTINGS_URL } from './settings/api';
 import { getToken, getUserName, getUserAvatar } from './utils/storage';
-import { formatDate } from './utils/dateFix';
 import moment from 'moment';
 
 const listingContainer = document.querySelector('#listingsContainer');
@@ -14,8 +13,7 @@ console.log(avatar);
 
 let GET_LISTING_ALL_URL = `${GET_ALL_LISTINGS_URL}?sort=created&sortOrder=desc&_bids=true`;
 
-let now = moment(); //todays date
-console.log('now', now);
+let now = moment();
 
 const searchBar = document.querySelector('#search');
 let data = [];
@@ -78,18 +76,30 @@ const showListings = (data) => {
         bid.sort((x, y) => y.amount - x.amount);
         let endDate = moment(data.endsAt);
         let durationLeft = moment.duration(endDate.diff(now));
-        let hoursLeft = durationLeft.asHours();
-        let daysLeft = durationLeft.asDays();
+        let days = Math.floor(durationLeft / (1000 * 60 * 60 * 24));
+        let hours = Math.floor(
+          (durationLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
 
-        let remainingHours =
-          hoursLeft < 0
-            ? 'Remaining time: This Auction has ended'
-            : 'Remaining: ' + Math.trunc(daysLeft) + ' Days';
+        let minutes = Math.floor(
+          (durationLeft % (1000 * 60 * 60)) / (1000 * 60)
+        );
+
+        console.log(days, hours, minutes);
+
+        let remainingHours = `Remaining time: ${days}d , ${hours}h and ${minutes} minutes`;
         let timeIs = `
-                                        <h4 class="text-base font-Roboto">
-                                                  ${remainingHours}
-                                              </h4>
-                    `;
+                                          <h4 class="text-base font-Roboto">
+                                               ${remainingHours}
+                                           </h4>
+        `;
+        if (minutes < 0) {
+          timeIs = `
+                                          <h4 class="text-base font-Roboto text-errorRed">
+                                               This auction has ended
+                                           </h4>
+        `;
+        }
 
         let topBid = 0;
         if (bid[0]) {
@@ -134,7 +144,7 @@ const showListings = (data) => {
                                             >
                                                 Currently highest Bid:${bidValue} $
                                             </p>
-                        ${timeIs}
+                                           ${timeIs}
                                         </div>
                                         <div>
                                         </div>
