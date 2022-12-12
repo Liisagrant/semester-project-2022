@@ -5,6 +5,7 @@ module.exports = {
     './js/*.js',
     './js/components/createNavbar.js',
     './js/components/getHeaderInfo.js',
+    './js/components/createFooter.js',
   ],
   theme: {
     colors: {
@@ -24,7 +25,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         notLoggedIn:
-                    "url('https://res.cloudinary.com/djnonssa4/image/upload/v1669922508/rudra-pratap-barik-nAJWCfynVN8-unsplash_hdqbgs.jpg')",
+          "url('https://res.cloudinary.com/djnonssa4/image/upload/v1669922508/rudra-pratap-barik-nAJWCfynVN8-unsplash_hdqbgs.jpg')",
       },
       fontFamily: {
         Poppins: ['Poppins', 'sans-serif'],
