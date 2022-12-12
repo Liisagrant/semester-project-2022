@@ -12,14 +12,14 @@ import {
 myNavBar();
 headerInfo();
 
-const avatar = getUserAvatar();
-const credits = getUserCredit();
-const userName = getUserName();
-const accessToken = getToken();
-console.log(credits);
-console.log(userName);
-console.log(accessToken);
-console.log(avatar);
+// const avatar = getUserAvatar();
+// const credits = getUserCredit();
+// const userName = getUserName();
+// const accessToken = getToken();
+// console.log(credits);
+// console.log(userName);
+// console.log(accessToken);
+// console.log(avatar);
 
 // header and Nav
 
