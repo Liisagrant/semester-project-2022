@@ -1,5 +1,6 @@
 import '../style.css';
 import { myNavBar } from './components/createNavbar';
+import { myFooter } from './components/createFooter';
 import { headerInfo } from './components/getHeaderInfo';
 import {
   getUserAvatar,
@@ -9,6 +10,7 @@ import {
   getUserCredit,
 } from './utils/storage';
 
+myFooter();
 myNavBar();
 headerInfo();
 
