@@ -24,7 +24,7 @@ npm run build
 and
 ```
 npm run dev
-´´´
+```
 
 
 After running these commands, the project will be built and served locally. 💻
