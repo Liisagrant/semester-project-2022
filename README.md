@@ -21,7 +21,8 @@ This project is built using Vite, so there is no need to install Vite in order t
 ```
 npm run build
 ```
-
+and
+```
 npm run dev
 ´´´
 
