@@ -1,6 +1,4 @@
 
-
-![this is an image](https://cheerful-tarsier-22b683.netlify.app//media/sniper-screenshot.png)
 # Sniper - An Online Auction Site 💰
 
 This is my semester exam project for the year 2022 as a frontend developer at Noroff School of Technology. 🎓
