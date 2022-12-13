@@ -18,9 +18,10 @@ The page is built using Vite, along with:
 
 This project is built using Vite, so there is no need to install Vite in order to run it. To run the project, simply clone or fork this repository. Then, in the project directory, run the following commands:
 
-```npm run build```
+```
+npm run build
 
-```npm run dev´´´
+npm run dev´´´
 
 
 After running these commands, the project will be built and served locally. 💻
