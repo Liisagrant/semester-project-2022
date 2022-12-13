@@ -9,7 +9,7 @@ const myFooter = () => {
       <div class="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div class="xl:grid xl:grid-cols-3 xl:gap-8">
           <div class="space-y-8 xl:col-span-1">
-          <img class="h-20" src="/media/Sniper.svg" alt="Sniper" />
+          <div class="h-20 bg-[url('./media/Sniper.svg')] bg-no-repeat"></div>
             <div class="flex space-x-6">
               <a href="#" class="hover:text-lightGray">
                 <span class="sr-only">Facebook</span>

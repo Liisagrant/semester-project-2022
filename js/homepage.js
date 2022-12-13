@@ -91,11 +91,7 @@ const showListings = (data) => {
                                     />`;
         if (!ListingImage) {
           listingMedia = `
-                                    <img
-                                        class="rounded-lg object-cover h-full w-full shadow-lg"
-                                        src="./media/no-photo.jpg"
-                                        alt="Product image"
-                                    />
+                                                    <div class="bg-[url('./media/no-photo.jpg')] h-60 w-full bg-center rounded-md"></div>
                     `;
         }
 
