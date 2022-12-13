@@ -40,21 +40,7 @@ const headerInfo = () => {
                                 </button>
     `;
     if (!avatar) {
-      userAvatar = `
-            <button
-                type="button"
-                class="flex rounded-full bg-gray-800 text-sm text-white focus:outline-none"
-                id="user-menu-button"
-                aria-expanded="false"
-                aria-haspopup="true"
-            >
-                <span class="sr-only">Open user menu</span>
-                <img
-                    class="h-8 w-8 rounded-full"
-                    src="./media/no-photo.jpg"
-                    alt="Profile Photo"
-                />
-            </button>`;
+      userAvatar = ``;
     }
     userAvatarContainer.innerHTML = `${userAvatar}`;
   }
