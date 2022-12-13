@@ -1,12 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './*.{html,js}',
-    './js/*.js',
-    './js/components/createNavbar.js',
-    './js/components/getHeaderInfo.js',
-    './js/components/createFooter.js',
-  ],
+  content: ['./*.{html,js}', './js/*.js', './js/*/*.js'],
   theme: {
     colors: {
       mainColor: '#314657',

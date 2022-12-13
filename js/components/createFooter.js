@@ -3,7 +3,8 @@ import { getUserName } from '../utils/storage';
 const myFooter = () => {
   const footerContainer = document.querySelector('#footerContainer');
 
-  footerContainer.innerHTML = `      <footer class="bg-mainColor" aria-labelledby="footer-heading">
+  footerContainer.innerHTML = `  
+  <footer class="bg-mainColor" aria-labelledby="footer-heading">
       <h2 id="footer-heading" class="sr-only">Footer</h2>
       <div class="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div class="xl:grid xl:grid-cols-3 xl:gap-8">
