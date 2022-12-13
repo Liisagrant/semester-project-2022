@@ -57,7 +57,11 @@ const getUserInfo = async () => {
         
         `;
     if (!avatar) {
-      userAvatar = `                  <div class="bg-[url('./media/no-photo.jpg')] h-24 w-24 bg-center bg-contain rounded-full ring-4 ring-white sm:h-32 sm:w-32"></div>`;
+      userAvatar = ` <img
+                    class="h-24 w-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32"
+                    src="./media/no-photo.jpg"
+                    alt="User Avatar"
+                />`;
     }
 
     profileAvatarContainer.innerHTML = `${userAvatar}`;

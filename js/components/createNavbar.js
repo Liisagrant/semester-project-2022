@@ -12,7 +12,6 @@ const myNavBar = () => {
     let navbarLinksMobile;
     navbarLinksMobile = `
                         <div class="flex flex-col p-2">
-
                     <a
                         href="./homepage.html"
                         class="text-white font-Poppins hover:text-lightGray flex justify-center block rounded-md py-2 px-3 text-base font-medium ${
@@ -20,7 +19,6 @@ const myNavBar = () => {
                         }"
                         >Home</a
                     >
-
                     <a
                         href="./listingpage.html"
                         class="text-white font-Poppins hover:text-lightGray flex justify-center block rounded-md py-2 px-3 text-base font-medium ${
@@ -37,7 +35,6 @@ const myNavBar = () => {
                         }"
                         >SignUp</a
                     >
-
                     <a
                         href="./index.html"
                         class="text-white font-Poppins hover:text-lightGray flex justify-center rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
@@ -58,7 +55,6 @@ const myNavBar = () => {
                         }"
                         >Home</a
                     >
-
                     <a
                         href="./listingpage.html"
                         class="text-white font-Poppins hover:text-lightGray flex justify-center block rounded-md py-2 px-3 text-base font-medium ${
@@ -68,7 +64,6 @@ const myNavBar = () => {
                         }"
                         >Items in action</a
                     >
-
                     <a
                         href="./addListing.html"
                         class="text-white font-Poppins hover:text-lightGray flex justify-center block rounded-md py-2 px-3 text-base font-medium ${
@@ -78,7 +73,6 @@ const myNavBar = () => {
                         }"
                         >Add a new item</a
                     >
-
                     <a
                         href="./profile.html"
                         class="text-white font-Poppins hover:text-lightGray flex justify-center block rounded-md py-2 px-3 text-base font-medium ${
@@ -112,7 +106,6 @@ const myNavBar = () => {
                                     >
                                         Sign Out
                                     </button>
-
                 </div>
             `;
     }
@@ -120,7 +113,6 @@ const myNavBar = () => {
     if (navbarDesktop) {
       let navbarLinksDesktop;
       navbarLinksDesktop = `
-
                     <a
                         href="./signUp.html"
                         class="text-white font-Poppins hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
@@ -129,7 +121,6 @@ const myNavBar = () => {
                         aria-current="page"
                         >SignUp</a
                     >
-
                     <a
                         href="./index.html"
                         class="text-white font-Poppins hover:text-lightGray hover:text-thirdColor rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
@@ -145,7 +136,6 @@ const myNavBar = () => {
                         aria-current="page"
                         >Home</a
                     >
-
                                         <a
                         href="./listingpage.html"
                         class="text-white font-Poppins hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
@@ -166,7 +156,6 @@ const myNavBar = () => {
                         aria-current="page"
                         >Home</a
                     >
-
                     <a
                         href="./listingpage.html"
                         class="text-white font-Poppins hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
@@ -176,7 +165,6 @@ const myNavBar = () => {
                         }"
                         >Items in auction</a
                     >
-
                     <a
                         href="./addListing.html"
                         class="text-white font-Poppins hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
@@ -186,7 +174,6 @@ const myNavBar = () => {
                         }"
                         >Add a new Item</a
                     >
-
                     <a
                         href="./profile.html"
                         class="text-white font-Poppins hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
