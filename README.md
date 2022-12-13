@@ -1,5 +1,5 @@
 
-![Homepage screenshot](sniper-screenshot.jpg)
+![Homepage screenshot](./media/sniper-screenshot.jpg)
 # Sniper - An Online Auction Site 💰
 
 This is my semester exam project for the year 2022 as a frontend developer at Noroff School of Technology. 🎓
