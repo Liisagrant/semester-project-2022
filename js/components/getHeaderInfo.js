@@ -3,7 +3,6 @@ import { getUserAvatar, getUserCredit, getUserName } from '../utils/storage';
 const headerInfo = () => {
   const userAvatarContainer = document.querySelector('#userAvatar');
   const signOutDesktop = document.querySelector('#signOutDesktop');
-  const userName = getUserName();
   if (signOutDesktop) {
     const userName = getUserName();
     let signOutbtnDesktop = `
