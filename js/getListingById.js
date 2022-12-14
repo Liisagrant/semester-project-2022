@@ -7,7 +7,6 @@ const searchParam = new URLSearchParams(paramstring);
 const ID = searchParam.get('id');
 const accessToken = getToken();
 
-const generalErrorMessege = document.querySelector('#generalErrorMessage');
 const listingImageContainer = document.querySelector('#listingImage');
 const sellerAvatarContainer = document.querySelector('#sellerAvatar');
 const sellerNameContainer = document.querySelector('#sellerName');
@@ -16,10 +15,8 @@ const discContainer = document.querySelector('#disc');
 const currentBidContainer = document.querySelector('#currentBidContainer');
 const titleContainer = document.querySelector('#titleContainer');
 const bidList = document.querySelector('#bidList');
-console.log(bidList);
 
-const now = moment(); // todays date
-console.log('now', now);
+const now = moment();
 
 const SINGLE_LISTING_INFO = `${GET_LISTING_BY_ID_URL}/${ID}?_bids=true&_seller=true`;
 const getListingById = async () => {
@@ -34,23 +31,19 @@ const getListingById = async () => {
     console.log(data);
     const { title } = data;
     const { description } = data;
-    const timeEnd = formatDate(data.endsAt).slice(0, 10);
     const seller = data.seller.name;
     const sellerAvatar = data.seller.avatar;
     const ListingImage = data.media[0];
     const bid = data.bids;
-    console.log(bid.length);
     bid.sort((x, y) => y.amount - x.amount);
     const endDate = moment(data.endsAt);
     const durationLeft = moment.duration(endDate.diff(now));
     const days = Math.floor(durationLeft / (1000 * 60 * 60 * 24));
     const hours = Math.floor(
-      (durationLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+      (durationLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
     );
 
     const minutes = Math.floor((durationLeft % (1000 * 60 * 60)) / (1000 * 60));
-
-    console.log(days, hours, minutes);
 
     const remainingHours = `Remaining time: ${days}d , ${hours}h and ${minutes} minutes`;
     let timeIs = `
@@ -129,7 +122,8 @@ const getListingById = async () => {
     document.title = `${title}`;
 
     if (!bid.length) {
-      bidList.innerHTML = '<p class="text-center">No bids made on this listing<p>';
+      bidList.innerHTML =
+        '<p class="text-center">No bids made on this listing<p>';
     }
 
     for (const data of bid) {
