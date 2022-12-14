@@ -170,7 +170,7 @@ const avatarUrlError = document.querySelector('#imageUrlError');
 const avtarUrlError2 = document.querySelector('#imageUrlError2');
 const modal = document.querySelector('#modal');
 const close = document.querySelector('#close');
-const profileErrorMessage = document.querySelector('#profielErrorMessage');
+const errormessageUpdate = document.querySelector('#errormessageUpdate');
 
 updateBtn.addEventListener('click', () => {
   modalBg.classList.remove('hidden');
@@ -219,12 +219,12 @@ form.addEventListener('submit', (event) => {
       if (response.ok) {
         updateLocalStorageInfo(GET_USER_PROFILE_URL);
       } else {
-        const err = await response.json();
-        const message = `${err.errors[0].message}`;
-        throw new Error(message);
+        const error = await response.json();
+        const errorMessage = error.errors[0].message;
+        throw new Error(errorMessage);
       }
-    })().catch((message) => {
-      generalError.innerHTML = `${message}`;
+    })().catch((errorMessage) => {
+      errormessageUpdate.innerHTML = `Error: ${errorMessage}`;
     });
   }
 });
