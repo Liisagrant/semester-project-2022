@@ -224,7 +224,7 @@ form.addEventListener('submit', (event) => {
         throw new Error(errorMessage);
       }
     })().catch((errorMessage) => {
-      errormessageUpdate.innerHTML = `Error: ${errorMessage}`;
+      errormessageUpdate.innerHTML = `${errorMessage}`;
     });
   }
 });
