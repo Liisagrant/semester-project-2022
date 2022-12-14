@@ -1,7 +1,6 @@
 import moment from 'moment';
 import { getToken, updateLocalStorageInfo } from './utils/storage';
 import { GET_LISTING_BY_ID_URL, GET_USER_PROFILE_URL } from './settings/api';
-import { formatDate } from './utils/dateFix';
 
 const paramstring = window.location.search;
 const searchParam = new URLSearchParams(paramstring);
@@ -46,7 +45,7 @@ const getListingById = async () => {
     const durationLeft = moment.duration(endDate.diff(now));
     const days = Math.floor(durationLeft / (1000 * 60 * 60 * 24));
     const hours = Math.floor(
-      (durationLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+      (durationLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
     );
 
     const minutes = Math.floor((durationLeft % (1000 * 60 * 60)) / (1000 * 60));
@@ -130,7 +129,8 @@ const getListingById = async () => {
     document.title = `${title}`;
 
     if (!bid.length) {
-      bidList.innerHTML = '<p class="text-center">No bids made on this listing<p>';
+      bidList.innerHTML =
+        '<p class="text-center">No bids made on this listing<p>';
     }
 
     for (const data of bid) {
