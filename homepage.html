@@ -1,182 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/apple-touch-icon.png"
-    />
-    <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/favicon-32x32.png"
-    />
-    <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/favicon-16x16.png"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>homepage</title>
     <script type="module" src="./js/main.js" defer></script>
     <script type="module" src="./js/homepage.js" defer></script>
-</head>
-<body>
-<header
-        class="bg-mainColor fixed top-0 left-0 right-0 z-20"
->
-    <div
-            class="mx-auto max-w-7xl px-2 sm:px-4 lg:divide-y lg:divide-gray-700 lg:px-8"
-    >
+  </head>
+  <body>
+    <header class="bg-mainColor fixed top-0 left-0 right-0 z-20">
+      <div
+        class="mx-auto max-w-7xl px-2 sm:px-4 lg:divide-y lg:divide-gray-700 lg:px-8"
+      >
         <div class="relative flex h-16 justify-between">
-            <div class="relative z-10 flex px-2 lg:px-0">
-                <div class="flex flex-shrink-0 items-center">
-                    <a href="#">
-                        <img
-                                class="block h-20 w-auto"
-                                src="/media/Sniper.svg"
-                                alt="Sniper"
-                        />
-                    </a>
-                </div>
+          <div class="relative z-10 flex px-2 lg:px-0">
+            <div class="flex flex-shrink-0 items-center">
+              <a href="#">
+                <img
+                  class="block h-20 w-auto"
+                  src="/media/Sniper.svg"
+                  alt="Sniper"
+                />
+              </a>
             </div>
-            <div class="relative z-10 flex items-center lg:hidden">
-                <!-- Mobile menu button -->
-                <button
-                        id="Mobile-menu-btn"
-                        type="button"
-                        class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-lightGray"
-                        aria-controls="mobile-menu"
-                        aria-expanded="false"
-                >
-                    <span class="sr-only">Open menu</span>
-                    <svg
-                            id="menu"
-                            class="block h-6 w-6 text-SecondColor hover:text-lightGray"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            stroke="currentColor"
-                            aria-hidden="true"
-                    >
-                        <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                        />
-                    </svg>
-                    <svg
-                            id="x"
-                            class="hidden h-6 w-6 text-SecondColor hover:text-lightGray"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            stroke="currentColor"
-                            aria-hidden="true"
-                    >
-                        <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M6 18L18 6M6 6l12 12"
-                        />
-                    </svg>
-                </button>
-            </div>
-            <div
-                    class="hidden lg:relative lg:z-10 lg:ml-4 lg:flex lg:items-center"
+          </div>
+          <div class="relative z-10 flex items-center lg:hidden">
+            <!-- Mobile menu button -->
+            <button
+              id="Mobile-menu-btn"
+              type="button"
+              class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-lightGray"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
             >
-                <div class="flex flex-row relative ml-4 flex-shrink-0">
-                    <div id="userCredit"></div>
-                    <div class="h-8 w-8" id="userAvatar">
-                    </div>
-                    <div id="signOutDesktop">
-                    </div>
-                </div>
+              <span class="sr-only">Open menu</span>
+              <svg
+                id="menu"
+                class="block h-6 w-6 text-SecondColor hover:text-lightGray"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+              <svg
+                id="x"
+                class="hidden h-6 w-6 text-SecondColor hover:text-lightGray"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="hidden lg:relative lg:z-10 lg:ml-4 lg:flex lg:items-center"
+          >
+            <div class="flex flex-row relative ml-4 flex-shrink-0">
+              <div id="userCredit"></div>
+              <div class="h-8 w-8" id="userAvatar"></div>
+              <div id="signOutDesktop"></div>
             </div>
+          </div>
         </div>
         <nav
-                id="navLinks-desktop"
-                class="hidden lg:flex lg:space-x-8 lg:py-2"
-                aria-label="Global"
+          id="navLinks-desktop"
+          class="hidden lg:flex lg:space-x-8 lg:py-2"
+          aria-label="Global"
         ></nav>
-    </div>
-    <!-- Mobile menu-->
-    <div id="signOutMobil">
-    </div>
-    <nav
-            class="hidden lg:hidden flex justify-center mobile-menu"
-            aria-label="Global"
-            id="navLinks-mobile"
-    >
-    </nav>
-</header>
-<div class="max-w-7xl mx-auto">
-<div class="relative bg-lightGray mx-2 mb-2 mt-20 lg:mx-16 lg:my-16">
-    <main class="lg:relative md:mt-20 lg:mt-40">
-        <div
-                class="mx-auto w-full pt-16 pb-20 text-center lg:py-48 lg:text-left"
-        >
+      </div>
+      <!-- Mobile menu-->
+      <div id="signOutMobil"></div>
+      <nav
+        class="hidden lg:hidden flex justify-center mobile-menu"
+        aria-label="Global"
+        id="navLinks-mobile"
+      ></nav>
+    </header>
+    <div class="max-w-7xl mx-auto">
+      <div class="relative bg-lightGray mx-2 mb-2 mt-20 lg:mx-16 lg:my-16">
+        <main class="lg:relative md:mt-20 lg:mt-40">
+          <div
+            class="mx-auto w-full pt-16 pb-20 text-center lg:py-48 lg:text-left"
+          >
             <div class="px-4 sm:px-8 lg:w-1/2 xl:pr-16">
-                <h1
-                        class="text-4xl font-bold font-Poppins tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl"
+              <h1
+                class="text-4xl font-bold font-Poppins tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl"
+              >
+                <span class="block xl:inline">Make a great deal today!</span>
+              </h1>
+              <h2
+                class="text-2xl font-bold font-Roboto tracking-tight text-mainColor mt-8 sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl"
+              >
+                <span class="block xl:inline mt-8"
+                  >So EASY. Signup, Search and BID</span
                 >
-                            <span class="block xl:inline"
-                            >Make a great deal today!</span
-                            >
-                </h1>
-                <h2
-                        class="text-2xl font-bold font-Roboto tracking-tight text-mainColor mt-8 sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl"
-                >
-                            <span class="block xl:inline mt-8"
-                            >So EASY. Signup, Search and BID</span
-                            >
-                </h2>
-                <p
-                        class="mx-auto mt-3 max-w-md text-lg text-gray-500 font-Lato font-bold sm:text-xl md:mt-5 md:max-w-3xl"
-                >
-                    The number one ONLINE auction page in Norway.
-                    Getting what you want should be smooth. We got you!
-                </p>
+              </h2>
+              <p
+                class="mx-auto mt-3 max-w-md text-lg text-gray-500 font-Lato font-bold sm:text-xl md:mt-5 md:max-w-3xl"
+              >
+                The number one ONLINE auction page in Norway. Getting what you
+                want should be smooth. We got you!
+              </p>
             </div>
-        </div>
-        <div
-                class="relative h-80 w-full sm:h-72 md:h-86 lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:w-1/2"
-        >
+          </div>
+          <div
+            class="relative h-80 w-full sm:h-72 md:h-86 lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:w-1/2"
+          >
             <img
-                    class="absolute inset-0 h-full w-full object-cover"
-                    src="/media/herobanner-homepage.jpg"
-                    alt=""
+              class="absolute inset-0 h-full w-full object-cover"
+              src="/media/herobanner-homepage.jpg"
+              alt=""
             />
-        </div>
-    </main>
-</div>
-</div>
-<div class="bg-darkGray mx-auto w-full text-center my-16">
-    <h2
-            class="text-2xl font-bold font-Poppins tracking-tight sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl py-6"
-    >
-                <span class="block xl:inline text-white"
-                >Items in actions right now!</span
-                >
-    </h2>
-</div>
-<div class="bg-white">
-    <div class="mx-auto max-w-7xl py-2 px-4 sm:px-6 lg:px-16">
-        <div class="space-y-12">
-            <ul
-                    id="listingsContainer"
-                    role="list"
-                    class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-12 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8"
-            >
-            </ul>
-        </div>
+          </div>
+        </main>
+      </div>
     </div>
-</div>
-<div id="footerContainer"></div>
-</body>
+    <div class="bg-darkGray mx-auto w-full text-center my-16">
+      <h2
+        class="text-2xl font-bold font-Poppins tracking-tight sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl py-6"
+      >
+        <span class="block xl:inline text-white"
+          >Items in actions right now!</span
+        >
+      </h2>
+    </div>
+    <div class="bg-white">
+      <div class="mx-auto max-w-7xl py-2 px-4 sm:px-6 lg:px-16">
+        <div class="space-y-12">
+          <div id="homepageErrorMessage"></div>
+          <ul
+            id="listingsContainer"
+            role="list"
+            class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-12 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8"
+          ></ul>
+        </div>
+      </div>
+    </div>
+    <div id="footerContainer"></div>
+  </body>
 </html>
