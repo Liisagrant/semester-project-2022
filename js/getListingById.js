@@ -45,7 +45,7 @@ const getListingById = async () => {
     const durationLeft = moment.duration(endDate.diff(now));
     const days = Math.floor(durationLeft / (1000 * 60 * 60 * 24));
     const hours = Math.floor(
-      (durationLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      (durationLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
     );
 
     const minutes = Math.floor((durationLeft % (1000 * 60 * 60)) / (1000 * 60));
@@ -129,8 +129,7 @@ const getListingById = async () => {
     document.title = `${title}`;
 
     if (!bid.length) {
-      bidList.innerHTML =
-        '<p class="text-center">No bids made on this listing<p>';
+      bidList.innerHTML = '<p class="text-center">No bids made on this listing<p>';
     }
 
     for (const data of bid) {

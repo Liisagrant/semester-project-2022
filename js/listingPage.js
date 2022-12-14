@@ -3,7 +3,7 @@ import { GET_ALL_LISTINGS_URL } from './settings/api';
 
 const listingContainer = document.querySelector('#listingsContainer');
 const listingAllErrorMessage = document.querySelector(
-  '#listingAllErrorMessage'
+  '#listingAllErrorMessage',
 );
 
 let GET_LISTING_ALL_URL = `${GET_ALL_LISTINGS_URL}?&sort=created&sortOrder=desc&_bids=true`;
@@ -16,8 +16,7 @@ let data = [];
 searchBar.addEventListener('keyup', (e) => {
   const searchString = e.target.value.toLowerCase();
   const filteredPosts = data.filter(
-    (listing) =>
-      listing.title && listing.title.toLowerCase().includes(searchString)
+    (listing) => listing.title && listing.title.toLowerCase().includes(searchString),
   );
   showListings(filteredPosts);
 });
@@ -73,11 +72,11 @@ const showListings = (data) => {
         const durationLeft = moment.duration(endDate.diff(now));
         const days = Math.floor(durationLeft / (1000 * 60 * 60 * 24));
         const hours = Math.floor(
-          (durationLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          (durationLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
         );
 
         const minutes = Math.floor(
-          (durationLeft % (1000 * 60 * 60)) / (1000 * 60)
+          (durationLeft % (1000 * 60 * 60)) / (1000 * 60),
         );
 
         const remainingHours = `Remaining time: ${days}d , ${hours}h and ${minutes} minutes`;
