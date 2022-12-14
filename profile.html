@@ -23,7 +23,7 @@
         <div class="relative flex h-16 justify-between">
           <div class="relative z-10 flex px-2 lg:px-0">
             <div class="flex flex-shrink-0 items-center">
-              <a href="./homePage.html">
+              <a href="./homepage.html">
                 <img
                   class="block h-20 w-auto"
                   src="/media/Sniper.svg"
@@ -157,7 +157,7 @@
                     id="imageUrlError2"
                     class="hidden text-sm text-errorRed font-Lato font-bold"
                   >
-                    If you want to update this fild it can not be empty
+                    If you want to update your Avatar please add an url
                   </span>
                 </div>
                 <div class="flex flex-row">
@@ -191,7 +191,7 @@
               </div>
               <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
                 <div class="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5">
-                  <div class="flex" id="profielAvatar"></div>
+                  <div class="flex" id="profileAvatar"></div>
                   <div
                     class="mt-6 sm:flex sm:min-w-0 sm:flex-1 sm:items-center sm:justify-end sm:space-x-6 sm:pb-1"
                   >
@@ -201,19 +201,19 @@
                       <button
                         id="updateAvatar"
                         type="button"
-                        class="inline-flex justify-center font-Roboto bg-lightGray rounded-md px-4 py-2 text-sm font-medium text-gray-700 hover:bg-mainColor"
+                        class="inline-flex justify-center font-Roboto bg-lightGray rounded-md px-4 py-2 text-sm font-medium text-gray-700 hover:bg-mainColor hover:text-white"
                       >
                         <span>Update Profile</span>
                       </button>
                       <div
-                        id="profielCredits"
-                        class="inline-flex justify-center font-Roboto bg-white border-2 border-SecondColor rounded-md px-4 py-2 text-sm font-medium text-gray-700 hover:bg-mainColor"
+                        id="profileCredits"
+                        class="inline-flex justify-center font-Roboto bg-white border-2 border-SecondColor rounded-md px-4 py-2 text-sm font-medium text-gray-700"
                       ></div>
                     </div>
                   </div>
                 </div>
                 <div
-                  id="profielNameEmail"
+                  id="profileNameEmail"
                   class="mt-6 min-w-0 flex-1 sm:block"
                 ></div>
                 <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -234,163 +234,6 @@
                     role="list"
                     class="mx-auto max-w-5xl space-y-12 my-8 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8"
                   >
-                    <!-- <li
-                                    class="bg-lightGray px-2 py-2 rounded-lg m"
-                                >
-                                    <div class="space-y-4">
-                                        <div
-                                            class="aspect-w-3 aspect-h-2"
-                                        >
-                                            <img
-                                                class="rounded-lg object-cover shadow-lg"
-                                                src="/media/fastbike.jpg"
-                                                alt="disc"
-                                            />
-                                        </div>
-
-                                        <div class="space-y-2">
-                                            <div
-                                                class="flex justify-between"
-                                            >
-                                                <div
-                                                    class="space-y-1 text-lg font-medium font-Poppins leading-6"
-                                                >
-                                                    <h3>Fast Bike</h3>
-                                                    <p
-                                                        class="text-green font-bold font-Roboto"
-                                                    >
-                                                        Current Bid: 104
-                                                        $
-                                                    </p>
-                                                    <h4
-                                                        class="text-base font-Roboto"
-                                                    >
-                                                        Remaining time:
-                                                        35 min
-                                                    </h4>
-                                                </div>
-                                                <div>
-                                                    <button
-                                                        type="submit"
-                                                        class="flex font-Roboto justify-center rounded-md bg-darkGray py-2 px-2 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                                                    >
-                                                        view Item
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li
-                                    class="bg-black px-2 py-2 rounded-lg relative"
-                                >
-                                    <h4
-                                        class="text-8xl font-bold font-Poppins text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 -rotate-45"
-                                    >
-                                        SOLD
-                                    </h4>
-                                    <div class="rounded-md">
-                                        <div class="space-y-4">
-                                            <div
-                                                class="aspect-w-3 aspect-h-2 relative"
-                                            >
-                                                <img
-                                                    class="rounded-lg object-cover opacity-30"
-                                                    src="/media/fastbike.jpg"
-                                                    alt="disc"
-                                                />
-                                            </div>
-                                            <div class="space-y-2">
-                                                <div
-                                                    class="flex justify-between"
-                                                >
-                                                    <div
-                                                        class="space-y-1 text-lg font-medium font-Poppins leading-6"
-                                                    >
-                                                        <h3>
-                                                            Fast Bike
-                                                        </h3>
-                                                        <p
-                                                            class="text-green font-Roboto font-bold"
-                                                        >
-                                                            Current Bid:
-                                                            120 $
-                                                        </p>
-                                                        <h4
-                                                            class="text-base font-Roboto"
-                                                        >
-                                                            Remaining
-                                                            time: 0 min
-                                                        </h4>
-                                                    </div>
-                                                    <div>
-                                                        <button
-                                                            type="submit"
-                                                            class="flex justify-center font-Roboto rounded-md bg-darkGray py-2 px-2 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 hidden"
-                                                        >
-                                                            view
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li
-                                    class="bg-black px-2 py-2 rounded-lg relative"
-                                >
-                                    <h4
-                                        class="text-8xl font-bold font-Poppins text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 -rotate-45"
-                                    >
-                                        SOLD
-                                    </h4>
-                                    <div class="rounded-md">
-                                        <div class="space-y-4">
-                                            <div
-                                                class="aspect-w-3 aspect-h-2 relative"
-                                            >
-                                                <img
-                                                    class="rounded-lg object-cover opacity-30"
-                                                    src="/media/fastbike.jpg"
-                                                    alt="disc"
-                                                />
-                                            </div>
-                                            <div class="space-y-2">
-                                                <div
-                                                    class="flex justify-between"
-                                                >
-                                                    <div
-                                                        class="space-y-1 text-lg font-medium font-Poppins leading-6"
-                                                    >
-                                                        <h3>
-                                                            Fast Bike
-                                                        </h3>
-                                                        <p
-                                                            class="text-green font-Roboto font-bold"
-                                                        >
-                                                            Current Bid:
-                                                            120 $
-                                                        </p>
-                                                        <h4
-                                                            class="text-base font-Roboto"
-                                                        >
-                                                            Remaining
-                                                            time: 0 min
-                                                        </h4>
-                                                    </div>
-                                                    <div>
-                                                        <button
-                                                            type="submit"
-                                                            class="flex justify-center font-Roboto rounded-md bg-darkGray py-2 px-2 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 hidden"
-                                                        >
-                                                            view
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li> -->
                   </ul>
                 </div>
               </div>

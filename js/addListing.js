@@ -1,4 +1,4 @@
-import { getToken, getUserName } from './utils/storage';
+import { getToken } from './utils/storage';
 import { CREATE_LISTING_URL } from './settings/api';
 import { validImgUrl, checkLength } from './utils/validation';
 
@@ -8,56 +8,29 @@ if (!accessToken) {
 }
 
 const listingForm = document.querySelector('#addListingForm');
-console.log(listingForm);
-
-const title = document.querySelector('#producTitle');
+const title = document.querySelector('#productTitle');
 const titleError = document.querySelector('#productTitleError');
-console.log(title);
-console.log(titleError);
-
 const tag1 = document.querySelector('#tag1');
-console.log(tag1);
 const tag2 = document.querySelector('#tag2');
-console.log(tag2);
 const tag3 = document.querySelector('#tag3');
-console.log(tag3);
-
 const imageUrl1 = document.querySelector('#imageUrl1');
 const imageUrlError1 = document.querySelector('#imageUrlError1');
-console.log(imageUrl1);
-console.log(imageUrlError1);
-
 const imageUrl2 = document.querySelector('#imageUrl2');
 const imageUrlError2 = document.querySelector('#imageUrlError2');
-console.log(imageUrl2);
-console.log(imageUrlError2);
-
 const imageUrl3 = document.querySelector('#imageUrl3');
 const imageUrlError3 = document.querySelector('#imageUrlError3');
-console.log(imageUrl3);
-console.log(imageUrlError3);
-
 const imgInput = document.querySelectorAll('.imgInput');
-
 const listingAddedMessage = document.querySelector('#listingAdded');
 const formBox = document.querySelector('#formBox');
-
 const today = new Date().toISOString().slice(0, 16);
+const deadline = document.querySelector('#deadline');
+const deadlineError = document.querySelector('#deadlineError');
+const desc = document.querySelector('#aboutProduct');
+const generalError = document.querySelector('#generalError');
 
 document.getElementsByName('listingEndDate')[0].min = today;
 
-const deadline = document.querySelector('#deadline');
-console.log(deadline);
-
-const deadlineError = document.querySelector('#deadlineError');
-console.log(deadlineError);
-
-const desc = document.querySelector('#aboutProduct');
-console.log(aboutProduct);
-
-const generalError = document.querySelector('#generalError');
-
-addListingForm.addEventListener('submit', (event) => {
+listingForm.addEventListener('submit', (event) => {
   event.preventDefault();
 
   let isTitle = false;
@@ -106,13 +79,13 @@ addListingForm.addEventListener('submit', (event) => {
 
   const formValid = isTitle && imagesIsvalid && isDeadline;
   if (formValid) {
-    let listingMedia = [];
+    const listingMedia = [];
     for (let i = 0; i < imgInput.length; i++) {
       if (imgInput[i].value) {
         listingMedia.push(imgInput[i].value);
       }
     }
-    let listingData = {
+    const listingData = {
       title: title.value,
       description: desc.value,
       tags: listingTags,
