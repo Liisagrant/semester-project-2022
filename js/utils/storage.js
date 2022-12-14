@@ -79,7 +79,7 @@ const updateLocalStorageInfo = (url) => {
       saveUser(userToSave);
       location.reload();
     } else {
-      console.log('sorry user er ikke updatert i localStorage');
+      console.log("Error info about user is not updated");
     }
   };
   getUserData();
