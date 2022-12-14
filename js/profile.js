@@ -127,7 +127,7 @@ const getUserInfo = async () => {
                     `;
       }
 
-      let listing = `
+      const listing = `
              <a href="detailPage.html?id=${id}" class="mx-2">
                                         <li
                                             class="bg-lightGray px-2 py-2 rounded-lg hover:scale-105 transition duration-500 cursor-pointer z-0"
@@ -231,6 +231,6 @@ form.addEventListener('submit', (event) => {
         const error = await response.json();
         console.log(error);
       }
-    })();
+    }());
   }
 });

@@ -1,7 +1,7 @@
+import moment from 'moment';
 import { GET_LISTINGS_URL } from './settings/api';
 import { getToken, getUserName, getUserAvatar } from './utils/storage';
 import { formatDate } from './utils/dateFix';
-import moment from 'moment';
 
 const listingContainer = document.querySelector('#listingsContainer');
 
@@ -12,7 +12,7 @@ console.log(userName);
 console.log(accessToken);
 console.log(avatar);
 
-let now = moment(); //todays date
+const now = moment(); // todays date
 console.log('now', now);
 let data = [];
 
@@ -47,20 +47,20 @@ const showListings = (data) => {
         const bid = data.bids;
         console.log(bid);
         bid.sort((x, y) => y.amount - x.amount);
-        let endDate = moment(data.endsAt);
-        let durationLeft = moment.duration(endDate.diff(now));
-        let days = Math.floor(durationLeft / (1000 * 60 * 60 * 24));
-        let hours = Math.floor(
-          (durationLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        const endDate = moment(data.endsAt);
+        const durationLeft = moment.duration(endDate.diff(now));
+        const days = Math.floor(durationLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (durationLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
         );
 
-        let minutes = Math.floor(
-          (durationLeft % (1000 * 60 * 60)) / (1000 * 60)
+        const minutes = Math.floor(
+          (durationLeft % (1000 * 60 * 60)) / (1000 * 60),
         );
 
         console.log(days, hours, minutes);
 
-        let remainingHours = `Remaining time: ${days}d , ${hours}h and ${minutes} minutes`;
+        const remainingHours = `Remaining time: ${days}d , ${hours}h and ${minutes} minutes`;
         let timeIs = `
                                           <h4 class="text-base font-Roboto">
                                                ${remainingHours}

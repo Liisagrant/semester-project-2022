@@ -1,7 +1,7 @@
+import moment from 'moment';
 import { getToken, updateLocalStorageInfo } from './utils/storage';
 import { GET_LISTING_BY_ID_URL, GET_USER_PROFILE_URL } from './settings/api';
 import { formatDate } from './utils/dateFix';
-import moment from 'moment';
 
 const paramstring = window.location.search;
 const searchParam = new URLSearchParams(paramstring);
@@ -19,7 +19,7 @@ const titleContainer = document.querySelector('#titleContainer');
 const bidList = document.querySelector('#bidList');
 console.log(bidList);
 
-let now = moment(); //todays date
+const now = moment(); // todays date
 console.log('now', now);
 
 const SINGLE_LISTING_INFO = `${GET_LISTING_BY_ID_URL}/${ID}?_bids=true&_seller=true`;
@@ -33,8 +33,8 @@ const getListingById = async () => {
   if (response.ok) {
     const data = await response.json();
     console.log(data);
-    const title = data.title;
-    const description = data.description;
+    const { title } = data;
+    const { description } = data;
     const timeEnd = formatDate(data.endsAt).slice(0, 10);
     const seller = data.seller.name;
     const sellerAvatar = data.seller.avatar;
@@ -42,18 +42,18 @@ const getListingById = async () => {
     const bid = data.bids;
     console.log(bid.length);
     bid.sort((x, y) => y.amount - x.amount);
-    let endDate = moment(data.endsAt);
-    let durationLeft = moment.duration(endDate.diff(now));
-    let days = Math.floor(durationLeft / (1000 * 60 * 60 * 24));
-    let hours = Math.floor(
-      (durationLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    const endDate = moment(data.endsAt);
+    const durationLeft = moment.duration(endDate.diff(now));
+    const days = Math.floor(durationLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (durationLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
     );
 
-    let minutes = Math.floor((durationLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const minutes = Math.floor((durationLeft % (1000 * 60 * 60)) / (1000 * 60));
 
     console.log(days, hours, minutes);
 
-    let remainingHours = `Remaining time: ${days}d , ${hours}h and ${minutes} minutes`;
+    const remainingHours = `Remaining time: ${days}d , ${hours}h and ${minutes} minutes`;
     let timeIs = `
                                           <h4 class="text-base font-Roboto">
                                                ${remainingHours}
@@ -130,16 +130,16 @@ const getListingById = async () => {
     document.title = `${title}`;
 
     if (!bid.length) {
-      bidList.innerHTML = `<p class="text-center">No bids made on this listing<p>`;
+      bidList.innerHTML = '<p class="text-center">No bids made on this listing<p>';
     }
 
-    for (let data of bid) {
+    for (const data of bid) {
       console.log(data);
       const seller = data.bidderName;
-      const amount = data.amount;
+      const { amount } = data;
       console.log(seller);
 
-      let listing = `
+      const listing = `
                   <ul role="list" class="divide-y divide-gray-200">
                     <li class="py-4">
                     <div class="flex space-x-3">
@@ -176,7 +176,7 @@ x.onclick = () => {
   modalBg.classList.add('hidden');
 };
 
-//Bid On a listing
+// Bid On a listing
 const BID_ON_LISTIN_URL = `${GET_LISTING_BY_ID_URL}/${ID}/bids`;
 const bidForm = document.querySelector('#addBidForm');
 const inputBid = document.querySelector('#placeBid');
@@ -213,10 +213,10 @@ bidForm.addEventListener('submit', (event) => {
     });
     if (response.ok) {
       console.log('yaaay');
-      errorBid.innerHTML = ``;
-      successBid.innerHTML = `Your Bid is added. Good Luck`;
+      errorBid.innerHTML = '';
+      successBid.innerHTML = 'Your Bid is added. Good Luck';
       bidForm.reset();
-      setTimeout(function () {
+      setTimeout(() => {
         updateLocalStorageInfo(GET_USER_PROFILE_URL);
       }, 4000);
     } else {

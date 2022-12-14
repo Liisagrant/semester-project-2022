@@ -15,31 +15,31 @@ const myNavBar = () => {
                     <a
                         href="./homepage.html"
                         class="text-white font-Poppins hover:text-lightGray flex justify-center block rounded-md py-2 px-3 text-base font-medium ${
-                          pathname === '/homepage.html' ? 'bg-onPageColor' : ''
-                        }"
+  pathname === '/homepage.html' ? 'bg-onPageColor' : ''
+}"
                         >Home</a
                     >
                     <a
                         href="./listingpage.html"
                         class="text-white font-Poppins hover:text-lightGray flex justify-center block rounded-md py-2 px-3 text-base font-medium ${
-                          pathname === '/listingpage.html'
-                            ? 'bg-onPageColor'
-                            : ''
-                        }"
+  pathname === '/listingpage.html'
+    ? 'bg-onPageColor'
+    : ''
+}"
                         >Items in action</a
                     >
                     <a
                         href="./signUp.html"
                         class="font-Poppins text-white hover:text-lightGray flex justify-center rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
-                          pathname === './sign-up.html' ? 'bg-onPageColor' : ''
-                        }"
+  pathname === './sign-up.html' ? 'bg-onPageColor' : ''
+}"
                         >SignUp</a
                     >
                     <a
                         href="./index.html"
                         class="text-white font-Poppins hover:text-lightGray flex justify-center rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
-                          pathname === './index.html' ? 'bg-onPageColor' : ''
-                        }"
+  pathname === './index.html' ? 'bg-onPageColor' : ''
+}"
                         >LogIn</a
                     >
                     
@@ -51,33 +51,33 @@ const myNavBar = () => {
                     <a
                         href="./homepage.html"
                         class="text-white font-Poppins hover:text-lightGray flex justify-center block rounded-md py-2 px-3 text-base font-medium ${
-                          pathname === '/homepage.html' ? 'bg-onPageColor' : ''
-                        }"
+  pathname === '/homepage.html' ? 'bg-onPageColor' : ''
+}"
                         >Home</a
                     >
                     <a
                         href="./listingpage.html"
                         class="text-white font-Poppins hover:text-lightGray flex justify-center block rounded-md py-2 px-3 text-base font-medium ${
-                          pathname === '/listingpage.html'
-                            ? 'bg-onPageColor'
-                            : ''
-                        }"
+  pathname === '/listingpage.html'
+    ? 'bg-onPageColor'
+    : ''
+}"
                         >Items in action</a
                     >
                     <a
                         href="./addListing.html"
                         class="text-white font-Poppins hover:text-lightGray flex justify-center block rounded-md py-2 px-3 text-base font-medium ${
-                          pathname === '/addListing.html'
-                            ? 'bg-onPageColor'
-                            : ''
-                        }"
+  pathname === '/addListing.html'
+    ? 'bg-onPageColor'
+    : ''
+}"
                         >Add a new item</a
                     >
                     <a
                         href="./profile.html"
                         class="text-white font-Poppins hover:text-lightGray flex justify-center block rounded-md py-2 px-3 text-base font-medium ${
-                          pathname === '/profile.html' ? 'bg-onPageColor' : ''
-                        }"
+  pathname === '/profile.html' ? 'bg-onPageColor' : ''
+}"
                         >Profile</a
                     >
                     <div class="p-2 font-bold font-poppins text-white">
@@ -102,33 +102,33 @@ const myNavBar = () => {
                     <a
                         href="./signUp.html"
                         class="text-white font-Poppins hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
-                          pathname === '/sign-up.html' ? 'bg-onPageColor' : ''
-                        }"
+  pathname === '/sign-up.html' ? 'bg-onPageColor' : ''
+}"
                         aria-current="page"
                         >SignUp</a
                     >
                     <a
                         href="./index.html"
                         class="text-white font-Poppins hover:text-lightGray hover:text-thirdColor rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
-                          pathname === '/index.html' ? 'bg-onPageColor' : ''
-                        }"
+  pathname === '/index.html' ? 'bg-onPageColor' : ''
+}"
                         >LogIn</a
                     >
                                 <a
                         href="./homepage.html"
                         class="text-white hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
-                          pathname === '/homepage.html' ? 'bg-onPageColor' : ''
-                        }"
+  pathname === '/homepage.html' ? 'bg-onPageColor' : ''
+}"
                         aria-current="page"
                         >Home</a
                     >
                                         <a
                         href="./listingpage.html"
                         class="text-white font-Poppins hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
-                          pathname === '/listingpage.html'
-                            ? 'bg-onPageColor'
-                            : ''
-                        }"
+  pathname === '/listingpage.html'
+    ? 'bg-onPageColor'
+    : ''
+}"
                         >Items in auction</a
                     >
             `;
@@ -137,34 +137,34 @@ const myNavBar = () => {
                         <a
                         href="./homepage.html"
                         class="text-white hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
-                          pathname === '/homepage.html' ? 'bg-onPageColor' : ''
-                        }"
+  pathname === '/homepage.html' ? 'bg-onPageColor' : ''
+}"
                         aria-current="page"
                         >Home</a
                     >
                     <a
                         href="./listingpage.html"
                         class="text-white font-Poppins hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
-                          pathname === '/listingpage.html'
-                            ? 'bg-onPageColor'
-                            : ''
-                        }"
+  pathname === '/listingpage.html'
+    ? 'bg-onPageColor'
+    : ''
+}"
                         >Items in auction</a
                     >
                     <a
                         href="./addListing.html"
                         class="text-white font-Poppins hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
-                          pathname === '/addListing.html'
-                            ? 'bg-onPageColor'
-                            : ''
-                        }"
+  pathname === '/addListing.html'
+    ? 'bg-onPageColor'
+    : ''
+}"
                         >Add a new Item</a
                     >
                     <a
                         href="./profile.html"
                         class="text-white font-Poppins hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
-                          pathname === '/profile.html' ? 'bg-onPageColor' : ''
-                        }"
+  pathname === '/profile.html' ? 'bg-onPageColor' : ''
+}"
                         >Profile</a
                     >
                 `;

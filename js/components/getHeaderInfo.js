@@ -40,7 +40,7 @@ const headerInfo = () => {
                                 </button>
     `;
     if (!avatar) {
-      userAvatar = ``;
+      userAvatar = '';
     }
     userAvatarContainer.innerHTML = `${userAvatar}`;
   }

@@ -1,6 +1,6 @@
+import moment from 'moment';
 import { GET_ALL_LISTINGS_URL } from './settings/api';
 import { getToken, getUserName, getUserAvatar } from './utils/storage';
-import moment from 'moment';
 
 const listingContainer = document.querySelector('#listingsContainer');
 
@@ -13,16 +13,14 @@ console.log(avatar);
 
 let GET_LISTING_ALL_URL = `${GET_ALL_LISTINGS_URL}?sort=created&sortOrder=desc&_bids=true`;
 
-let now = moment();
+const now = moment();
 
 const searchBar = document.querySelector('#search');
 let data = [];
 
 searchBar.addEventListener('keyup', (e) => {
   const searchString = e.target.value.toLowerCase();
-  const filteredPosts = data.filter((listing) => {
-    return listing.title && listing.title.toLowerCase().includes(searchString);
-  });
+  const filteredPosts = data.filter((listing) => listing.title && listing.title.toLowerCase().includes(searchString));
   showListings(filteredPosts);
 });
 
@@ -74,20 +72,20 @@ const showListings = (data) => {
         const bid = data.bids;
         // console.log(bid);
         bid.sort((x, y) => y.amount - x.amount);
-        let endDate = moment(data.endsAt);
-        let durationLeft = moment.duration(endDate.diff(now));
-        let days = Math.floor(durationLeft / (1000 * 60 * 60 * 24));
-        let hours = Math.floor(
-          (durationLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        const endDate = moment(data.endsAt);
+        const durationLeft = moment.duration(endDate.diff(now));
+        const days = Math.floor(durationLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (durationLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
         );
 
-        let minutes = Math.floor(
-          (durationLeft % (1000 * 60 * 60)) / (1000 * 60)
+        const minutes = Math.floor(
+          (durationLeft % (1000 * 60 * 60)) / (1000 * 60),
         );
 
         console.log(days, hours, minutes);
 
-        let remainingHours = `Remaining time: ${days}d , ${hours}h and ${minutes} minutes`;
+        const remainingHours = `Remaining time: ${days}d , ${hours}h and ${minutes} minutes`;
         let timeIs = `
                                           <h4 class="text-base font-Roboto">
                                                ${remainingHours}

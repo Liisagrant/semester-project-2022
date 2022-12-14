@@ -26,8 +26,7 @@ const checkLength = (value, len) => {
 };
 
 const validImgUrl = (url) => {
-  const urlPattern =
-    /(?:https?):\/\/(\w+:?\w*)?(\S+)(:\d+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+  const urlPattern = /(?:https?):\/\/(\w+:?\w*)?(\S+)(:\d+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
   if (typeof url === 'object') {
     return urlPattern.test(url.value);
   }
@@ -46,4 +45,6 @@ const validImgUrl = (url) => {
 //     }
 // }
 
-export { validEmail, validatePassword, checkLength, validImgUrl };
+export {
+  validEmail, validatePassword, checkLength, validImgUrl,
+};
