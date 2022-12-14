@@ -1,7 +1,6 @@
 import moment from 'moment';
 import { GET_LISTINGS_URL } from './settings/api';
 import { getToken, getUserName, getUserAvatar } from './utils/storage';
-import { formatDate } from './utils/dateFix';
 
 const listingContainer = document.querySelector('#listingsContainer');
 
@@ -51,11 +50,11 @@ const showListings = (data) => {
         const durationLeft = moment.duration(endDate.diff(now));
         const days = Math.floor(durationLeft / (1000 * 60 * 60 * 24));
         const hours = Math.floor(
-          (durationLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+          (durationLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
         );
 
         const minutes = Math.floor(
-          (durationLeft % (1000 * 60 * 60)) / (1000 * 60),
+          (durationLeft % (1000 * 60 * 60)) / (1000 * 60)
         );
 
         console.log(days, hours, minutes);

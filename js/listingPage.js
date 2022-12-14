@@ -1,17 +1,12 @@
 import moment from 'moment';
 import { GET_ALL_LISTINGS_URL } from './settings/api';
-import { getToken, getUserName, getUserAvatar } from './utils/storage';
 
 const listingContainer = document.querySelector('#listingsContainer');
+const listingAllErrorMessage = document.querySelector(
+  '#listingAllErrorMessage'
+);
 
-const avatar = getUserAvatar();
-const userName = getUserName();
-const accessToken = getToken();
-console.log(userName);
-console.log(accessToken);
-console.log(avatar);
-
-let GET_LISTING_ALL_URL = `${GET_ALL_LISTINGS_URL}?sort=created&sortOrder=desc&_bids=true`;
+let GET_LISTING_ALL_URL = `${GET_ALL_LISTINGS_URL}?&sort=created&sortOrder=desc&_bids=true`;
 
 const now = moment();
 
@@ -20,7 +15,10 @@ let data = [];
 
 searchBar.addEventListener('keyup', (e) => {
   const searchString = e.target.value.toLowerCase();
-  const filteredPosts = data.filter((listing) => listing.title && listing.title.toLowerCase().includes(searchString));
+  const filteredPosts = data.filter(
+    (listing) =>
+      listing.title && listing.title.toLowerCase().includes(searchString)
+  );
   showListings(filteredPosts);
 });
 
@@ -28,14 +26,14 @@ const newBtn = document.querySelector('#newest');
 const oldBtn = document.querySelector('#oldest');
 
 oldBtn.addEventListener('click', () => {
-  GET_LISTING_ALL_URL = `${GET_ALL_LISTINGS_URL}?sort=created&sortOrder=asc&_bids=true`;
+  GET_LISTING_ALL_URL = `${GET_ALL_LISTINGS_URL}?&sort=created&sortOrder=asc&_bids=true`;
   getAllListings().then(() => {
     showListings(data);
   });
 });
 
 newBtn.addEventListener('click', () => {
-  GET_LISTING_ALL_URL = `${GET_ALL_LISTINGS_URL}?sort=created&sortOrder=desc&_bids=true`;
+  GET_LISTING_ALL_URL = `${GET_ALL_LISTINGS_URL}?&sort=created&sortOrder=desc&_bids=true`;
   getAllListings().then(() => {
     showListings(data);
   });
@@ -51,11 +49,11 @@ async function getAllListings() {
 
   if (response.ok) {
     data = await response.json();
-    console.log(data);
     showListings(data);
   } else {
-    const error = await response.json();
-    const errorMessage = `Sorry, there is an error ${error}`;
+    const err = await response.json();
+    const message = `${err.errors[0].message}`;
+    listingAllErrorMessage.innerHTML = `${message}`;
   }
 }
 
@@ -70,20 +68,17 @@ const showListings = (data) => {
         const { title } = data;
         const ListingImage = data.media[0];
         const bid = data.bids;
-        // console.log(bid);
         bid.sort((x, y) => y.amount - x.amount);
         const endDate = moment(data.endsAt);
         const durationLeft = moment.duration(endDate.diff(now));
         const days = Math.floor(durationLeft / (1000 * 60 * 60 * 24));
         const hours = Math.floor(
-          (durationLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+          (durationLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
         );
 
         const minutes = Math.floor(
-          (durationLeft % (1000 * 60 * 60)) / (1000 * 60),
+          (durationLeft % (1000 * 60 * 60)) / (1000 * 60)
         );
-
-        console.log(days, hours, minutes);
 
         const remainingHours = `Remaining time: ${days}d , ${hours}h and ${minutes} minutes`;
         let timeIs = `
@@ -109,7 +104,7 @@ const showListings = (data) => {
           `${0}`;
         }
 
-        let listingMedia = `                                    <img
+        let listingMedia = `        <img
                                         class="rounded-lg object-cover h-full w-full shadow-lg"
                                         src="${ListingImage}"
                                         alt="product Image"
@@ -150,7 +145,7 @@ const showListings = (data) => {
                                 </div>
                             </div>
                         </li>
-                        </a>
+                      </a>
             `;
       })
       .join('');
