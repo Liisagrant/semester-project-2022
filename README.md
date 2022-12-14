@@ -1,5 +1,5 @@
 
-![A screenshot of my project](media/screenshot.png)
+![A screenshot of my project](image/screenshot.png)
 
 # Sniper - An Online Auction Site 💰
 
