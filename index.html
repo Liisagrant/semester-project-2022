@@ -1,225 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta
-      name="description"
-      content="This is the number one online auction page in norway. Login here"
+            name="description"
+            content="This is the number one online auction page in norway. Login here"
     />
     <title>:: LogIn ::</title>
     <script type="module" src="./js/main.js" defer></script>
     <script type="module" src="./js/logIn.js" defer></script>
-  </head>
-  <body class="bg-lightGray">
-    <header class="bg-mainColor fixed top-0 left-0 right-0 z-20">
-      <div
-        class="mx-auto max-w-7xl px-2 sm:px-4 lg:divide-y lg:divide-gray-700 lg:px-8"
-      >
+</head>
+<body class="bg-lightGray">
+<header class="bg-mainColor fixed top-0 left-0 right-0 z-20">
+    <div
+            class="mx-auto max-w-7xl px-2 sm:px-4 lg:divide-y lg:divide-gray-700 lg:px-8"
+    >
         <div class="relative flex h-16 justify-between">
-          <div class="relative z-10 flex px-2 lg:px-0">
-            <div class="flex flex-shrink-0 items-center">
-              <a href="./homepage.html">
-                <img
-                  class="block h-20 w-auto"
-                  src="/media/Sniper.svg"
-                  alt="Sniper"
-                />
-              </a>
+            <div class="relative z-10 flex px-2 lg:px-0">
+                <div class="flex flex-shrink-0 items-center">
+                    <a href="./homepage.html">
+                        <img
+                                class="block h-20 w-auto"
+                                src="/media/Sniper.svg"
+                                alt="Sniper"
+                        />
+                    </a>
+                </div>
             </div>
-          </div>
-          <div class="relative z-10 flex items-center lg:hidden">
-            <!-- Mobile menu button -->
-            <button
-              id="Mobile-menu-btn"
-              type="button"
-              class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-lightGray"
-              aria-controls="mobile-menu"
-              aria-expanded="false"
-            >
-              <span class="sr-only">Open menu</span>
-              <svg
-                id="menu"
-                class="block h-6 w-6 text-SecondColor hover:text-lightGray"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                />
-              </svg>
+            <div class="relative z-10 flex items-center lg:hidden">
+                <!-- Mobile menu button -->
+                <button
+                        id="Mobile-menu-btn"
+                        type="button"
+                        class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-lightGray"
+                        aria-controls="mobile-menu"
+                        aria-expanded="false"
+                >
+                    <span class="sr-only">Open menu</span>
+                    <svg
+                            id="menu"
+                            class="block h-6 w-6 text-SecondColor hover:text-lightGray"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            aria-hidden="true"
+                    >
+                        <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                        />
+                    </svg>
 
-              <svg
-                id="x"
-                class="hidden h-6 w-6 text-SecondColor hover:text-lightGray"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-          <div
-            class="hidden lg:relative lg:z-10 lg:ml-4 lg:flex lg:items-center"
-          ></div>
+                    <svg
+                            id="x"
+                            class="hidden h-6 w-6 text-SecondColor hover:text-lightGray"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            aria-hidden="true"
+                    >
+                        <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M6 18L18 6M6 6l12 12"
+                        />
+                    </svg>
+                </button>
+            </div>
+            <div
+                    class="hidden lg:relative lg:z-10 lg:ml-4 lg:flex lg:items-center"
+            ></div>
         </div>
         <nav
-          id="navLinks-desktop"
-          class="hidden lg:flex lg:space-x-8 lg:py-2"
-          aria-label="Global"
+                id="navLinks-desktop"
+                class="hidden lg:flex lg:space-x-8 lg:py-2"
+                aria-label="Global"
         ></nav>
-      </div>
-      <!-- Mobile menu, show/hide based on menu state. -->
-      <nav
-        class="hidden lg:hidden flex justify-center mobile-menu"
-        aria-label="Global"
-        id="navLinks-mobile"
-      ></nav>
-    </header>
+    </div>
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <nav
+            class="hidden lg:hidden flex justify-center mobile-menu"
+            aria-label="Global"
+            id="navLinks-mobile"
+    ></nav>
+</header>
+<div
+        class="max-w-7xl mx-auto flex min-h-full bg-lightGray mt-28 md:mt-24 sm:mt-20"
+>
     <div
-      class="max-w-7xl mx-auto flex min-h-full bg-lightGray mt-28 md:mt-24 sm:mt-20"
+            class="flex flex-1 flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24"
     >
-      <div
-        class="flex flex-1 flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24"
-      >
         <div class="mx-auto w-full max-w-sm lg:w-96">
-          <div>
-            <h2
-              class="mt-6 text-3xl font-Poppins font-bold tracking-tight text-black"
-            >
-              Sign in to your account
-            </h2>
-            <p class="mt-2 text-sm text-black">
-              Or
-              <a
-                href="#"
-                class="font-Lato font-bold text-mainColor hover:text-white"
-                >start your 14-day free trial</a
-              >
-            </p>
-          </div>
-
-          <div class="mt-8">
             <div>
-              <div class="relative mt-6"></div>
+                <h2
+                        class="mt-6 text-3xl font-Poppins font-bold tracking-tight text-black"
+                >
+                    Sign in to your account
+                </h2>
+                <p class="mt-2 text-sm text-black">
+                    Or
+                    <a
+                            href="#"
+                            class="font-Lato font-bold text-mainColor hover:text-white"
+                    >start your 14-day free trial</a
+                    >
+                </p>
             </div>
 
-            <div class="mt-6">
-              <form id="logInForm" action="#" method="POST" class="space-y-6">
+            <div class="mt-8">
                 <div>
-                  <label
-                    for="email"
-                    class="block font-Poppins text-sm font-medium text-gray-700"
-                    >Email address</label
-                  >
-                  <div class="mt-1">
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      autocomplete="email"
-                      class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                    />
-                  </div>
+                    <div class="relative mt-6"></div>
                 </div>
-                <span
-                  id="emailNotValid"
-                  class="hidden text-sm text-errorRed font-Lato font-bold"
-                  >Please enter a valid email. It must be a stud.noroff.no email
+
+                <div class="mt-6">
+                    <form id="logInForm" action="#" method="POST" class="space-y-6">
+                        <div>
+                            <label
+                                    for="email"
+                                    class="block font-Poppins text-sm font-medium text-gray-700"
+                            >Email address</label
+                            >
+                            <div class="mt-1">
+                                <input
+                                        id="email"
+                                        name="email"
+                                        type="email"
+                                        autocomplete="email"
+                                        class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                                />
+                            </div>
+                        </div>
+                        <span
+                                id="emailNotValid"
+                                class="hidden text-sm text-errorRed font-Lato font-bold"
+                        >Please enter a valid email. It must be a stud.noroff.no email
                   address.
                 </span>
-                <span
-                  id="emailError"
-                  class="hidden text-sm text-errorRed font-Lato font-bold"
-                  >Email is required
+                        <span
+                                id="emailError"
+                                class="hidden text-sm text-errorRed font-Lato font-bold"
+                        >Email is required
                 </span>
-                <div class="space-y-1">
-                  <label
-                    for="password"
-                    class="block text-sm font-Poppins font-medium text-gray-700"
-                    >Password</label
-                  >
-                  <div class="mt-1">
-                    <input
-                      id="password"
-                      name="password"
-                      type="password"
-                      autocomplete="current-password"
-                      class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                    />
-                  </div>
-                  <span
-                    id="passwordError"
-                    class="hidden text-sm text-errorRed font-Lato font-bold"
-                    >Password is required
+                        <div class="space-y-1">
+                            <label
+                                    for="password"
+                                    class="block text-sm font-Poppins font-medium text-gray-700"
+                            >Password</label
+                            >
+                            <div class="mt-1">
+                                <input
+                                        id="password"
+                                        name="password"
+                                        type="password"
+                                        autocomplete="current-password"
+                                        class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                                />
+                            </div>
+                            <span
+                                    id="passwordError"
+                                    class="hidden text-sm text-errorRed font-Lato font-bold"
+                            >Password is required
                   </span>
-                </div>
+                        </div>
 
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center">
-                    <input
-                      id="remember-me"
-                      name="remember-me"
-                      type="checkbox"
-                      class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                    />
-                    <label
-                      for="remember-me"
-                      class="ml-2 block text-sm text-gray-900 font-Poppins"
-                      >Remember me</label
-                    >
-                  </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <input
+                                        id="remember-me"
+                                        name="remember-me"
+                                        type="checkbox"
+                                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                                />
+                                <label
+                                        for="remember-me"
+                                        class="ml-2 block text-sm text-gray-900 font-Poppins"
+                                >Remember me</label
+                                >
+                            </div>
 
-                  <div class="text-sm">
-                    <a
-                      href="#"
-                      class="font-medium hover:text-white font-Poppins"
-                      >Forgot your password?</a
-                    >
-                  </div>
+                            <div class="text-sm">
+                                <a
+                                        href="#"
+                                        class="font-medium hover:text-white font-Poppins"
+                                >Forgot your password?</a
+                                >
+                            </div>
+                        </div>
+                        <div>
+                            <button
+                                    type="submit"
+                                    class="flex w-full justify-center rounded-md bg-darkGray font-Roboto py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                            >
+                                Sign in
+                            </button>
+                        </div>
+                        <span
+                                id="generalError"
+                                class="text-sm text-errorRed font-bold flex"
+                        ></span>
+                    </form>
                 </div>
-                <div>
-                  <button
-                    type="submit"
-                    class="flex w-full justify-center rounded-md bg-darkGray font-Roboto py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                  >
-                    Sign in
-                  </button>
-                </div>
-                <span
-                  id="generalError"
-                  class="text-sm text-errorRed font-bold flex"
-                ></span>
-              </form>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="relative hidden w-0 flex-1 lg:block">
-        <img
-          class="absolute inset-0 h-full w-full object-cover"
-          src="/media/login-image.jpg"
-          alt=""
-        />
-      </div>
     </div>
-    <div id="footerContainer"></div>
-  </body>
+    <div class="relative hidden w-0 flex-1 lg:block">
+        <img
+                class="absolute inset-0 h-full w-full object-cover"
+                src="/media/login-image.jpg"
+                alt=""
+        />
+    </div>
+</div>
+<div id="footerContainer"></div>
+</body>
 </html>
