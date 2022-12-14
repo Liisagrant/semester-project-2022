@@ -1,18 +1,9 @@
 import moment from 'moment';
 import { GET_LISTINGS_URL } from './settings/api';
-import { getToken, getUserName, getUserAvatar } from './utils/storage';
 
 const listingContainer = document.querySelector('#listingsContainer');
-
-const avatar = getUserAvatar();
-const userName = getUserName();
-const accessToken = getToken();
-console.log(userName);
-console.log(accessToken);
-console.log(avatar);
-
-const now = moment(); // todays date
-console.log('now', now);
+const homepageErrorMessage = document.querySelector('#homepageErrorMessage');
+const now = moment();
 let data = [];
 
 async function getAllListings() {
@@ -25,11 +16,11 @@ async function getAllListings() {
 
   if (response.ok) {
     data = await response.json();
-    console.log(data);
     showListings(data);
   } else {
-    const error = await response.json();
-    const errorMessage = `Sorry, there is an error ${error}`;
+    const err = await response.json();
+    const message = `${err.errors[0].message}`;
+    homepageErrorMessage.innerHTML = `${message}`;
   }
 }
 
@@ -44,7 +35,6 @@ const showListings = (data) => {
         const { title } = data;
         const ListingImage = data.media[0];
         const bid = data.bids;
-        console.log(bid);
         bid.sort((x, y) => y.amount - x.amount);
         const endDate = moment(data.endsAt);
         const durationLeft = moment.duration(endDate.diff(now));
@@ -57,9 +47,8 @@ const showListings = (data) => {
           (durationLeft % (1000 * 60 * 60)) / (1000 * 60)
         );
 
-        console.log(days, hours, minutes);
-
         const remainingHours = `Remaining time: ${days}d , ${hours}h and ${minutes} minutes`;
+
         let timeIs = `
                                           <h4 class="text-base font-Roboto">
                                                ${remainingHours}
@@ -83,7 +72,7 @@ const showListings = (data) => {
           `${0}`;
         }
 
-        let listingMedia = `                                    <img
+        let listingMedia = `        <img
                                         class="rounded-lg object-cover h-full w-full shadow-lg"
                                         src="${ListingImage}"
                                         alt="product Image"
@@ -105,7 +94,6 @@ const showListings = (data) => {
                                 <div class="w-full h-60">
                                 ${listingMedia}
                                 </div>
-
                                 <div class="space-y-2">
                                     <div class="flex justify-between">
                                         <div
