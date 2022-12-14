@@ -1,3 +1,4 @@
+import moment from 'moment';
 import { getToken, updateLocalStorageInfo } from './utils/storage';
 import { validImgUrl } from './utils/validation';
 import {
@@ -5,21 +6,17 @@ import {
   UPDATE_AVATAR_URL,
   GET_USER_PROFILE_URL,
 } from './settings/api';
-import { formatDate } from './utils/dateFix';
-import moment from 'moment';
 
 const accessToken = getToken();
 if (!accessToken) {
   location.href = '/notLoggedIn.html';
 }
 
-let now = moment(); //todays date
-console.log('now', now);
+const now = moment();
 
-const profileAvatarContainer = document.querySelector('#profielAvatar');
-const profileCreditsContainer = document.querySelector('#profielCredits');
-const profileNameAndEmailContainer =
-  document.querySelector('#profielNameEmail');
+const profileAvatarContainer = document.querySelector('#profileAvatar');
+const profileCreditsContainer = document.querySelector('#profileCredits');
+const profileNameAndEmailContainer = document.querySelector('#profileNameEmail');
 const listingContainer = document.querySelector('#listingsContainer');
 const generalError = document.querySelector('#generalError');
 
@@ -84,24 +81,21 @@ const getUserInfo = async () => {
         `;
 
     for (const list of listings) {
-      console.log(list);
       const { id } = list;
-      console.log(id);
       const { title } = list;
       const image = list.media[0];
-      console.log(image);
-      let endDate = moment(list.endsAt);
-      let durationLeft = moment.duration(endDate.diff(now));
-      let days = Math.floor(durationLeft / (1000 * 60 * 60 * 24));
-      let hours = Math.floor(
-        (durationLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      const endDate = moment(list.endsAt);
+      const durationLeft = moment.duration(endDate.diff(now));
+      const days = Math.floor(durationLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (durationLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
       );
 
-      let minutes = Math.floor((durationLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const minutes = Math.floor((durationLeft % (1000 * 60 * 60)) / (1000 * 60));
 
       console.log(days, hours, minutes);
 
-      let remainingHours = `Remaining time: ${days}d , ${hours}h and ${minutes} minutes`;
+      const remainingHours = `Remaining time: ${days}d , ${hours}h and ${minutes} minutes`;
       let timeIs = `
                                           <h4 class="text-base font-Roboto">
                                                ${remainingHours}
@@ -186,7 +180,7 @@ const modal = document.querySelector('#modal');
 const close = document.querySelector('#close');
 console.log(close);
 
-updateBtn.addEventListener('click', (e) => {
+updateBtn.addEventListener('click', () => {
   modalBg.classList.remove('hidden');
   modal.classList.remove('hidden');
 });

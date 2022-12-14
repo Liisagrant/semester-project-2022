@@ -1,259 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta
-      name="description"
-      content="This is the number one online auction page in norway. Sign up here"
+            name="description"
+            content="This is the number one online auction page in norway. Sign up here"
     />
     <title>:: SignUp ::</title>
     <script type="module" src="./js/main.js" defer></script>
     <script type="module" src="./js/signUp.js" defer></script>
-  </head>
-  <body class="bg-lightGray">
-    <header class="bg-mainColor fixed top-0 left-0 right-0 z-20">
-      <div
-        class="mx-auto max-w-7xl px-2 sm:px-4 lg:divide-y lg:divide-gray-700 lg:px-8"
-      >
+</head>
+<body class="bg-lightGray">
+<header class="bg-mainColor fixed top-0 left-0 right-0 z-20">
+    <div
+            class="mx-auto max-w-7xl px-2 sm:px-4 lg:divide-y lg:divide-gray-700 lg:px-8"
+    >
         <div class="relative flex h-16 justify-between">
-          <div class="relative z-10 flex px-2 lg:px-0">
-            <div class="flex flex-shrink-0 items-center">
-              <a href="./homePage.html">
-                <img
-                  class="block h-20 w-auto"
-                  src="/media/Sniper.svg"
-                  alt="Sniper"
-                />
-              </a>
+            <div class="relative z-10 flex px-2 lg:px-0">
+                <div class="flex flex-shrink-0 items-center">
+                    <a href="./homepage.html">
+                        <img
+                                class="block h-20 w-auto"
+                                src="/media/Sniper.svg"
+                                alt="Sniper"
+                        />
+                    </a>
+                </div>
             </div>
-          </div>
-          <div class="relative z-10 flex items-center lg:hidden">
-            <!-- Mobile menu button -->
-            <button
-              id="Mobile-menu-btn"
-              type="button"
-              class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-lightGray"
-              aria-controls="mobile-menu"
-              aria-expanded="false"
-            >
-              <span class="sr-only">Open menu</span>
-              <svg
-                id="menu"
-                class="block h-6 w-6 text-SecondColor hover:text-lightGray"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                />
-              </svg>
+            <div class="relative z-10 flex items-center lg:hidden">
+                <!-- Mobile menu button -->
+                <button
+                        id="Mobile-menu-btn"
+                        type="button"
+                        class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-lightGray"
+                        aria-controls="mobile-menu"
+                        aria-expanded="false"
+                >
+                    <span class="sr-only">Open menu</span>
+                    <svg
+                            id="menu"
+                            class="block h-6 w-6 text-SecondColor hover:text-lightGray"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            aria-hidden="true"
+                    >
+                        <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                        />
+                    </svg>
 
-              <svg
-                id="x"
-                class="hidden h-6 w-6 text-SecondColor hover:text-lightGray"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-          <div
-            class="hidden lg:relative lg:z-10 lg:ml-4 lg:flex lg:items-center"
-          ></div>
+                    <svg
+                            id="x"
+                            class="hidden h-6 w-6 text-SecondColor hover:text-lightGray"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            aria-hidden="true"
+                    >
+                        <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M6 18L18 6M6 6l12 12"
+                        />
+                    </svg>
+                </button>
+            </div>
+            <div
+                    class="hidden lg:relative lg:z-10 lg:ml-4 lg:flex lg:items-center"
+            ></div>
         </div>
         <nav
-          id="navLinks-desktop"
-          class="hidden lg:flex lg:space-x-8 lg:py-2"
-          aria-label="Global"
+                id="navLinks-desktop"
+                class="hidden lg:flex lg:space-x-8 lg:py-2"
+                aria-label="Global"
         ></nav>
-      </div>
-      <!-- Mobile menu, show/hide based on menu state. -->
-      <nav
-        class="hidden lg:hidden flex justify-center mobile-menu"
-        aria-label="Global"
-        id="navLinks-mobile"
-      ></nav>
-    </header>
-    <div class="max-w-7xl mx-auto flex min-h-full">
-      <div
-        class="flex flex-1 flex-col justify-center py-12 px-4 mt-20 sm:px-6 lg:flex-none lg:px-20 xl:px-24"
-      >
+    </div>
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <nav
+            class="hidden lg:hidden flex justify-center mobile-menu"
+            aria-label="Global"
+            id="navLinks-mobile"
+    ></nav>
+</header>
+<div class="max-w-7xl mx-auto flex min-h-full">
+    <div
+            class="flex flex-1 flex-col justify-center py-12 px-4 mt-20 sm:px-6 lg:flex-none lg:px-20 xl:px-24"
+    >
         <div class="mx-auto w-full max-w-sm lg:w-96">
-          <div>
-            <h1
-              class="mt-6 text-3xl font-Poppins font-bold tracking-tight text-black"
-            >
-              Register as a user
-            </h1>
-            <p class="mt-2 text-sm text-gray-600 font-Roboto">
-              Or
-              <a
-                href="index.html"
-                class="font-bold font-Lato text-indigo-600 hover:text-white"
-                >Sign in to your account</a
-              >
-            </p>
-          </div>
-          <div class="mt-8">
-            <div class="mt-6">
-              <form id="signUp-form" action="#" method="POST" class="space-y-6">
-                <div>
-                  <label
-                    for="firstname"
-                    class="block text-sm font-medium font-Poppins text-gray-700"
-                    >First Name</label
-                  >
-                  <div class="mt-1">
-                    <input
-                      id="firstName"
-                      name="firstname"
-                      type="text"
-                      autocomplete="firstname"
-                      class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                    />
-                  </div>
-                  <span
-                    id="firstNameError"
-                    class="hidden text-sm text-errorRed font-Lato font-bold"
-                    >Please enter your first name
+            <div>
+                <h1
+                        class="mt-6 text-3xl font-Poppins font-bold tracking-tight text-black"
+                >
+                    Register as a user
+                </h1>
+                <p class="mt-2 text-sm text-gray-600 font-Roboto">
+                    Or
+                    <a
+                            href="index.html"
+                            class="font-bold font-Lato text-indigo-600 hover:text-white"
+                    >Sign in to your account</a
+                    >
+                </p>
+            </div>
+            <div class="mt-8">
+                <div class="mt-6">
+                    <form id="signUp-form" action="#" method="POST" class="space-y-6">
+                        <div>
+                            <label
+                                    for="firstName"
+                                    class="block text-sm font-medium font-Poppins text-gray-700"
+                            >First Name</label
+                            >
+                            <div class="mt-1">
+                                <input
+                                        id="firstName"
+                                        name="firstname"
+                                        type="text"
+                                        autocomplete="firstname"
+                                        class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                                />
+                            </div>
+                            <span
+                                    id="firstNameError"
+                                    class="hidden text-sm text-errorRed font-Lato font-bold"
+                            >Please enter your first name
                   </span>
-                </div>
-                <div>
-                  <label
-                    for="email"
-                    class="block text-sm font-medium text-gray-700 font-Poppins"
-                    >Email</label
-                  >
-                  <div class="mt-1">
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      autocomplete="email"
-                      class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                    />
-                  </div>
-                  <span
-                    id="emailError"
-                    class="hidden text-sm text-errorRed font-Lato font-bold"
-                    >Please enter valid email
+                        </div>
+                        <div>
+                            <label
+                                    for="email"
+                                    class="block text-sm font-medium text-gray-700 font-Poppins"
+                            >Email</label
+                            >
+                            <div class="mt-1">
+                                <input
+                                        id="email"
+                                        name="email"
+                                        type="email"
+                                        autocomplete="email"
+                                        class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                                />
+                            </div>
+                            <span
+                                    id="emailError"
+                                    class="hidden text-sm text-errorRed font-Lato font-bold"
+                            >Please enter valid email
                   </span>
-                  <span
-                    id="emailNotValid"
-                    class="hidden text-sm text-errorRed font-Lato font-bold"
-                  >
+                            <span
+                                    id="emailNotValid"
+                                    class="hidden text-sm text-errorRed font-Lato font-bold"
+                            >
                     This email is not valid. It must be a
                     stud.noroff.no address
                   </span>
-                </div>
-                <div class="space-y-1">
-                  <label
-                    for="password"
-                    class="block text-sm font-medium text-gray-700 font-Poppins"
-                    >Password</label
-                  >
-                  <div class="mt-1">
-                    <input
-                      id="password"
-                      name="password"
-                      type="password"
-                      autocomplete="current-password"
-                      class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                    />
-                  </div>
-                  <span
-                    id="passwordError"
-                    class="hidden text-sm text-errorRed font-Lato font-bold"
-                    >Please enter a password with least 8 characters
+                        </div>
+                        <div class="space-y-1">
+                            <label
+                                    for="password"
+                                    class="block text-sm font-medium text-gray-700 font-Poppins"
+                            >Password</label
+                            >
+                            <div class="mt-1">
+                                <input
+                                        id="password"
+                                        name="password"
+                                        type="password"
+                                        autocomplete="current-password"
+                                        class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                                />
+                            </div>
+                            <span
+                                    id="passwordError"
+                                    class="hidden text-sm text-errorRed font-Lato font-bold"
+                            >Please enter a password with least 8 characters
                   </span>
-                </div>
-                <div class="space-y-1">
-                  <label
-                    for="confirmpassword"
-                    class="block text-sm font-medium text-gray-700 font-Poppins"
-                    >Confirm Password</label
-                  >
-                  <div class="mt-1">
-                    <input
-                      id="confirmpassword"
-                      name="password"
-                      type="password"
-                      autocomplete="current-password"
-                      class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                    />
-                  </div>
-                  <span
-                    id="confirmpasswordError"
-                    class="hidden text-sm text-errorRed font-Lato font-bold"
-                    >Please enter a password with least 8 characters
+                        </div>
+                        <div class="space-y-1">
+                            <label
+                                    for="confirmpassword"
+                                    class="block text-sm font-medium text-gray-700 font-Poppins"
+                            >Confirm Password</label
+                            >
+                            <div class="mt-1">
+                                <input
+                                        id="confirmpassword"
+                                        name="password"
+                                        type="password"
+                                        autocomplete="current-password"
+                                        class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                                />
+                            </div>
+                            <span
+                                    id="confirmpasswordError"
+                                    class="hidden text-sm text-errorRed font-Lato font-bold"
+                            >Please enter a password with least 8 characters
                   </span>
-                  <span
-                    id="passwordErrorNotMatch"
-                    class="hidden text-sm text-errorRed font-Lato font-bold"
-                    >Password does not match
+                            <span
+                                    id="passwordErrorNotMatch"
+                                    class="hidden text-sm text-errorRed font-Lato font-bold"
+                            >Password does not match
                   </span>
-                </div>
-                <div class="space-y-1">
-                  <label
-                    for="Avatar"
-                    class="block text-sm font-medium text-gray-700 font-Poppins"
-                    >Image url (This is optional and can be added later)</label
-                  >
-                  <div class="mt-1">
-                    <input
-                      id="avatar"
-                      name="img-url"
-                      type="img-url"
-                      class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                    />
-                  </div>
-                  <span
-                    id="avatarError"
-                    class="hidden text-sm text-errorRed font-Lato font-bold"
-                    >Sorry. This url is not valid
+                        </div>
+                        <div class="space-y-1">
+                            <label
+                                    for="Avatar"
+                                    class="block text-sm font-medium text-gray-700 font-Poppins"
+                            >Image url (This is optional and can be added later)</label
+                            >
+                            <div class="mt-1">
+                                <input
+                                        id="avatar"
+                                        name="img-url"
+                                        type="img-url"
+                                        class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                                />
+                            </div>
+                            <span
+                                    id="avatarError"
+                                    class="hidden text-sm text-errorRed font-Lato font-bold"
+                            >Sorry. This url is not valid
                   </span>
+                        </div>
+                        <div>
+                            <button
+                                    type="submit"
+                                    class="flex w-full font-Roboto justify-center rounded-md bg-darkGray py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                            >
+                                Sign Up
+                            </button>
+                        </div>
+                        <div
+                                id="generalError"
+                                class="text-center mt-6 text-errorRed"
+                        ></div>
+                    </form>
                 </div>
-                <div>
-                  <button
-                    type="submit"
-                    class="flex w-full font-Roboto justify-center rounded-md bg-darkGray py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                  >
-                    Sign Up
-                  </button>
-                </div>
-                <div
-                  id="generalError"
-                  class="text-center mt-6 text-errorRed"
-                ></div>
-              </form>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="relative hidden w-0 flex-1 lg:block">
-        <img
-          class="absolute inset-0 h-full w-full object-cover"
-          src="./media/sign-up.jpg"
-          alt="Image of fine art"
-        />
-      </div>
     </div>
-    <div id="footerContainer"></div>
-  </body>
+    <div class="relative hidden w-0 flex-1 lg:block">
+        <img
+                class="absolute inset-0 h-full w-full object-cover"
+                src="./media/sign-up.jpg"
+                alt="Image of fine art"
+        />
+    </div>
+</div>
+<div id="footerContainer"></div>
+</body>
 </html>

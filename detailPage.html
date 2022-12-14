@@ -1,225 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta
-      name="description"
-      content="This is the number one online auction page in norway. View all products and see detailed info about product and ongoing bids"
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta
+            name="description"
+            content="This is the number one online auction page in norway. View all products and see detailed info about product and ongoing bids"
     />
     <title>Vite App</title>
     <script type="module" src="./js/main.js" defer></script>
     <script type="module" src="./js/getListingById.js" defer></script>
-  </head>
-  <body class="bg-mainColor">
-    <header class="bg-mainColor fixed top-0 left-0 right-0 z-20">
-      <div
-        class="mx-auto max-w-7xl px-2 sm:px-4 lg:divide-y lg:divide-gray-700 lg:px-8"
-      >
+</head>
+<body class="bg-mainColor">
+<header class="bg-mainColor fixed top-0 left-0 right-0 z-20">
+    <div
+            class="mx-auto max-w-7xl px-2 sm:px-4 lg:divide-y lg:divide-gray-700 lg:px-8"
+    >
         <div class="relative flex h-16 justify-between">
-          <div class="relative z-10 flex px-2 lg:px-0">
-            <div class="flex flex-shrink-0 items-center">
-              <a href="./homepage.html">
-                <img
-                  class="block h-20 w-auto"
-                  src="/media/Sniper.svg"
-                  alt="Sniper"
-                />
-              </a>
+            <div class="relative z-10 flex px-2 lg:px-0">
+                <div class="flex flex-shrink-0 items-center">
+                    <a href="./homepage.html">
+                        <img
+                                class="block h-20 w-auto"
+                                src="/media/Sniper.svg"
+                                alt="Sniper"
+                        />
+                    </a>
+                </div>
             </div>
-          </div>
-          <div class="relative z-10 flex items-center lg:hidden">
-            <!-- Mobile menu button -->
-            <button
-              id="Mobile-menu-btn"
-              type="button"
-              class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-lightGray"
-              aria-controls="mobile-menu"
-              aria-expanded="false"
+            <div class="relative z-10 flex items-center lg:hidden">
+                <!-- Mobile menu button -->
+                <button
+                        id="Mobile-menu-btn"
+                        type="button"
+                        class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-lightGray"
+                        aria-controls="mobile-menu"
+                        aria-expanded="false"
+                >
+                    <span class="sr-only">Open menu</span>
+                    <svg
+                            id="menu"
+                            class="block h-6 w-6 text-SecondColor hover:text-lightGray"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            aria-hidden="true"
+                    >
+                        <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                        />
+                    </svg>
+                    <svg
+                            id="x"
+                            class="hidden h-6 w-6 text-SecondColor hover:text-lightGray"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            aria-hidden="true"
+                    >
+                        <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M6 18L18 6M6 6l12 12"
+                        />
+                    </svg>
+                </button>
+            </div>
+            <div
+                    class="hidden lg:relative lg:z-10 lg:ml-4 lg:flex lg:items-center"
             >
-              <span class="sr-only">Open menu</span>
-              <svg
-                id="menu"
-                class="block h-6 w-6 text-SecondColor hover:text-lightGray"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                />
-              </svg>
-              <svg
-                id="x"
-                class="hidden h-6 w-6 text-SecondColor hover:text-lightGray"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-          <div
-            class="hidden lg:relative lg:z-10 lg:ml-4 lg:flex lg:items-center"
-          >
-            <div class="flex flex-row relative ml-4 flex-shrink-0">
-              <div id="userCredit"></div>
-              <div class="h-8 w-8" id="userAvatar"></div>
-              <div id="signOutDesktop"></div>
+                <div class="flex flex-row relative ml-4 flex-shrink-0">
+                    <div id="userCredit"></div>
+                    <div class="h-8 w-8" id="userAvatar"></div>
+                    <div id="signOutDesktop"></div>
+                </div>
             </div>
-          </div>
         </div>
         <nav
-          id="navLinks-desktop"
-          class="hidden lg:flex lg:space-x-8 lg:py-2"
-          aria-label="Global"
+                id="navLinks-desktop"
+                class="hidden lg:flex lg:space-x-8 lg:py-2"
+                aria-label="Global"
         ></nav>
-      </div>
-      <!-- Mobile menu-->
-      <div id="signOutMobil"></div>
-      <nav
-        class="hidden lg:hidden flex justify-center mobile-menu"
-        aria-label="Global"
-        id="navLinks-mobile"
-      ></nav>
-    </header>
-    <div
-      id="modalBg"
-      class="relative z-10 hidden"
-      aria-labelledby="modal-title"
-      role="dialog"
-      aria-modal="true"
-    >
-      <div
-        class="fixed inset-0 bg-black bg-opacity-75 transition-opacity"
-      ></div>
-
-      <div id="modal" class="fixed inset-0 z-10 overflow-y-auto">
-        <div
-          class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
-        >
-          <div
-            class="relative transform overflow-hidden bg-lightGray rounded-lg px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6"
-          >
-            <div>
-              <form
-                id="updateAvatarForm"
-                action="#"
-                method="POST"
-                class="space-y-1"
-              >
-                <div
-                  class="font-bold flex justify-end text-darkGray m-1"
-                  id="x"
-                >
-                  X
-                </div>
-                <h2 class="font-Poppins text-center font-bold">
-                  All Bids made on this Listing
-                </h2>
-                <div class="flex w-60 items-center justify-center mx-auto">
-                  <div class="flex-1 truncate">
-                    <div class="flex items-center space-x-3">
-                      <h3
-                        class="truncate text-sm font-medium text-gray-900"
-                        id="sellerName"
-                      ></h3>
-                      <span
-                        class="inline-block flex-shrink-0 rounded-full bg-lightGreen px-1 py-0.5 text-xs font-medium text-green-800"
-                        >Seller</span
-                      >
-                    </div>
-                  </div>
-                  <div id="sellerAvatar"></div>
-                </div>
-                <div id="bidList"></div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-    <main class="bg-lightGray flex justify-center">
-      <div
-        class="bg-white mt-24 mb-16 mx-2 rounded-md max-w-xl lg:mt-44 md:max-w-2xl lg:max-w-4xl"
-      >
-        <div class="flex flex-col md:flex-row">
-          <div class="h-40 md:80 md:h-96" id="listingImage"></div>
-          <div class="m-4">
-            <h1 class="text-lg font-bold font-Poppins" id="titleContainer"></h1>
-            <p
-              class="text-green font-semibold font-Roboto"
-              id="currentBidContainer"
-            ></p>
-            <div class="text-mainColor text-sm my-2 mx-auto">
-              <div id="timeEnd"></div>
-            </div>
-            <div id="disc"></div>
-            <div class="flex flex-row justify-center p-1 mt-16">
-              <div class="bg-white py-2 font-Roboto"></div>
-              <form class="flex flex-row" id="addBidForm">
+    <!-- Mobile menu-->
+    <div id="signOutMobil"></div>
+    <nav
+            class="hidden lg:hidden flex justify-center mobile-menu"
+            aria-label="Global"
+            id="navLinks-mobile"
+    ></nav>
+</header>
+<div
+        id="modalBg"
+        class="relative z-10 hidden"
+        aria-labelledby="modal-title"
+        role="dialog"
+        aria-modal="true"
+>
+    <div
+            class="fixed inset-0 bg-black bg-opacity-75 transition-opacity"
+    ></div>
+
+    <div id="modal" class="fixed inset-0 z-10 overflow-y-auto">
+        <div
+                class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+        >
+            <div
+                    class="relative transform overflow-hidden bg-lightGray rounded-lg px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6"
+            >
                 <div>
-                  <label
-                    for="placeBid"
-                    class="block text-sm font-medium text-gray-700 font-Roboto"
-                  ></label>
-                  <input
-                    id="placeBid"
-                    type="number"
-                    class="flex w-16 justify-center font-Roboto border-2 border-lightGray rounded-l-md bg-white px-2 my-2 text-md font-bold text-black shadow-sm hover:border-SecondColor focus:outline-none"
-                  />
+                    <form
+                            id="updateAvatarForm"
+                            action="#"
+                            method="POST"
+                            class="space-y-1"
+                    >
+                        <div
+                                class="font-bold flex justify-end text-darkGray m-1"
+                                id="x"
+                        >
+                            X
+                        </div>
+                        <h2 class="font-Poppins text-center font-bold">
+                            All Bids made on this Listing
+                        </h2>
+                        <div class="flex w-60 items-center justify-center mx-auto">
+                            <div class="flex-1 truncate">
+                                <div class="flex items-center space-x-3">
+                                    <h3
+                                            class="truncate text-sm font-medium text-gray-900"
+                                            id="sellerName"
+                                    ></h3>
+                                    <span
+                                            class="inline-block flex-shrink-0 rounded-full bg-lightGreen px-1 py-0.5 text-xs font-medium text-green-800"
+                                    >Seller</span
+                                    >
+                                </div>
+                            </div>
+                            <div id="sellerAvatar"></div>
+                        </div>
+                        <div id="bidList"></div>
+                    </form>
                 </div>
-                <button
-                  type="submit"
-                  id="addBid"
-                  class="flex justify-center font-Roboto border-2 border-darkGray rounded-r-md bg-darkGray px-2 my-2 text-md font-bold text-white shadow-sm hover:bg-mainColor hover:text-white focus:outline-none"
-                >
-                  <span class="m-auto">ADD BID</span>
-                </button>
-              </form>
             </div>
-            <div
-              id="errorBid"
-              class="text-sm font-bold font-lato text-errorRed text-center mb-2"
-            ></div>
-            <div
-              id="successBid"
-              class="text-sm font-bold font-lato text-green text-center mb-2"
-            ></div>
-            <div class="flex justify-center">
-              <button
-                id="seeBidsMadeBtn"
-                type="submit"
-                class="flex justify-center rounded-md bg-darkGray font-Roboto py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-              >
-                veiw all bids made
-              </button>
-            </div>
-            <div id="notLoggedIN" class="hidden">
-              <p class="font-lato font-bold text-mainColor mt-4 text-center">
-                If you want to make a bid, please LogIn or Sign up!
-              </p>
-            </div>
-          </div>
         </div>
-      </div>
-    </main>
-    <div id="footerContainer"></div>
-  </body>
+    </div>
+</div>
+<main class="bg-lightGray flex justify-center">
+    <div
+            class="bg-white mt-24 mb-16 mx-2 rounded-md max-w-xl lg:mt-44 md:max-w-2xl lg:max-w-4xl"
+    >
+        <div class="flex flex-col md:flex-row">
+            <div class="h-40 md:80 md:h-96" id="listingImage"></div>
+            <div class="m-4">
+                <h1 class="text-lg font-bold font-Poppins" id="titleContainer"></h1>
+                <p
+                        class="text-green font-semibold font-Roboto"
+                        id="currentBidContainer"
+                ></p>
+                <div class="text-mainColor text-sm my-2 mx-auto">
+                    <div id="timeEnd"></div>
+                </div>
+                <div id="disc"></div>
+                <div class="flex flex-row justify-center p-1 mt-16">
+                    <div class="bg-white py-2 font-Roboto"></div>
+                    <form class="flex flex-row" id="addBidForm">
+                        <div>
+                            <label
+                                    for="placeBid"
+                                    class="block text-sm font-medium text-gray-700 font-Roboto"
+                            ></label>
+                            <input
+                                    id="placeBid"
+                                    type="number"
+                                    class="flex w-16 justify-center font-Roboto border-2 border-lightGray rounded-l-md bg-white px-2 my-2 text-md font-bold text-black shadow-sm hover:border-SecondColor focus:outline-none"
+                            />
+                        </div>
+                        <button
+                                type="submit"
+                                id="addBid"
+                                class="flex justify-center font-Roboto border-2 border-darkGray rounded-r-md bg-darkGray px-2 my-2 text-md font-bold text-white shadow-sm hover:bg-mainColor hover:text-white focus:outline-none"
+                        >
+                            <span class="m-auto">ADD BID</span>
+                        </button>
+                    </form>
+                </div>
+                <div
+                        id="errorBid"
+                        class="text-sm font-bold font-lato text-errorRed text-center mb-2"
+                ></div>
+                <div
+                        id="successBid"
+                        class="text-sm font-bold font-lato text-green text-center mb-2"
+                ></div>
+                <div class="flex justify-center">
+                    <button
+                            id="seeBidsMadeBtn"
+                            type="submit"
+                            class="flex justify-center rounded-md bg-darkGray font-Roboto py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-mainColor focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    >
+                        view all bids made
+                    </button>
+                </div>
+                <div id="notLoggedIN" class="hidden">
+                    <p class="font-lato font-bold text-mainColor mt-4 text-center">
+                        If you want to make a bid, please Login or Signup!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<div id="footerContainer"></div>
+</body>
 </html>
