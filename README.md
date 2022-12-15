@@ -18,16 +18,36 @@ The page is built using Vite, along with:
 
 ## How to Run the Project 🏃‍♂️
 
-This project is built using Vite, so there is no need to install Vite in order to run it. To run the project, simply clone or fork this repository. Then, your project terminal, run the following commands:
+This project is built using Vite. To run the project, simply clone or fork this repository. Then, in your project terminal, run the following commands:
+
+```
+npm run install
+```
+(Installs the node modules)
+
+and then
 
 ```
 npm run build
 ```
-and
+
+(Makes project smaller adds a dist folder)
+
+then
+
+```
+npm run preview
+```
+
+To preview the "small" project from dist
+
+or 
+
 ```
 npm run dev
 ```
 
+To get the whole project
 
 After running these commands, the project will be built and served locally. 💻 📡
 
