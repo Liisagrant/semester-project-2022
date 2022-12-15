@@ -1,4 +1,4 @@
-import { getUserName, getUserCredit, getUserAvatar } from '../utils/storage';
+import { getUserName, getUserCredit } from '../utils/storage';
 
 const myNavBar = () => {
   const { pathname } = document.location;
@@ -112,7 +112,7 @@ const myNavBar = () => {
                         }"
                         >LogIn</a
                     >
-                                <a
+                    <a
                         href="./homepage.html"
                         class="text-white hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
                           pathname === '/homepage.html' ? 'bg-onPageColor' : ''
@@ -120,7 +120,7 @@ const myNavBar = () => {
                         aria-current="page"
                         >Home</a
                     >
-                                        <a
+                    <a
                         href="./listingpage.html"
                         class="text-white font-Poppins hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
                           pathname === '/listingpage.html'
@@ -132,39 +132,41 @@ const myNavBar = () => {
             `;
       if (userName) {
         navbarLinksDesktop = `
-                        <a
-                        href="./homepage.html"
-                        class="text-white hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
-                          pathname === '/homepage.html' ? 'bg-onPageColor' : ''
-                        }"
-                        aria-current="page"
-                        >Home</a
-                    >
-                    <a
-                        href="./listingpage.html"
-                        class="text-white font-Poppins hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
-                          pathname === '/listingpage.html'
-                            ? 'bg-onPageColor'
-                            : ''
-                        }"
-                        >Items in auction</a
-                    >
-                    <a
-                        href="./addListing.html"
-                        class="text-white font-Poppins hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
-                          pathname === '/addListing.html'
-                            ? 'bg-onPageColor'
-                            : ''
-                        }"
-                        >Add a new Item</a
-                    >
-                    <a
-                        href="./profile.html"
-                        class="text-white font-Poppins hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
-                          pathname === '/profile.html' ? 'bg-onPageColor' : ''
-                        }"
-                        >Profile</a
-                    >
+                      <a
+                          href="./homepage.html"
+                          class="text-white hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
+                            pathname === '/homepage.html'
+                              ? 'bg-onPageColor'
+                              : ''
+                          }"
+                            aria-current="page"
+                          >Home</a
+                      >
+                      <a
+                          href="./listingpage.html"
+                          class="text-white font-Poppins hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
+                            pathname === '/listingpage.html'
+                              ? 'bg-onPageColor'
+                              : ''
+                          }"
+                          >Items in auction</a
+                      >
+                      <a
+                          href="./addListing.html"
+                          class="text-white font-Poppins hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
+                            pathname === '/addListing.html'
+                              ? 'bg-onPageColor'
+                              : ''
+                          }"
+                          >Add a new Item</a
+                      >
+                      <a
+                          href="./profile.html"
+                          class="text-white font-Poppins hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
+                            pathname === '/profile.html' ? 'bg-onPageColor' : ''
+                          }"
+                          >Profile</a
+                      >
                 `;
       }
       navbarMobile.innerHTML = `${navbarLinksMobile}`;

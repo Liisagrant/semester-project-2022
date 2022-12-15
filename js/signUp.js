@@ -7,24 +7,18 @@ import {
 } from './utils/validation';
 
 const form = document.querySelector('#signUp-form');
-
 const firstName = document.querySelector('#firstName');
 const firstNameError = document.querySelector('#firstNameError');
-
 const email = document.querySelector('#email');
 const emailError = document.querySelector('#emailError');
 const emailNotValid = document.querySelector('#emailNotValid');
-
 const password = document.querySelector('#password');
 const passwordError = document.querySelector('#passwordError');
-
 const confirmPassword = document.querySelector('#confirmpassword');
 const confirmpasswordError = document.querySelector('#confirmpasswordError');
 const passwordErrorNotMatch = document.querySelector('#passwordErrorNotMatch');
-
 const avatar = document.querySelector('#avatar');
 const avatarError = document.querySelector('#avatarError');
-
 const errorSignupUser = document.querySelector('#generalError');
 
 form.addEventListener('submit', (event) => {
@@ -50,10 +44,7 @@ form.addEventListener('submit', (event) => {
   if (checkLength(email.value, 1) && validEmail(email.value) === true) {
     emailNotValid.classList.add('hidden');
     isEmailValid = true;
-  } else if (
-    checkLength(email.value, 1)
-        && validEmail(email.value) === false
-  ) {
+  } else if (checkLength(email.value, 1) && validEmail(email.value) === false) {
     emailNotValid.classList.remove('hidden');
   }
 
@@ -90,13 +81,14 @@ form.addEventListener('submit', (event) => {
     avatarError.classList.remove('hidden');
   }
 
-  const isFormValid = isFirstName
-        && isEmail
-        && isEmailValid
-        && isPassword
-        && isConfirmPassword
-        && isPasswordMatch
-        && isAvatarValid;
+  const isFormValid =
+    isFirstName &&
+    isEmail &&
+    isEmailValid &&
+    isPassword &&
+    isConfirmPassword &&
+    isPasswordMatch &&
+    isAvatarValid;
 
   if (isFormValid) {
     const userData = {

@@ -30,7 +30,6 @@ const getListingById = async () => {
   if (response.ok) {
     const data = await response.json();
     loader.classList.add('hidden');
-    console.log(data);
     const { title } = data;
     const { description } = data;
     const seller = data.seller.name;
@@ -72,23 +71,22 @@ const getListingById = async () => {
     }
 
     let discListing = `
-                            <p class="text-xs font-Lato md:max-w-md">
+                        <p class="text-xs font-Lato md:max-w-md">
                             ${description}
                         </p>
             `;
     if (!description) {
       discListing = `
-                            <p class="text-xs font-Lato md:max-w-md">
+                        <p class="text-xs font-Lato md:max-w-md">
                             No description made on this listing
                         </p>
                 `;
     }
 
     discContainer.innerHTML = `${discListing}`;
-    console.log(disc);
 
     let listingMedia = `                                  
-                            <img
+                        <img
                             src="${ListingImage}"
                             alt="Product image"
                             class="object-cover h-full w-full rounded-t-md md:rounded-r-none md:rounded-l-md"
@@ -96,7 +94,7 @@ const getListingById = async () => {
     `;
     if (!ListingImage) {
       listingMedia = `
-                                    <img
+                        <img
                             src="/media/no-photo.jpg"
                             alt="Product image"
                             class="object-cover h-full w-full rounded-t-md md:rounded-r-none md:rounded-l-md"
@@ -129,10 +127,8 @@ const getListingById = async () => {
     }
 
     for (const data of bid) {
-      console.log(data);
       const seller = data.bidderName;
       const { amount } = data;
-      console.log(seller);
 
       const listing = `
                   <ul role="list" class="divide-y divide-gray-200">
@@ -171,7 +167,6 @@ x.onclick = () => {
   modalBg.classList.add('hidden');
 };
 
-// Bid On a listing
 const BID_ON_LISTIN_URL = `${GET_LISTING_BY_ID_URL}/${ID}/bids`;
 const bidForm = document.querySelector('#addBidForm');
 const inputBid = document.querySelector('#placeBid');
@@ -187,7 +182,6 @@ if (!accessToken) {
 bidForm.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  console.log('inputBid', inputBid.value);
   const bidValue = getListingById();
 
   if (inputBid.value <= bidValue) {
@@ -207,7 +201,6 @@ bidForm.addEventListener('submit', (event) => {
       body: JSON.stringify(amountBid),
     });
     if (response.ok) {
-      console.log('yaaay');
       errorBid.innerHTML = '';
       successBid.innerHTML = 'Your Bid is added. Good Luck';
       bidForm.reset();
@@ -218,7 +211,6 @@ bidForm.addEventListener('submit', (event) => {
       const err = await response.json();
       const message = `${err.errors[0].message}`;
       errorBid.innerHTML = `${message}`;
-
       throw new Error(message);
     }
   };
