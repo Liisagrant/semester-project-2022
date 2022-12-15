@@ -126,9 +126,9 @@ const getListingById = async () => {
         '<p class="text-center">No bids made on this listing<p>';
     }
 
-    for (const data of bid) {
-      const seller = data.bidderName;
-      const { amount } = data;
+    for (const bidData of bid) {
+      const sellerListing = bidData.bidderName;
+      const { amount } = bidData;
 
       const listing = `
                   <ul role="list" class="divide-y divide-gray-200">
@@ -136,7 +136,7 @@ const getListingById = async () => {
                     <div class="flex space-x-3">
                         <div class="flex-1 space-y-1">
                          <div class="flex items-center justify-between">
-                            <h3 class="text-sm font-medium">${seller}</h3>
+                            <h3 class="text-sm font-medium">${sellerListing}</h3>
                             <p class="text-sm text-gray-500">${amount} $</p>
                         </div>
                     </div>
@@ -152,7 +152,7 @@ const getListingById = async () => {
 getListingById();
 
 const seeBidsMadeBtn = document.querySelector('#seeBidsMadeBtn');
-
+const modalBg = document.querySelector('#modalBg');
 const x = document.querySelector('#x');
 
 seeBidsMadeBtn.onclick = () => {

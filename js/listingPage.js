@@ -66,13 +66,13 @@ const showListings = (data) => {
     listingContainer.innerHTML = 'Sorry no listings today';
   } else {
     const listOfListings = data
-      .map((data) => {
-        const { id } = data;
-        const { title } = data;
-        const ListingImage = data.media[0];
-        const bid = data.bids;
+      .map((listing) => {
+        const { id } = listing;
+        const { title } = listing;
+        const ListingImage = listing.media[0];
+        const bid = listing.bids;
         bid.sort((x, y) => y.amount - x.amount);
-        const endDate = moment(data.endsAt);
+        const endDate = moment(listing.endsAt);
         const durationLeft = moment.duration(endDate.diff(now));
         const days = Math.floor(durationLeft / (1000 * 60 * 60 * 24));
         const hours = Math.floor(

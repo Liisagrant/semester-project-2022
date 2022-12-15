@@ -7,38 +7,19 @@ const now = moment();
 let data = [];
 const loader = document.querySelector('#loaderSpinner');
 
-async function getAllListings() {
-  const response = await fetch(GET_LISTINGS_URL, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-
-  if (response.ok) {
-    data = await response.json();
-    loader.classList.add('hidden');
-    showListings(data);
-  } else {
-    const err = await response.json();
-    const message = `${err.errors[0].message}`;
-    homepageErrorMessage.innerHTML = `${message}`;
-  }
-}
-
 const showListings = (data) => {
   listingContainer.innerHTML = '';
   if (!data.length) {
     listingContainer.innerHTML = 'Sorry no listings today';
   } else {
     const listOfListings = data
-      .map((data) => {
-        const { id } = data;
-        const { title } = data;
-        const ListingImage = data.media[0];
-        const bid = data.bids;
+      .map((listing) => {
+        const { id } = listing;
+        const { title } = listing;
+        const ListingImage = listing.media[0];
+        const bid = listing.bids;
         bid.sort((x, y) => y.amount - x.amount);
-        const endDate = moment(data.endsAt);
+        const endDate = moment(listing.endsAt);
         const durationLeft = moment.duration(endDate.diff(now));
         const days = Math.floor(durationLeft / (1000 * 60 * 60 * 24));
         const hours = Math.floor(
@@ -126,3 +107,22 @@ const showListings = (data) => {
 getAllListings().then(() => {
   showListings(data);
 });
+
+async function getAllListings() {
+  const response = await fetch(GET_LISTINGS_URL, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (response.ok) {
+    data = await response.json();
+    loader.classList.add('hidden');
+    showListings(data);
+  } else {
+    const err = await response.json();
+    const message = `${err.errors[0].message}`;
+    homepageErrorMessage.innerHTML = `${message}`;
+  }
+}
