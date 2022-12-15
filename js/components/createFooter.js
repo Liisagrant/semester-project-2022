@@ -1,5 +1,3 @@
-import { getUserName } from '../utils/storage';
-
 const myFooter = () => {
   const footerContainer = document.querySelector('#footerContainer');
 
@@ -26,7 +24,6 @@ const myFooter = () => {
                   />
                 </svg>
               </a>
-
               <a href="#" class="hover:text-darkGray">
                 <span class="sr-only">Instagram</span>
                 <svg
@@ -42,7 +39,6 @@ const myFooter = () => {
                   />
                 </svg>
               </a>
-
               <a href="#" class="hover:text-lightGray">
                 <span class="sr-only">Twitter</span>
                 <svg
@@ -56,7 +52,6 @@ const myFooter = () => {
                   />
                 </svg>
               </a>
-
               <a href="#" class="hover:text-darkGray">
                 <span class="sr-only">GitHub</span>
                 <svg
@@ -72,7 +67,6 @@ const myFooter = () => {
                   />
                 </svg>
               </a>
-
               <a href="#" class="hover:text-darkGray">
                 <span class="sr-only">Dribbble</span>
                 <svg
@@ -106,7 +100,6 @@ const myFooter = () => {
                       >Homepage</a
                     >
                   </li>
-
                   <li>
                     <a
                       href="./listingpage.html"
@@ -114,7 +107,6 @@ const myFooter = () => {
                       >Items in Auction</a
                     >
                   </li>
-
                   <li>
                     <a
                       href="signUp.html"
@@ -122,7 +114,6 @@ const myFooter = () => {
                       >SignUp</a
                     >
                   </li>
-
                   <li>
                     <a
                       href="./index.html"
@@ -144,7 +135,6 @@ const myFooter = () => {
                       >Pricing</a
                     >
                   </li>
-
                   <li>
                     <a
                       href="#"
@@ -152,7 +142,6 @@ const myFooter = () => {
                       >Documentation</a
                     >
                   </li>
-
                   <li>
                     <a
                       href="#"
@@ -160,7 +149,6 @@ const myFooter = () => {
                       >Guides</a
                     >
                   </li>
-
                   <li>
                     <a
                       href="#"
@@ -184,7 +172,6 @@ const myFooter = () => {
                       >About</a
                     >
                   </li>
-
                   <li>
                     <a
                       href="#"
@@ -192,7 +179,6 @@ const myFooter = () => {
                       >Blog</a
                     >
                   </li>
-
                   <li>
                     <a
                       href="#"
@@ -200,7 +186,6 @@ const myFooter = () => {
                       >Jobs</a
                     >
                   </li>
-
                   <li>
                     <a
                       href="#"
@@ -208,7 +193,6 @@ const myFooter = () => {
                       >Press</a
                     >
                   </li>
-
                   <li>
                     <a
                       href="#"
@@ -230,7 +214,6 @@ const myFooter = () => {
                       >Claim</a
                     >
                   </li>
-
                   <li>
                     <a
                       href="#"
@@ -238,7 +221,6 @@ const myFooter = () => {
                       >Privacy</a
                     >
                   </li>
-
                   <li>
                     <a
                       href="#"

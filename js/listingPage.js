@@ -87,13 +87,13 @@ const showListings = (data) => {
         let timeIs = `
                                           <h4 class="text-base font-Roboto">
                                                ${remainingHours}
-                                           </h4>
+                                          </h4>
         `;
         if (minutes < 0) {
           timeIs = `
                                           <h4 class="text-base font-Roboto text-errorRed">
                                                This auction has ended
-                                           </h4>
+                                          </h4>
         `;
         }
 

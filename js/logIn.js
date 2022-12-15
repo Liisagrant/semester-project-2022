@@ -29,8 +29,8 @@ if (logInForm) {
       emailNotValid.classList.add('hidden');
       isEmailValid = true;
     } else if (
-      checkLength(email.value, 0)
-      && validEmail(email.value) === false
+      checkLength(email.value, 0) &&
+      validEmail(email.value) === false
     ) {
       emailNotValid.classList.remove('hidden');
     }
@@ -79,11 +79,9 @@ if (logInForm) {
           const message = `${err.errors[0].message}`;
           throw new Error(message);
         }
-      }()).catch((err) => {
+      })().catch((err) => {
         generalError.innerHTML = `${err}`;
       });
-    } else {
-      console.log('This did absoloutely not work');
     }
   });
 }

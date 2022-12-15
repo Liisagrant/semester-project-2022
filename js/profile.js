@@ -43,19 +43,20 @@ const getUserInfo = async () => {
       generalError.classList.add('hidden');
     }
     let userAvatar = `
-                            <img
-                                    class="h-24 w-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32"
-                                    src="${avatar}"
-                                    alt="User Avatar"
-                            />
+            <img
+                class="h-24 w-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32"
+                src="${avatar}"
+                alt="User Avatar"
+            />
         
         `;
     if (!avatar) {
-      userAvatar = ` <img
+      userAvatar = ` 
+              <img
                     class="h-24 w-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32"
                     src="./media/no-photo.jpg"
                     alt="User Avatar"
-                />`;
+              />`;
     }
 
     profileAvatarContainer.innerHTML = `${userAvatar}`;
@@ -162,7 +163,6 @@ const getUserInfo = async () => {
 
 getUserInfo();
 
-// Modal and Update avatar
 const updateBtn = document.querySelector('#updateAvatar');
 const form = document.querySelector('#updateAvatarForm');
 const modalBg = document.querySelector('#modal-background');

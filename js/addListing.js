@@ -93,8 +93,6 @@ listingForm.addEventListener('submit', (event) => {
       endsAt: deadline.value,
     };
 
-    console.log(listingData);
-
     async function createListing() {
       const response = await fetch(CREATE_LISTING_URL, {
         method: 'POST',
@@ -104,11 +102,7 @@ listingForm.addEventListener('submit', (event) => {
         },
         body: JSON.stringify(listingData),
       });
-      console.log('create list response', response);
       if (response.ok) {
-        const data = await response.json();
-        console.log(data);
-        console.log('yaya all goood');
         formBox.classList.add('hidden');
         listingAddedMessage.classList.remove('hidden');
         window.scrollTo(0, 0);
