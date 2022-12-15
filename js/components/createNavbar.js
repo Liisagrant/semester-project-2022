@@ -60,7 +60,7 @@ const myNavBar = () => {
                             ? 'bg-onPageColor'
                             : ''
                         }"
-                        >Items in action</a
+                        >Items in auction</a
                     >
                     <a
                         href="./addListing.html"

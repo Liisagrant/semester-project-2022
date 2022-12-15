@@ -5,6 +5,7 @@ const listingContainer = document.querySelector('#listingsContainer');
 const homepageErrorMessage = document.querySelector('#homepageErrorMessage');
 const now = moment();
 let data = [];
+const loader = document.querySelector('#loaderSpinner');
 
 async function getAllListings() {
   const response = await fetch(GET_LISTINGS_URL, {
@@ -16,6 +17,7 @@ async function getAllListings() {
 
   if (response.ok) {
     data = await response.json();
+    loader.classList.add('hidden');
     showListings(data);
   } else {
     const err = await response.json();
@@ -40,11 +42,11 @@ const showListings = (data) => {
         const durationLeft = moment.duration(endDate.diff(now));
         const days = Math.floor(durationLeft / (1000 * 60 * 60 * 24));
         const hours = Math.floor(
-          (durationLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+          (durationLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
         );
 
         const minutes = Math.floor(
-          (durationLeft % (1000 * 60 * 60)) / (1000 * 60),
+          (durationLeft % (1000 * 60 * 60)) / (1000 * 60)
         );
 
         const remainingHours = `Remaining time: ${days}d , ${hours}h and ${minutes} minutes`;
@@ -88,7 +90,7 @@ const showListings = (data) => {
         }
 
         return `
-                <a href="detailPage.html?id=${id}" class="mx-2">
+                <a href="detailPage.html?id=${id}" class="mx-2 overflow-hidden">
                         <li class="bg-lightGray px-2 py-2 rounded-lg hover:scale-105 transition duration-500 cursor-pointer z-0">
                             <div class="space-y-4">
                                 <div class="w-full h-60">

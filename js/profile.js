@@ -13,13 +13,13 @@ if (!accessToken) {
 }
 
 const now = moment();
-
 const profileAvatarContainer = document.querySelector('#profileAvatar');
 const profileCreditsContainer = document.querySelector('#profileCredits');
 const profileNameAndEmailContainer =
   document.querySelector('#profileNameEmail');
 const listingContainer = document.querySelector('#listingsContainer');
 const generalError = document.querySelector('#generalError');
+const loader = document.querySelector('#loaderSpinner');
 
 const getUserInfo = async () => {
   const response = await fetch(GET_PROFILE_URL, {
@@ -31,6 +31,7 @@ const getUserInfo = async () => {
   });
   if (response.ok) {
     const data = await response.json();
+    loader.classList.add('hidden');
     const { name } = data;
     const { email } = data;
     const { avatar } = data;
