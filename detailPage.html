@@ -118,12 +118,7 @@
             class="relative transform overflow-hidden bg-lightGray rounded-lg px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6"
           >
             <div>
-              <form
-                id="updateAvatarForm"
-                action="#"
-                method="POST"
-                class="space-y-1"
-              >
+              <form id="allBidsForm" action="#" method="POST" class="space-y-1">
                 <div
                   class="font-bold flex justify-end text-darkGray m-1 hover:cursor-pointer"
                   id="x"
@@ -161,7 +156,7 @@
       >
         <div class="flex flex-col md:flex-row">
           <div class="h-40 md:80 md:h-96" id="listingImage"></div>
-          <div class="m-4">
+          <div class="m-4 max-w-sm overflow-hidden">
             <h1 class="text-lg font-bold font-Poppins" id="titleContainer"></h1>
             <p
               class="text-green font-semibold font-Roboto"
@@ -171,6 +166,9 @@
               <div id="timeEnd"></div>
             </div>
             <div id="disc"></div>
+            <div id="loaderSpinner" class="flex justify-center h-32">
+              <img src="./media//loader.gif" alt="loader" />
+            </div>
             <div class="flex flex-row justify-center p-1 mt-4">
               <div class="bg-white py-2 font-Roboto"></div>
               <div id="notLoggedIN" class="hidden">

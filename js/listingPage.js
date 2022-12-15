@@ -123,7 +123,7 @@ const showListings = (data) => {
         }
 
         return `
-                <a href="detailPage.html?id=${id}" class="mx-2">
+                <a href="detailPage.html?id=${id}" class="mx-2 overflow-hidden">
                         <li class="bg-lightGray px-2 py-2 rounded-lg hover:scale-105 transition duration-500 cursor-pointer z-0">
                             <div class="space-y-4">
                                 <div class="w-full h-60">

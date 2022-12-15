@@ -15,6 +15,7 @@ const discContainer = document.querySelector('#disc');
 const currentBidContainer = document.querySelector('#currentBidContainer');
 const titleContainer = document.querySelector('#titleContainer');
 const bidList = document.querySelector('#bidList');
+const loader = document.querySelector('#loaderSpinner');
 
 const now = moment();
 
@@ -28,6 +29,7 @@ const getListingById = async () => {
   });
   if (response.ok) {
     const data = await response.json();
+    loader.classList.add('hidden');
     console.log(data);
     const { title } = data;
     const { description } = data;
