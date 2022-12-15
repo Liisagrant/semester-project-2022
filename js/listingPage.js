@@ -5,60 +5,14 @@ const listingContainer = document.querySelector('#listingsContainer');
 const listingAllErrorMessage = document.querySelector(
   '#listingAllErrorMessage'
 );
-
 const loader = document.querySelector('#loaderSpinner');
-
+const now = moment();
+let data = [];
 let GET_LISTING_ALL_URL = `${GET_ALL_LISTINGS_URL}?&sort=created&sortOrder=desc&_bids=true`;
 
-const now = moment();
-
 const searchBar = document.querySelector('#search');
-let data = [];
-
-searchBar.addEventListener('keyup', (e) => {
-  const searchString = e.target.value.toLowerCase();
-  const filteredPosts = data.filter(
-    (listing) =>
-      listing.title && listing.title.toLowerCase().includes(searchString)
-  );
-  showListings(filteredPosts);
-});
-
 const newBtn = document.querySelector('#newest');
 const oldBtn = document.querySelector('#oldest');
-
-oldBtn.addEventListener('click', () => {
-  GET_LISTING_ALL_URL = `${GET_ALL_LISTINGS_URL}?&sort=created&sortOrder=asc&_bids=true`;
-  getAllListings().then(() => {
-    showListings(data);
-  });
-});
-
-newBtn.addEventListener('click', () => {
-  GET_LISTING_ALL_URL = `${GET_ALL_LISTINGS_URL}?&sort=created&sortOrder=desc&_bids=true`;
-  getAllListings().then(() => {
-    showListings(data);
-  });
-});
-
-async function getAllListings() {
-  const response = await fetch(GET_LISTING_ALL_URL, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-
-  if (response.ok) {
-    data = await response.json();
-    loader.classList.add('hidden');
-    showListings(data);
-  } else {
-    const err = await response.json();
-    const message = `${err.errors[0].message}`;
-    listingAllErrorMessage.innerHTML = `${message}`;
-  }
-}
 
 const showListings = (data) => {
   listingContainer.innerHTML = '';
@@ -158,4 +112,46 @@ const showListings = (data) => {
 
 getAllListings().then(() => {
   showListings(data);
+});
+
+async function getAllListings() {
+  const response = await fetch(GET_LISTING_ALL_URL, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (response.ok) {
+    data = await response.json();
+    loader.classList.add('hidden');
+    showListings(data);
+  } else {
+    const err = await response.json();
+    const message = `${err.errors[0].message}`;
+    listingAllErrorMessage.innerHTML = `${message}`;
+  }
+}
+
+oldBtn.addEventListener('click', () => {
+  GET_LISTING_ALL_URL = `${GET_ALL_LISTINGS_URL}?&sort=created&sortOrder=asc&_bids=true`;
+  getAllListings().then(() => {
+    showListings(data);
+  });
+});
+
+newBtn.addEventListener('click', () => {
+  GET_LISTING_ALL_URL = `${GET_ALL_LISTINGS_URL}?&sort=created&sortOrder=desc&_bids=true`;
+  getAllListings().then(() => {
+    showListings(data);
+  });
+});
+
+searchBar.addEventListener('keyup', (e) => {
+  const searchString = e.target.value.toLowerCase();
+  const filteredPosts = data.filter(
+    (listing) =>
+      listing.title && listing.title.toLowerCase().includes(searchString)
+  );
+  showListings(filteredPosts);
 });

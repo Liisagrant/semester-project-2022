@@ -21,6 +21,28 @@ const avatar = document.querySelector('#avatar');
 const avatarError = document.querySelector('#avatarError');
 const errorSignupUser = document.querySelector('#generalError');
 
+async function signUp(url, data) {
+  try {
+    const response = await fetch(SIGN_UP_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (response.ok) {
+      location.href = './index.html';
+    } else {
+      const err = await response.json();
+      const message = `${err.errors[0].message}`;
+      throw new Error(message);
+    }
+  } catch (err) {
+    errorSignupUser.innerHTML = `${err}`;
+  }
+}
+
 form.addEventListener('submit', (event) => {
   event.preventDefault();
 
@@ -100,25 +122,3 @@ form.addEventListener('submit', (event) => {
     signUp(SIGN_UP_URL, userData);
   }
 });
-
-async function signUp(url, data) {
-  try {
-    const response = await fetch(SIGN_UP_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
-
-    if (response.ok) {
-      location.href = './index.html';
-    } else {
-      const err = await response.json();
-      const message = `${err.errors[0].message}`;
-      throw new Error(message);
-    }
-  } catch (err) {
-    errorSignupUser.innerHTML = `${err}`;
-  }
-}

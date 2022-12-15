@@ -1,6 +1,18 @@
 const tokenKey = 'token';
 const userKey = 'user';
 
+const saveToStorage = (key, value) => {
+  localStorage.setItem(key, JSON.stringify(value));
+};
+
+const getFromStorage = (key) => {
+  const value = localStorage.getItem(key);
+  if (value) {
+    return JSON.parse(value);
+  }
+  return [];
+};
+
 const saveToken = (token) => {
   saveToStorage(tokenKey, token);
 };
@@ -41,18 +53,6 @@ const getUserCredit = () => {
   return null;
 };
 
-const saveToStorage = (key, value) => {
-  localStorage.setItem(key, JSON.stringify(value));
-};
-
-const getFromStorage = (key) => {
-  const value = localStorage.getItem(key);
-  if (value) {
-    return JSON.parse(value);
-  }
-  return [];
-};
-
 const clearStorage = () => {
   localStorage.clear();
 };
@@ -79,7 +79,7 @@ const updateLocalStorageInfo = (url) => {
       saveUser(userToSave);
       location.reload();
     } else {
-      console.log("Error info about user is not updated");
+      console.log('Error info about user is not updated');
     }
   };
   getUserData();

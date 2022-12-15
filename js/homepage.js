@@ -7,6 +7,25 @@ const now = moment();
 let data = [];
 const loader = document.querySelector('#loaderSpinner');
 
+async function getAllListings() {
+  const response = await fetch(GET_LISTINGS_URL, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (response.ok) {
+    data = await response.json();
+    loader.classList.add('hidden');
+    showListings(data);
+  } else {
+    const err = await response.json();
+    const message = `${err.errors[0].message}`;
+    homepageErrorMessage.innerHTML = `${message}`;
+  }
+}
+
 const showListings = (data) => {
   listingContainer.innerHTML = '';
   if (!data.length) {
@@ -107,22 +126,3 @@ const showListings = (data) => {
 getAllListings().then(() => {
   showListings(data);
 });
-
-async function getAllListings() {
-  const response = await fetch(GET_LISTINGS_URL, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-
-  if (response.ok) {
-    data = await response.json();
-    loader.classList.add('hidden');
-    showListings(data);
-  } else {
-    const err = await response.json();
-    const message = `${err.errors[0].message}`;
-    homepageErrorMessage.innerHTML = `${message}`;
-  }
-}

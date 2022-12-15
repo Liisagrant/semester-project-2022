@@ -1,4 +1,3 @@
-
 ![A screenshot of my project](image/screenshot.png)
 
 # Sniper - An Online Auction Site 💰
@@ -23,6 +22,7 @@ This project is built using Vite. To run the project, simply clone or fork this 
 ```
 npm run install
 ```
+
 (Installs the node modules)
 
 and then
@@ -41,7 +41,7 @@ npm run preview
 
 To preview the "small" project from dist
 
-or 
+or
 
 ```
 npm run dev
