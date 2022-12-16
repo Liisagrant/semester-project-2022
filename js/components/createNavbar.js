@@ -78,7 +78,7 @@ const myNavBar = () => {
                         }"
                         >Profile</a
                     >
-                    <div class="p-2 font-bold font-poppins text-white">
+                    <div class="p-2 font-bold font-Poppins text-white">
                     <span>Current Credit:${credits}</span>
                     </div>
                     <div class="flex justify-center">
@@ -114,7 +114,7 @@ const myNavBar = () => {
                     >
                     <a
                         href="./homepage.html"
-                        class="text-white hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
+                        class="text-white font-Poppins hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
                           pathname === '/homepage.html' ? 'bg-onPageColor' : ''
                         }"
                         aria-current="page"
@@ -134,7 +134,7 @@ const myNavBar = () => {
         navbarLinksDesktop = `
                       <a
                           href="./homepage.html"
-                          class="text-white hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
+                          class="text-white font-Poppins hover:text-lightGray rounded-md py-2 px-3 inline-flex items-center text-sm font-medium ${
                             pathname === '/homepage.html'
                               ? 'bg-onPageColor'
                               : ''
