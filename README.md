@@ -19,7 +19,7 @@ The page is built using Vite, along with:
 
 This project is built using Vite. To run the project, simply clone or fork this repository. Then, in your project terminal, run the following commands:
 
-|Commands           | Column 2                                   | 
+|Commands           | What the command does                      | 
 |-------------------|--------------------------------------------|
 | npm install       | Installs the node modules                  |
 | npm run build     | Makes project smaller adds a dist folder   |
